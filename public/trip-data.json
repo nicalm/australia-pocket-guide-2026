@@ -497,26 +497,32 @@
       "schedule": [
         {
           "id": "day-5-item-1",
-          "time": "按票面",
+          "time": "12:45",
           "type": "attraction",
-          "text": "悉尼歌剧院导览。已订票；具体集合点和时间等 PDF 补充，提前到场。",
+          "text": "12:45 前到悉尼歌剧院 Welcome Centre 集合；13:00 参加 1 小时中文导览。2 位 Tour and Dine Adult，导览后可凭券在指定餐厅用餐。",
           "placeIds": [
             "ChIJ3S-JXmauEmsRUcIaWtf4MzE"
+          ],
+          "ticketIds": [
+            "ticket-opera-mandarin-tour"
           ]
         },
         {
           "id": "day-5-item-2",
-          "time": "两场之间",
+          "time": "14:00–18:00",
           "type": "attraction",
-          "text": "歌剧院周边休息、用餐。围绕已订场次安排空档，不额外塞入远处景点。",
+          "text": "导览后用餐、在歌剧院和环形码头周边休息；18:00 前返回 Joan Sutherland Theatre 门口准备入场。",
           "placeIds": []
         },
         {
           "id": "day-5-item-3",
-          "time": "按票面",
+          "time": "18:30",
           "type": "attraction",
-          "text": "Great Opera Hits 演出。原行程已订票；演出时刻以确认邮件／门票为准。",
-          "placeIds": []
+          "text": "Great Opera Hits，Joan Sutherland Theatre。座位 H25、H26，Stalls Door 26；2 张 Standard 票。",
+          "placeIds": [],
+          "ticketIds": [
+            "ticket-great-opera-hits"
+          ]
         },
         {
           "id": "day-5-hotel",
@@ -900,27 +906,30 @@
       "schedule": [
         {
           "id": "day-12-item-1",
-          "time": "集合待定",
+          "time": "12:20",
           "type": "attraction",
-          "text": "小火车＋企鹅岛一日游。以旅行团集合点、接送与班次为准；Dandenong Ranges 图钉不等于车站。",
+          "text": "12:20 前抵达 Mail Exchange Hotel 外接车点：688 Bourke St, Melbourne VIC 3000。12:30 出发；认准 Explore Australia Tours 标识车辆。",
           "placeIds": [
-            "ChIJ7UbDqw0l1moRDEPa1jtC2Qg"
+            "place-mail-exchange-hotel"
+          ],
+          "ticketIds": [
+            "ticket-puffing-billy-penguins"
           ]
         },
         {
           "id": "day-12-item-2",
-          "time": "白天",
+          "time": "12:30 后",
           "type": "attraction",
-          "text": "Dandenong Ranges / 小火车。顺序由旅行团安排，确认是否包含小火车票。",
+          "text": "Puffing Billy 蒸汽小火车＋企鹅野生动物之旅，Penguins Plus 观赏升级，2 位成人。当天顺序由旅行团安排。",
           "placeIds": [
             "ChIJ7UbDqw0l1moRDEPa1jtC2Qg"
           ]
         },
         {
           "id": "day-12-item-3",
-          "time": "下午",
+          "time": "下午–傍晚",
           "type": "drive",
-          "text": "菲利普岛 → Nobbies。按实际团单停靠，Nobbies 开放状态出发前核对。",
+          "text": "继续前往菲利普岛与 Nobbies；具体停靠按旅行团当日安排。出发后留意手机通知，接车信息可能临时变化。",
           "placeIds": [
             "ChIJ57hyT0Dy1WoRM2yxoXEDDHk"
           ]
@@ -929,7 +938,7 @@
           "id": "day-12-item-4",
           "time": "日落前后",
           "type": "drive",
-          "text": "企鹅归巢 → 返回墨尔本。入场时间以门票为准；穿齐保暖层，遵守禁止摄影规定。",
+          "text": "Penguins Plus 观赏企鹅归巢，之后随团返回墨尔本。日落前穿齐保暖层；企鹅观赏区禁止摄影。",
           "placeIds": []
         },
         {
@@ -2150,14 +2159,169 @@
       },
       "website": "https://veriu.com.au/hotels/veriu-queen-victoria-market/",
       "cityOrArea": "91/101 Therry St, Melbourne VIC 3000, Australia"
+    },
+    {
+      "id": "place-mail-exchange-hotel",
+      "name": "Mail Exchange Hotel",
+      "nameZh": "Mail Exchange Hotel 接车点",
+      "countryCode": "AU",
+      "address": "688 Bourke St, Melbourne VIC 3000, Australia",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Mail%20Exchange%20Hotel%20688%20Bourke%20St%20Melbourne",
+      "navigation": {
+        "url": "https://www.google.com/maps/search/?api=1&query=Mail%20Exchange%20Hotel%20688%20Bourke%20St%20Melbourne",
+        "query": "Mail Exchange Hotel 688 Bourke St Melbourne"
+      },
+      "cityOrArea": "Melbourne"
     }
   ],
   "restaurants": [],
-  "bookingsAndTickets": [],
+  "bookingsAndTickets": [
+    {
+      "id": "ticket-opera-mandarin-tour",
+      "day": 5,
+      "dayId": "day-05",
+      "name": "悉尼歌剧院 1 小时中文导览",
+      "requirement": "advance-required",
+      "purchaseStatus": "purchased",
+      "scheduleItemIds": [
+        "day-5-item-1"
+      ],
+      "guidance": [
+        "9 月 28 日 13:00",
+        "2 位 Tour and Dine Adult",
+        "至少提前 15 分钟到 Welcome Centre",
+        "迟到无法追上导览且不可退款"
+      ],
+      "document": {
+        "url": "assets/tickets/sydney-opera-house-mandarin-tour.pdf",
+        "type": "application/pdf",
+        "label": "查看中文导览订单 PDF"
+      }
+    },
+    {
+      "id": "ticket-great-opera-hits",
+      "day": 5,
+      "dayId": "day-05",
+      "name": "Great Opera Hits 演出票",
+      "requirement": "advance-required",
+      "purchaseStatus": "purchased",
+      "scheduleItemIds": [
+        "day-5-item-3"
+      ],
+      "guidance": [
+        "9 月 28 日 18:30",
+        "Joan Sutherland Theatre",
+        "H25、H26 · Stalls Door 26"
+      ],
+      "document": {
+        "url": "assets/tickets/great-opera-hits.pdf",
+        "type": "application/pdf",
+        "label": "查看演出订单 PDF"
+      }
+    },
+    {
+      "id": "ticket-puffing-billy-penguins",
+      "day": 12,
+      "dayId": "day-12",
+      "name": "Puffing Billy＋Penguins Plus 一日游",
+      "requirement": "advance-required",
+      "purchaseStatus": "purchased",
+      "scheduleItemIds": [
+        "day-12-item-1"
+      ],
+      "guidance": [
+        "10 月 5 日 12:30 接车",
+        "Mail Exchange Hotel · 688 Bourke St",
+        "至少提前 10 分钟到",
+        "2 位成人 · Penguins Plus"
+      ],
+      "document": {
+        "url": "assets/tickets/puffing-billy-penguins-tour.pdf",
+        "type": "application/pdf",
+        "label": "查看一日游确认 PDF"
+      },
+      "supplementalDocument": {
+        "url": "assets/tickets/puffing-billy-pickup-confirmation.png",
+        "type": "image/png",
+        "label": "查看接车确认截图"
+      }
+    }
+  ],
   "ticketPlanning": {
     "statusStorage": "local",
     "statusStorageNote": "门票状态暂保存在当前浏览器。",
-    "items": []
+    "items": [
+      {
+        "id": "ticket-opera-mandarin-tour",
+        "day": 5,
+        "dayId": "day-05",
+        "name": "悉尼歌剧院 1 小时中文导览",
+        "requirement": "advance-required",
+        "purchaseStatus": "purchased",
+        "scheduleItemIds": [
+          "day-5-item-1"
+        ],
+        "guidance": [
+          "9 月 28 日 13:00",
+          "2 位 Tour and Dine Adult",
+          "至少提前 15 分钟到 Welcome Centre",
+          "迟到无法追上导览且不可退款"
+        ],
+        "document": {
+          "url": "assets/tickets/sydney-opera-house-mandarin-tour.pdf",
+          "type": "application/pdf",
+          "label": "查看中文导览订单 PDF"
+        }
+      },
+      {
+        "id": "ticket-great-opera-hits",
+        "day": 5,
+        "dayId": "day-05",
+        "name": "Great Opera Hits 演出票",
+        "requirement": "advance-required",
+        "purchaseStatus": "purchased",
+        "scheduleItemIds": [
+          "day-5-item-3"
+        ],
+        "guidance": [
+          "9 月 28 日 18:30",
+          "Joan Sutherland Theatre",
+          "H25、H26 · Stalls Door 26"
+        ],
+        "document": {
+          "url": "assets/tickets/great-opera-hits.pdf",
+          "type": "application/pdf",
+          "label": "查看演出订单 PDF"
+        }
+      },
+      {
+        "id": "ticket-puffing-billy-penguins",
+        "day": 12,
+        "dayId": "day-12",
+        "name": "Puffing Billy＋Penguins Plus 一日游",
+        "requirement": "advance-required",
+        "purchaseStatus": "purchased",
+        "scheduleItemIds": [
+          "day-12-item-1"
+        ],
+        "guidance": [
+          "10 月 5 日 12:30 接车",
+          "Mail Exchange Hotel · 688 Bourke St",
+          "至少提前 10 分钟到",
+          "2 位成人 · Penguins Plus"
+        ],
+        "document": {
+          "url": "assets/tickets/puffing-billy-penguins-tour.pdf",
+          "type": "application/pdf",
+          "label": "查看一日游确认 PDF"
+        },
+        "supplementalDocument": {
+          "url": "assets/tickets/puffing-billy-pickup-confirmation.png",
+          "type": "image/png",
+          "label": "查看接车确认截图"
+        }
+      }
+    ]
   },
   "preTrip": {
     "packingItems": [],
@@ -2173,8 +2337,8 @@
         "completed": false
       },
       {
-        "id": "todo-day-tour",
-        "text": "补充小火车＋企鹅岛一日游集合点与票据",
+        "id": "todo-opera-tickets",
+        "text": "9/25 前确认歌剧院正式电子票已收到（订单说明活动前 3 天另发）",
         "completed": false
       }
     ],

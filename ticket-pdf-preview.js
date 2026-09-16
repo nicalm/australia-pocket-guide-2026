@@ -63,7 +63,7 @@
     const title = document.getElementById("ticket-dialog-title");
     if (!dialog || !body || !title) return;
 
-    const label = ticket.attraction?.nameZh || ticket.attraction?.name || ticket.document.label || "门票 PDF";
+    const label = ticket.name || ticket.attraction?.nameZh || ticket.attraction?.name || ticket.document.label || "门票 PDF";
     title.textContent = label;
     const url = String(ticket.document.url);
     const frame = pdfFrame(ticket, label);
@@ -88,6 +88,16 @@
     external.rel = "noopener noreferrer";
     external.textContent = "在新窗口打开 PDF ↗";
     links.append(external);
+    const supplemental = ticket.supplementalDocuments || (ticket.supplementalDocument ? [ticket.supplementalDocument] : []);
+    supplemental.forEach((item) => {
+      if (!item?.url) return;
+      const link = document.createElement("a");
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = `${item.label || "查看附件"} ↗`;
+      links.append(link);
+    });
     body.append(status, frame, links);
     if (!dialog.open) dialog.showModal();
   }
@@ -96,8 +106,8 @@
   document.addEventListener("travel-data-ready", (event) => indexTicketDocuments(event.detail));
   const warmFromEvent = (event) => {
     const opener = event.target.closest?.(".schedule-ticket__open");
-    const card = opener?.closest("[data-ticket-id]");
-    const ticket = card ? ticketDocuments.get(card.dataset.ticketId) : null;
+    const ticketId = opener?.dataset.ticketOpen || opener?.closest("[data-ticket-id]")?.dataset.ticketId;
+    const ticket = ticketId ? ticketDocuments.get(ticketId) : null;
     if (ticket && isPdf(ticket.document)) warmPdf(ticket.document.url);
   };
   document.addEventListener("pointerover", warmFromEvent, true);
@@ -105,8 +115,8 @@
   document.addEventListener("touchstart", warmFromEvent, { capture: true, passive: true });
   document.addEventListener("click", (event) => {
     const opener = event.target.closest?.(".schedule-ticket__open");
-    const card = opener?.closest("[data-ticket-id]");
-    const ticket = card ? ticketDocuments.get(card.dataset.ticketId) : null;
+    const ticketId = opener?.dataset.ticketOpen || opener?.closest("[data-ticket-id]")?.dataset.ticketId;
+    const ticket = ticketId ? ticketDocuments.get(ticketId) : null;
     if (!opener) return;
     if (!ticket || !isPdf(ticket.document)) {
       const body = document.getElementById("ticket-dialog-body");

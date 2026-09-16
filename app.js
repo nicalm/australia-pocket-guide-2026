@@ -478,6 +478,11 @@ function ticketDocument(ticket) {
   return url ? { url, type: "", label: ticket.documentLabel || "查看票据" } : null;
 }
 
+function ticketSupplementalDocuments(ticket) {
+  const documents = ticket.supplementalDocuments || (ticket.supplementalDocument ? [ticket.supplementalDocument] : []);
+  return documents.filter((document) => document && typeof document === "object" && document.url);
+}
+
 function inlineTicketMarkup(ticket) {
   const purchased = isTicketPurchased(ticket);
   const title = ticketTitle(ticket);
@@ -933,7 +938,8 @@ function openTicketDialog(ticketId, opener) {
   const links = [
     localDocument ? `<a href="${escapeHtml(localDocument)}" target="_blank" rel="noopener noreferrer">在新窗口打开票据 ↗</a>` : "",
     externalDocument ? `<a href="${escapeHtml(externalDocument)}" target="_blank" rel="noopener noreferrer">${escapeHtml(document?.label || "查看票据")} ↗</a>` : "",
-    officialUrl ? `<a href="${escapeHtml(officialUrl)}" target="_blank" rel="noopener noreferrer">打开官方页面 ↗</a>` : ""
+    officialUrl ? `<a href="${escapeHtml(officialUrl)}" target="_blank" rel="noopener noreferrer">打开官方页面 ↗</a>` : "",
+    ...ticketSupplementalDocuments(ticket).map((item) => { const local = localAssetUrl(item.url); return local ? `<a href="${escapeHtml(local)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.label || "查看附件")} ↗</a>` : ""; })
   ].filter(Boolean).join("");
   $("#ticket-dialog-body").innerHTML = `
     <p class="ticket-dialog__status">${escapeHtml(isTicketPurchased(ticket) ? "已标记购票" : ticketRequirement(ticket))}</p>
