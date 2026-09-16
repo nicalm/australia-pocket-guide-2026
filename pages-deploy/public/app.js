@@ -47,7 +47,7 @@ function applyModuleConfig() {
   document.querySelectorAll("[data-module]").forEach((element) => {
     element.hidden = !moduleEnabled(element.dataset.module);
   });
-  const visibleTravelLinks = [...document.querySelectorAll(".travel-navigation-menu a")].filter((link) => !link.hidden);
+  const visibleTravelLinks = [...document.querySelectorAll(".persistent-tabs a")].filter((link) => !link.hidden);
   const travelNavigation = $("#travel-navigation");
   if (travelNavigation) travelNavigation.hidden = visibleTravelLinks.length === 0;
   document.documentElement.dataset.persistence = state.config.persistence.mode;

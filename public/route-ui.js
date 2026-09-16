@@ -2,6 +2,7 @@
 let mapRoutes = [];
 let mapInstance = 0;
 let activePhotoTargets = new Map();
+let liveMap = null;
 
 const transportNames = {
   drive: "自驾", train: "火车", rail: "火车", "cable-car": "缆车",
@@ -304,11 +305,56 @@ function routeMapMarkup(source, city, route) {
   return `${fallback}${travelMapMarkup(source, city, route)}`;
 }
 
+function allAustraliaRegion(routeMap) {
+  const regions = travelMapRegions(routeMap);
+  const unique = (items) => [...new Map(items.map((item) => [item.id, item])).values()];
+  const dailyLayouts = {};
+  regions.forEach((region) => Object.entries(region.dailyLayouts || {}).forEach(([day, layout]) => {
+    const current = dailyLayouts[day] || { places: [], transport: [] };
+    dailyLayouts[day] = { places: [...new Set([...current.places, ...(layout.places || [])])], transport: [...current.transport, ...(layout.transport || [])] };
+  }));
+  return { id: "australia-all", label: "澳大利亚总览", places: unique(regions.flatMap((region) => region.places || [])), routes: regions.flatMap((region) => region.routes || []), days: [...new Set(regions.flatMap((region) => region.days || []))].sort((a,b)=>a-b), dailyLayouts };
+}
+
+function realMapMarkup() {
+  return `<div class="real-map-block"><div class="real-map-canvas" id="real-route-map" aria-label="OpenStreetMap 真实地理路线图"></div><div class="illustrated-map-utility"><span>真实道路和地名来自 OpenStreetMap；彩色线只连接计划地点，不代表实际驾驶、轮渡或步行轨迹。</span><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a></div></div>`;
+}
+
+function routePlacesForRealMap(source, city, route) {
+  const all = mapPlacesFor(city || source);
+  if (!route) return all;
+  const ids = new Set(dailyMapLayoutFor(source, route.day, city)?.places || route.placeIds || []);
+  return all.filter((place) => ids.has(place.id));
+}
+
+function mountRealMap(source, city, route) {
+  const target = document.getElementById("real-route-map");
+  if (!target || !window.L) return;
+  liveMap?.remove();
+  liveMap = L.map(target, { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "&copy; OpenStreetMap contributors" }).addTo(liveMap);
+  const places = routePlacesForRealMap(source, city, route).filter((place) => Number.isFinite(Number(place.geo?.lat)) && Number.isFinite(Number(place.geo?.lng)));
+  const routeIds = route
+    ? [...new Set(((city || source).routes || []).filter((item) => item.day === route.day).flatMap((item) => item.placeIds || []))]
+    : [...new Set((city || source).routes?.flatMap((item) => item.placeIds || []) || [])];
+  const byId = new Map(places.map((place) => [place.id, place]));
+  const coordinates = routeIds.map((id) => byId.get(id)).filter(Boolean).map((place) => [place.geo.lat, place.geo.lng]);
+  if (coordinates.length > 1) L.polyline(coordinates, { color: route?.color || "#287b90", weight: 4, opacity: .86 }).addTo(liveMap);
+  places.forEach((place, index) => {
+    const photo = place.photo ? `<img src="${escapeHtml(place.photo.url)}" alt="" class="real-map-popup-photo">` : "";
+    L.marker([place.geo.lat, place.geo.lng], { title: place.label }).addTo(liveMap).bindPopup(`${photo}<strong>${escapeHtml(place.label)}</strong><br><a href="${escapeHtml(mapsSearch(place.query))}" target="_blank" rel="noopener">Google Maps 导航 ↗</a>`);
+  });
+  const bounds = L.latLngBounds(places.map((place) => [place.geo.lat, place.geo.lng]));
+  if (bounds.isValid()) liveMap.fitBounds(bounds, { padding: [26, 26], maxZoom: route ? 14 : 8 });
+  requestAnimationFrame(() => liveMap?.invalidateSize());
+}
+
 function renderRoutePanel(regionId, cityId = "", dayNumber = 0) {
   const root = $("#route-explorer");
   const routeMap = state.data?.routeMap;
-  const regions = travelMapRegions(routeMap);
-  const source = travelMapSource(routeMap, regionId || routeMap?.defaultRegionId || root.dataset.region);
+  const regionalSources = travelMapRegions(routeMap);
+  const regions = [allAustraliaRegion(routeMap), ...regionalSources];
+  const source = regions.find((region) => region.id === (regionId || root.dataset.region)) || regions[0];
   root.dataset.region = source.id || "";
   const cities = mapCityDefinitions(source);
   const city = mapCityFor(source, cityId || root.dataset.city);
@@ -316,10 +362,10 @@ function renderRoutePanel(regionId, cityId = "", dayNumber = 0) {
   mapRoutes = mapRouteDefinitions(source, city);
   const route = mapRoutes.find((item) => item.day === dayNumber);
   document.querySelector(".illustrated-map-popover")?.remove();
-  root.innerHTML = `<div class="route-region-tabs" aria-label="旅行国家">${regions.map((region) => `<button type="button" data-route-region="${escapeHtml(region.id)}" aria-pressed="${region.id === source.id}">${escapeHtml(region.label || region.id)}</button>`).join("")}</div>
-    <div class="route-city-tabs" aria-label="${escapeHtml(source.label || "当前国家")}城市"><button type="button" data-route-city="" aria-pressed="${!city}">国家总览</button>${cities.map((item) => `<button type="button" data-route-city="${escapeHtml(item.id)}" aria-pressed="${item.id === city?.id}">${escapeHtml(item.label)}</button>`).join("")}</div>
-    ${city ? `<div class="route-day-tabs" aria-label="${escapeHtml(city.label)}路线日期"><button type="button" data-route-day="0" aria-pressed="${!route}">城市总览</button>${mapRoutes.map((item) => { const day = state.data.days.find((candidate) => candidate.day === item.day); return day ? `<button type="button" data-route-day="${item.day}" style="--route-color:${item.color}" aria-pressed="${item === route}"><i></i>${day.date.slice(5).replace("-", "/")}</button>` : ""; }).join("")}</div>` : ""}
-  ${routeMapMarkup(source, city, route)}`;
+  root.innerHTML = `<div class="route-region-tabs" aria-label="真实国家与城市地图">${regions.map((region) => `<button type="button" data-route-region="${escapeHtml(region.id)}" aria-pressed="${region.id === source.id}">${escapeHtml(region.label || region.id)}</button>`).join("")}</div>
+    <div class="route-day-tabs" aria-label="${escapeHtml((city || source).label)}路线日期"><button type="button" data-route-day="0" aria-pressed="${!route}">${city ? "城市总览" : "区域总览"}</button>${mapRoutes.map((item) => { const day = state.data.days.find((candidate) => candidate.day === item.day); return day ? `<button type="button" data-route-day="${item.day}" style="--route-color:${item.color}" aria-pressed="${item === route}"><i></i>${day.date.slice(5).replace("-", "/")}</button>` : ""; }).join("")}</div>
+  ${realMapMarkup()}${photoStripMarkup(routePlacesForRealMap(source, city, route))}`;
+  mountRealMap(source, city, route);
 }
 
 function setupRouteExplorer() {
@@ -349,7 +395,8 @@ function setupRouteExplorer() {
     }
     const transport = event.target.closest("[data-transport-day]");
     if (transport) {
-      const source = travelMapSource(state.data.routeMap, $("#route-explorer").dataset.region);
+      const regionId = $("#route-explorer").dataset.region;
+      const source = regionId === "australia-all" ? allAustraliaRegion(state.data.routeMap) : travelMapSource(state.data.routeMap, regionId);
       const city = mapCityFor(source, $("#route-explorer").dataset.city);
       const day = state.data.days.find((item) => item.day === Number(transport.dataset.transportDay));
       const pin = dailyMapLayoutFor(source, day.day, city).transport[Number(transport.dataset.transportGroup)];
