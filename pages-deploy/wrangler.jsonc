@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "australia-pocket-guide-shared",
+  "compatibility_date": "2026-09-16",
+  "pages_build_output_dir": "./public",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "australia-pocket-guide-2026", "database_id": "a69a8015-7e79-4170-8d3d-15a95df9ebcd" }
+  ]
+}
