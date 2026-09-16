@@ -1,0 +1,10 @@
+const fs = require('fs');
+const vm = require('vm');
+const html = fs.readFileSync('index.html', 'utf8');
+const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const prefix = script.slice(0, script.indexOf('const outfitPlan='));
+const groups = vm.runInNewContext(prefix + ';packGroups');
+const quote = value => "'" + String(value).replace(/'/g, "''") + "'";
+const rows = groups.flatMap(([category, items], groupIndex) => items.map((label, itemIndex) => '(' + [quote('pack-' + groupIndex + '-' + itemIndex), quote(category), quote(label), '0', String(groupIndex * 100 + itemIndex), 'unixepoch()'].join(',') + ')'));
+fs.writeFileSync('seed.sql', 'insert or ignore into packing_items(id,category,label,packed,position,updated_at) values\n' + rows.join(',\n') + ';\n', 'utf8');
+console.log('Prepared ' + rows.length + ' seed rows.');

@@ -4,6 +4,6 @@ Chinese-language travel guide for Sydney, Melbourne, the Great Ocean Road and Ph
 
 Website: https://nicalm.github.io/australia-pocket-guide-2026/
 
-The site is a single self-contained HTML file served by GitHub Pages from the main branch. Update index.html and push to publish changes.
+The shared version is a Cloudflare Worker with static assets and a D1 database. index.html is also kept on GitHub Pages as a read-only fallback.
 
-Packing checks and personal notes stay in the visitor's browser local storage; there is no synchronization or backend. Weather updates request fixed city forecasts from Open-Meteo. The published itinerary is public. Search-engine indexing is discouraged but not access-controlled.
+Packing items and notes sync through a capability URL whose share parameter is checked by the Worker. Keep that URL among the travel group. Browser local storage provides an offline fallback. Weather updates request fixed city forecasts from Open-Meteo.
