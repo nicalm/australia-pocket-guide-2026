@@ -426,6 +426,7 @@ function renderStays() {
 
 let packingItems = [];
 const collapsedPackingGroups = new Set();
+let packingSortables = [];
 function sharedApi(path, options = {}) {
   const share = new URLSearchParams(location.search).get("share") || "";
   return fetch(`/api/${path}${path.includes("?") ? "&" : "?"}share=${encodeURIComponent(share)}`, { ...options, headers: { "content-type": "application/json", ...(options.headers || {}) } }).then(async (response) => {
@@ -436,13 +437,22 @@ function sharedApi(path, options = {}) {
 function renderPacking() {
   const done = packingItems.filter((item) => item.packed).length;
   $("#packing-progress").textContent = `${done} / ${packingItems.length}`;
+  packingItems.sort((first, second) => Number(first.position) - Number(second.position));
   const groups = Map.groupBy(packingItems, (item) => item.category || "其他");
+  const categories = [...groups.keys()];
+  const select = $("#packing-category-select");
+  if (select) { const current=select.value; select.innerHTML=categories.map((category)=>`<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("")+`<option value="__new__">＋ 创建新分类</option>`; select.value=categories.includes(current)?current:(categories[0]||"__new__"); $("#packing-new-category").hidden=select.value!=="__new__"; }
   $("#packing-list").innerHTML = [...groups].map(([category, items], groupIndex) => {
     const collapsed = collapsedPackingGroups.has(category);
     const packed = items.filter((item) => item.packed).length;
-    return `<section class="packing-group${collapsed ? " is-collapsed" : ""}"><button type="button" class="packing-group-toggle" data-packing-category="${escapeHtml(category)}" aria-expanded="${!collapsed}" aria-controls="packing-group-${groupIndex}"><span><strong>${escapeHtml(category)}</strong><small>${packed} / ${items.length}</small></span><i aria-hidden="true">+</i></button><div class="packing-group-items" id="packing-group-${groupIndex}" ${collapsed ? "hidden" : ""}>${items.map((item) => `<div class="packing-row${item.packed ? " is-complete" : ""}" data-packing-id="${escapeHtml(item.id)}"><label><input type="checkbox" ${item.packed ? "checked" : ""}><span class="todo-check">✓</span><span>${escapeHtml(item.label)}</span></label><span class="packing-actions"><button type="button" data-packing-action="edit">编辑</button><button type="button" data-packing-action="delete">删除</button></span></div>`).join("")}</div></section>`;
+    return `<section class="packing-group${collapsed ? " is-collapsed" : ""}" data-packing-group="${escapeHtml(category)}"><div class="packing-group-head"><button type="button" class="packing-drag-handle packing-group-handle" aria-label="长按拖动分类 ${escapeHtml(category)}">⠿</button><button type="button" class="packing-group-toggle" data-packing-category="${escapeHtml(category)}" aria-expanded="${!collapsed}" aria-controls="packing-group-${groupIndex}"><span><strong>${escapeHtml(category)}</strong><small>${packed} / ${items.length}</small></span><i aria-hidden="true">+</i></button></div><div class="packing-group-items" id="packing-group-${groupIndex}" data-packing-drop-category="${escapeHtml(category)}" ${collapsed ? "hidden" : ""}>${items.map((item) => `<div class="packing-row${item.packed ? " is-complete" : ""}" data-packing-id="${escapeHtml(item.id)}"><button type="button" class="packing-drag-handle packing-item-handle" aria-label="长按拖动条目 ${escapeHtml(item.label)}">⠿</button><label><input type="checkbox" ${item.packed ? "checked" : ""}><span class="todo-check">✓</span><span>${escapeHtml(item.label)}</span></label><span class="packing-actions"><button type="button" data-packing-action="edit">编辑</button><button type="button" data-packing-action="delete">删除</button></span></div>`).join("")}</div></section>`;
   }).join("");
+  setupPackingSortables();
 }
+async function persistPackingOrder() {
+  const groups=[...document.querySelectorAll("[data-packing-group]")];let position=0;const changes=[];groups.forEach((group)=>{const category=group.dataset.packingGroup;group.querySelectorAll("[data-packing-id]").forEach((row)=>{const item=packingItems.find((entry)=>entry.id===row.dataset.packingId);if(item&&(item.category!==category||item.position!==position)){item.category=category;item.position=position;changes.push({id:item.id,category,position});}position+=1;});});if(changes.length){$("#packing-sync").textContent="正在保存排序…";await sharedApi("items/reorder",{method:"PUT",body:JSON.stringify({items:changes})});$("#packing-sync").textContent="共享排序已同步";renderPacking();}
+}
+function setupPackingSortables(){packingSortables.forEach((sortable)=>sortable.destroy());packingSortables=[];$("#packing-list").dataset.dragReady="false";if(!window.Sortable)return;packingSortables.push(Sortable.create($("#packing-list"),{animation:180,handle:".packing-group-handle",draggable:".packing-group",delay:350,delayOnTouchOnly:true,touchStartThreshold:4,onEnd:persistPackingOrder}));document.querySelectorAll("[data-packing-drop-category]").forEach((list)=>packingSortables.push(Sortable.create(list,{group:"packing-items",animation:180,handle:".packing-item-handle",draggable:".packing-row",delay:350,delayOnTouchOnly:true,touchStartThreshold:4,onAdd:persistPackingOrder,onUpdate:persistPackingOrder})));$("#packing-list").dataset.dragReady="true";}
 async function loadExtras() {
   const share = new URLSearchParams(location.search).get("share") || "";
   const outfit = state.data.extra?.weatherAndClothing?.outfitPlan || {};
@@ -451,7 +461,8 @@ async function loadExtras() {
   try { const data = await sharedApi("state"); packingItems = data.items || []; renderPacking(); $("#shared-notes").value = data.notes || ""; $("#packing-sync").textContent = "共享清单已同步"; } catch { $("#packing-sync").textContent = "共享清单暂时无法读取"; }
 }
 function setupExtras() {
-  $("#packing-form").onsubmit = async (event) => { event.preventDefault(); const input=$("#packing-input"), category=$("#packing-category"); if(!input.value.trim()) return; const item={id:crypto.randomUUID(),label:input.value.trim(),category:category.value.trim()||"其他",packed:false,position:(packingItems.at(-1)?.position||0)+1}; packingItems.push(item); renderPacking(); event.target.reset(); await sharedApi("items",{method:"POST",body:JSON.stringify(item)}); };
+  $("#packing-category-select").onchange = (event) => { const input=$("#packing-new-category");input.hidden=event.target.value!=="__new__";if(!input.hidden)input.focus(); };
+  $("#packing-form").onsubmit = async (event) => { event.preventDefault(); const input=$("#packing-input"),select=$("#packing-category-select"),newCategory=$("#packing-new-category");const category=(select.value==="__new__"?newCategory.value:select.value).trim();if(!input.value.trim()||!category)return; const item={id:crypto.randomUUID(),label:input.value.trim(),category:category.slice(0,60),packed:false,position:(packingItems.at(-1)?.position||0)+1};packingItems.push(item);renderPacking();input.value="";newCategory.value="";select.value=category;await sharedApi("items",{method:"POST",body:JSON.stringify(item)}); };
   $("#packing-list").onchange = async (event) => { const row=event.target.closest("[data-packing-id]"); if(!row) return; const item=packingItems.find(x=>x.id===row.dataset.packingId); item.packed=event.target.checked; renderPacking(); await sharedApi(`items/${encodeURIComponent(item.id)}`,{method:"PATCH",body:JSON.stringify({packed:item.packed})}); };
   $("#packing-list").onclick = async (event) => {
     const groupButton = event.target.closest("[data-packing-category]");

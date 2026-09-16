@@ -41,6 +41,12 @@ export default {
         if(!id||!label)return json({error:'条目不能为空'},400);
         await env.DB.prepare('insert into packing_items(id,category,label,packed,position,updated_at) values(?,?,?,?,?,unixepoch())').bind(id,category,label,item.packed?1:0,Number(item.position)||0).run();return json({ok:true},201);
       }
+      if(url.pathname==='/api/items/reorder'&&request.method==='PUT'){
+        const body=await request.json(),items=Array.isArray(body.items)?body.items.slice(0,150):[];
+        if(!items.length)return json({error:'没有排序变更'},400);
+        const statements=items.map(item=>{const id=clean(item.id,80),category=clean(item.category,60),position=Number(item.position);if(!id||!category||!Number.isFinite(position))throw new Error('排序数据无效');return env.DB.prepare('update packing_items set category=?,position=?,updated_at=unixepoch() where id=?').bind(category,position,id);});
+        await env.DB.batch(statements);return json({ok:true,updated:items.length});
+      }
       const match=url.pathname.match(/^\/api\/items\/([^/]+)$/);
       if(match&&request.method==='PATCH'){
         const id=decodeURIComponent(match[1]),body=await request.json();

@@ -15,6 +15,7 @@
   <script src="runtime-storage.js?v=20260914-3" defer></script>
   <script src="overview-map.js?v=20260915-1" defer></script>
   <script src="vendor/leaflet/leaflet.js?v=1.9.4" defer></script>
+  <script src="vendor/packing-reorder/packing-reorder.min.js?v=1.15.6" defer></script>
   <script src="route-ui.js?v=20260915-7" defer></script>
   <script src="app.js?v=20260914-3" defer></script>
   <script src="ticket-pdf-preview.js?v=20260910-2" defer></script>
@@ -102,7 +103,7 @@
     <section class="section extra-section" id="packing-extra" aria-labelledby="packing-extra-title">
       <div class="section-heading"><div><p class="section-kicker">PACK TOGETHER</p><h2 id="packing-extra-title">共享行李</h2></div><span class="soft-label" id="packing-progress">0 / 0</span></div>
       <p class="sync-copy" id="packing-sync">正在读取共享清单…</p>
-      <form class="todo-form packing-add" id="packing-form"><input id="packing-input" maxlength="160" placeholder="添加行李条目" aria-label="行李条目"><input id="packing-category" maxlength="60" placeholder="分类（可选）" aria-label="行李分类"><button type="submit">添加</button></form>
+      <form class="todo-form packing-add" id="packing-form"><input id="packing-input" maxlength="160" placeholder="添加行李条目" aria-label="行李条目"><label class="packing-category-field"><span>分类</span><select id="packing-category-select" aria-label="选择行李分类"></select></label><input id="packing-new-category" maxlength="60" placeholder="输入新分类名称" aria-label="新分类名称" hidden><button type="submit">添加</button></form>
       <div id="packing-list"></div>
     </section>
 
