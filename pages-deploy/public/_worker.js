@@ -8,11 +8,12 @@ export default {
     if(url.searchParams.get('share')!==env.SHARE_KEY)return json({error:'共享链接无效'},403);
     try{
       if(url.pathname==='/api/state'&&request.method==='GET'){
-        const [items,settings]=await Promise.all([
+        const [items,todos,settings]=await Promise.all([
           env.DB.prepare('select id, category, label, packed, position from packing_items order by position, id').all(),
+          env.DB.prepare('select id, label, completed, position from todos order by position, id').all(),
           env.DB.prepare("select value from shared_settings where key='notes'").first()
         ]);
-        return json({items:items.results.map(x=>({...x,packed:Boolean(x.packed)})),notes:settings?.value||''});
+        return json({items:items.results.map(x=>({...x,packed:Boolean(x.packed)})),todos:todos.results.map(x=>({...x,completed:Boolean(x.completed)})),notes:settings?.value||''});
       }
       if(url.pathname==='/api/seed'&&request.method==='POST'){
         const count=await env.DB.prepare('select count(*) as count from packing_items').first();
@@ -35,6 +36,13 @@ export default {
         return json({ok:true});
       }
       if(match&&request.method==='DELETE'){await env.DB.prepare('delete from packing_items where id=?').bind(decodeURIComponent(match[1])).run();return new Response(null,{status:204});}
+      if(url.pathname==='/api/todos'&&request.method==='POST'){
+        const item=await request.json(),id=clean(item.id,80),label=clean(item.label,120);if(!id||!label)return json({error:'待办不能为空'},400);
+        await env.DB.prepare('insert into todos(id,label,completed,position,updated_at) values(?,?,?,?,unixepoch())').bind(id,label,item.completed?1:0,Number(item.position)||0).run();return json({ok:true},201);
+      }
+      const todoMatch=url.pathname.match(/^\/api\/todos\/([^/]+)$/);
+      if(todoMatch&&request.method==='PATCH'){const body=await request.json();await env.DB.prepare('update todos set completed=?,updated_at=unixepoch() where id=?').bind(body.completed?1:0,decodeURIComponent(todoMatch[1])).run();return json({ok:true});}
+      if(todoMatch&&request.method==='DELETE'){await env.DB.prepare('delete from todos where id=?').bind(decodeURIComponent(todoMatch[1])).run();return new Response(null,{status:204});}
       if(url.pathname==='/api/notes'&&request.method==='PUT'){
         const body=await request.json(),notes=String(body.notes??'').slice(0,12000);
         await env.DB.prepare("insert into shared_settings(key,value,updated_at) values('notes',?,unixepoch()) on conflict(key) do update set value=excluded.value,updated_at=excluded.updated_at").bind(notes).run();return json({ok:true});

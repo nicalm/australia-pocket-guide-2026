@@ -14,3 +14,13 @@ create table if not exists shared_settings (
   value text not null default '',
   updated_at integer not null default (unixepoch())
 );
+
+create table if not exists todos (
+  id text primary key,
+  label text not null check(length(label) between 1 and 120),
+  completed integer not null default 0 check(completed in (0,1)),
+  position real not null default 0,
+  updated_at integer not null default (unixepoch())
+);
+
+create index if not exists todos_position_idx on todos(position, id);
