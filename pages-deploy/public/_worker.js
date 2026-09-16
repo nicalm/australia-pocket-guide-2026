@@ -9,14 +9,16 @@ export default {
     try{
       const mailMatch=url.pathname.match(/^\/api\/confirmation\/(\d+)$/);
       if(mailMatch&&request.method==='GET'){
-        const allowed=new Set(['34868420','35413193','35413179','35413205','35413198','35413153']);
+        const allowed=new Set(['34868420','37956870','35413193','35413179','35413205','35413198','35413153']);
         if(!allowed.has(mailMatch[1]))return json({error:'确认邮件不存在'},404);
         const upstream=await fetch('https://wanderlog.com/api/tripPlans/ryfdswcvguxmleir/emails/'+mailMatch[1],{signal:AbortSignal.timeout(20000)});
         if(!upstream.ok)return json({error:'Wanderlog 暂时无法读取邮件，请稍后重试'},502);
         const result=await upstream.json();if(!result.success||!result.data?.text)return json({error:'确认邮件暂不可用'},502);
         const safe=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         const mail=result.data;
-        return new Response('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+safe(mail.subject)+'</title><style>body{max-width:880px;margin:32px auto;padding:0 20px;background:#f3f6f2;color:#13262f;font:16px/1.7 system-ui}h1{font-size:22px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.8 system-ui;background:white;padding:24px;border-radius:16px}a{color:#174c49}</style><h1>'+safe(mail.subject)+'</h1><p>Wanderlog 确认邮件 · 实时读取原文</p><pre>'+safe(mail.text)+'</pre><p><a href="https://wanderlog.com/plan/ryfdswcvguxmleir/前往australia的旅行" rel="noreferrer">返回 Wanderlog 行程</a></p></html>',{headers:{'content-type':'text/html; charset=utf-8','cache-control':'private, no-store','referrer-policy':'no-referrer','content-security-policy':"default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'",'x-content-type-options':'nosniff'}});
+        const original=String(mail.sanitizedHtml||'').replace(/<script[\s\S]*?<\/script>/gi,'').replace(/<base[\s\S]*?>/gi,'').replace(/<form[\s\S]*?<\/form>/gi,'').replace(/\son\w+\s*=\s*(["']).*?\1/gi,'').replace(/href\s*=\s*(["'])javascript:[\s\S]*?\1/gi,'href="#"');
+        const fallback='<pre>'+safe(mail.text)+'</pre>';
+        return new Response('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+safe(mail.subject)+'</title><style>body{margin:0;background:#e9eeea;color:#13262f;font:14px/1.6 system-ui}.bar{position:sticky;top:0;z-index:3;padding:12px 18px;background:#13262f;color:white}.bar strong{display:block}.bar small{color:#b8cccf}.mail{max-width:760px;margin:20px auto;padding:0 12px 30px}.paper{overflow:auto;background:white;border-radius:14px;box-shadow:0 14px 45px #13262f1c}.paper>article,.paper>div{max-width:100%}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:24px;font:14px/1.8 system-ui}a{color:#185f82}</style></head><body><header class="bar"><strong>'+safe(mail.subject)+'</strong><small>Wanderlog 保存的原邮件 HTML · 图片可能由邮件原发送方加载</small></header><main class="mail"><div class="paper">'+(original||fallback)+'</div></main></body></html>',{headers:{'content-type':'text/html; charset=utf-8','cache-control':'private, no-store','referrer-policy':'no-referrer','content-security-policy':"default-src 'none'; img-src https: data:; style-src 'unsafe-inline' https:; font-src https: data:; base-uri 'none'; form-action 'none'; frame-ancestors 'self'",'x-content-type-options':'nosniff'}});
       }
       if(url.pathname==='/api/state'&&request.method==='GET'){
         const [items,todos,settings]=await Promise.all([

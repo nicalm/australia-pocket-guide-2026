@@ -1,0 +1,6044 @@
+{
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": true,
+      "driving": true,
+      "ledger": false
+    },
+    "language": "zh-CN",
+    "persistence": {
+      "mode": "local"
+    }
+  },
+  "metadata": {
+    "tripId": "australia-2026",
+    "title": "2026 澳大利亚 14 天旅行计划",
+    "language": "zh-CN",
+    "timeZone": "Australia/Sydney",
+    "assets": {
+      "routeMaps": [
+        "assets/maps/templates/template-06-upland-basin.webp"
+      ]
+    }
+  },
+  "trip": {
+    "status": "draft",
+    "startDate": "2026-09-24",
+    "endDate": "2026-10-07",
+    "dayCount": 14,
+    "nightCountAway": 12,
+    "countries": [
+      {
+        "code": "AU",
+        "nameZh": "澳大利亚",
+        "nameEn": "Australia"
+      }
+    ],
+    "primaryDestinationCountries": [
+      "AU"
+    ],
+    "citiesAndAreas": [
+      "悉尼",
+      "墨尔本",
+      "吉朗",
+      "大洋路",
+      "瓦南布尔",
+      "菲利普岛"
+    ],
+    "routeSummary": "香港 → 悉尼 → 墨尔本 → 吉朗 → 大洋路 → 瓦南布尔 → 墨尔本 → 香港",
+    "groupSize": 2
+  },
+  "flightJourneys": [
+    {
+      "id": "journey-hkg-syd",
+      "title": "香港 → 悉尼 · 国泰航空 CX161",
+      "status": "confirmed",
+      "confirmationEmailId": "34868420"
+    },
+    {
+      "id": "journey-syd-mel",
+      "title": "悉尼 → 墨尔本 · 捷星航空 JQ537",
+      "status": "confirmed",
+      "confirmationEmailId": "37956870"
+    },
+    {
+      "id": "journey-mel-hkg",
+      "title": "墨尔本 → 香港 · 国泰航空 CX134",
+      "status": "confirmed",
+      "confirmationEmailId": "34868420"
+    }
+  ],
+  "flights": [
+    {
+      "id": "flight-cx161",
+      "journeyId": "journey-hkg-syd",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "国泰航空",
+        "name": "Cathay Pacific"
+      },
+      "flightNumber": "CX161",
+      "departure": {
+        "airportCode": "HKG",
+        "city": "香港",
+        "terminal": "T1",
+        "date": "2026-09-24",
+        "time": "21:35",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "SYD",
+        "city": "悉尼",
+        "terminal": "T1",
+        "date": "2026-09-25",
+        "time": "08:40",
+        "utcOffset": "+10:00"
+      }
+    },
+    {
+      "id": "flight-jq537",
+      "journeyId": "journey-syd-mel",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "捷星航空",
+        "name": "Jetstar"
+      },
+      "flightNumber": "JQ537",
+      "departure": {
+        "airportCode": "SYD",
+        "city": "悉尼",
+        "date": "2026-09-30",
+        "time": "11:25",
+        "utcOffset": "+10:00"
+      },
+      "arrival": {
+        "airportCode": "MEL",
+        "city": "墨尔本",
+        "date": "2026-09-30",
+        "time": "13:00",
+        "utcOffset": "+10:00"
+      }
+    },
+    {
+      "id": "flight-cx134",
+      "journeyId": "journey-mel-hkg",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "国泰航空",
+        "name": "Cathay Pacific"
+      },
+      "flightNumber": "CX134",
+      "departure": {
+        "airportCode": "MEL",
+        "city": "墨尔本",
+        "terminal": "T2",
+        "date": "2026-10-07",
+        "time": "08:25",
+        "utcOffset": "+11:00"
+      },
+      "arrival": {
+        "airportCode": "HKG",
+        "city": "香港",
+        "terminal": "T1",
+        "date": "2026-10-07",
+        "time": "14:55",
+        "utcOffset": "+08:00"
+      }
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "stay-1",
+      "name": "Kimpton Margot Sydney",
+      "city": "Sydney NSW 2000",
+      "countryCode": "AU",
+      "checkInDate": "2026-09-25",
+      "checkOutDate": "2026-09-30",
+      "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+      "bookingStatus": "confirmed",
+      "address": "339 Pitt St, Sydney NSW 2000, Australia",
+      "phone": "+61 2 8027 8000",
+      "website": "https://www.ihg.com/kimptonhotels/hotels/us/en/kimpton-hotel-sydney-australia/sydkm/hoteldetail",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3db5ea9fc3:0x3b0155a08051f08f",
+      "confirmationEmailId": 35413193
+    },
+    {
+      "id": "stay-2",
+      "name": "Holiday Inn & Suites Geelong by IHG",
+      "city": "Geelong VIC 3220",
+      "countryCode": "AU",
+      "checkInDate": "2026-09-30",
+      "checkOutDate": "2026-10-01",
+      "placeId": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+      "bookingStatus": "confirmed",
+      "address": "40 Ryrie St, Geelong VIC 3220, Australia",
+      "phone": "+61 3 4225 6100",
+      "website": "https://www.ihg.com/holidayinn/hotels/us/en/geelong/gexgl/hoteldetail?cm_mmc=GoogleMaps-_-HI-_-AU-_-GEXGL",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4140491d830d3:0xd67fc88cc35211b3",
+      "confirmationEmailId": 35413179
+    },
+    {
+      "id": "stay-3",
+      "name": "Sandpiper Motel Apollo Bay- Great Ocean Road",
+      "city": "Apollo Bay VIC 3233",
+      "countryCode": "AU",
+      "checkInDate": "2026-10-01",
+      "checkOutDate": "2026-10-02",
+      "placeId": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+      "bookingStatus": "confirmed",
+      "address": "3 Murray St, Apollo Bay VIC 3233, Australia",
+      "phone": "+61 3 5237 6732",
+      "website": "http://www.sandpipermotel.net.au/",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad336dc44911fff:0x27e73f34c122190d",
+      "confirmationEmailId": 35413205
+    },
+    {
+      "id": "stay-4",
+      "name": "Deep Blue Hotel & Hot Springs",
+      "city": "Warrnambool VIC 3280",
+      "countryCode": "AU",
+      "checkInDate": "2026-10-02",
+      "checkOutDate": "2026-10-04",
+      "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU",
+      "bookingStatus": "confirmed",
+      "address": "1 Worm Bay Rd, Warrnambool VIC 3280, Australia",
+      "phone": "+61 3 5559 2000",
+      "website": "https://thedeepblue.com.au/",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4ce97d3c3e19:0x15cc3520f0c57a0a",
+      "confirmationEmailId": 35413198
+    },
+    {
+      "id": "stay-5",
+      "name": "Veriu Queen Victoria Market",
+      "city": "Melbourne VIC 3000",
+      "countryCode": "AU",
+      "checkInDate": "2026-10-04",
+      "checkOutDate": "2026-10-07",
+      "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+      "bookingStatus": "confirmed",
+      "address": "91/101 Therry St, Melbourne VIC 3000, Australia",
+      "phone": "+61 3 9100 4600",
+      "website": "https://veriu.com.au/hotels/veriu-queen-victoria-market/",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d0f15ef81b9:0x884509b93bc77397",
+      "confirmationEmailId": 35413153
+    }
+  ],
+  "groundTransport": {
+    "rentalCar": {
+      "company": "Thrifty",
+      "rentalPeriodDays": 5,
+      "vehicle": {
+        "example": "Toyota Corolla Hybrid 或同级",
+        "class": "Compact / CDAH · 5 座自动挡"
+      },
+      "unlimitedKilometers": true,
+      "price": {
+        "currency": "AUD",
+        "payAtCounter": 266.63
+      },
+      "insurance": [
+        "押金 AUD 200 起",
+        "基础免赔额 AUD 5,900",
+        "满油取还"
+      ],
+      "pickup": {
+        "date": "2026-09-30",
+        "time": "14:00",
+        "location": "Melbourne Downtown",
+        "address": "Shop 3/8 Franklin St, Melbourne VIC 3000",
+        "utcOffset": "+10:00"
+      },
+      "dropoff": {
+        "date": "2026-10-05",
+        "time": "11:00",
+        "timeZoneLabel": "墨尔本当地时间（夏令时 UTC+11）",
+        "vehicleReturnPoint": "Melbourne Downtown · Shop 3/8 Franklin St",
+        "deadlineWarning": "Wanderlog 写 10/4 还车，但订单为 10/5 11:00；请确认最终安排。",
+        "recommendedArrivalTime": "10:30",
+        "utcOffset": "+11:00"
+      },
+      "document": {
+        "url": "assets/tickets/melbourne-car-rental.pdf",
+        "type": "application/pdf",
+        "label": "查看租车订单 PDF"
+      }
+    },
+    "rentalChecklist": [
+      "主驾驶携带驾照原件、认可翻译／许可和本人信用卡",
+      "取车时拍摄车身、轮胎、油量和里程",
+      "确认收费公路、加油与营业时间"
+    ],
+    "drivingNotes": [
+      "澳大利亚靠左行驶",
+      "长途路段约每两小时休息",
+      "日落前完成陌生乡间路段，注意野生动物"
+    ],
+    "drivingReferenceLinks": [
+      {
+        "label": "租车订单 PDF",
+        "url": "assets/tickets/melbourne-car-rental.pdf"
+      }
+    ],
+    "plannedRoadLegs": [],
+    "publicTransitAndRail": []
+  },
+  "days": [
+    {
+      "id": "day-01",
+      "day": 1,
+      "date": "2026-09-24",
+      "title": "香港出发 · 夜航悉尼",
+      "locations": [],
+      "schedule": [
+        {
+          "id": "day-1-item-1",
+          "time": "18:35",
+          "type": "flight",
+          "text": "建议抵达香港机场 T1。订单建议国际航班提前 3 小时到场。",
+          "placeIds": []
+        },
+        {
+          "id": "day-1-item-2",
+          "time": "20:35",
+          "type": "attraction",
+          "text": "订单所列值机截止。提前完成值机与托运行李。",
+          "placeIds": []
+        },
+        {
+          "id": "day-1-item-3",
+          "time": "21:35",
+          "type": "attraction",
+          "text": "CX161 香港出发。夜航，次日 08:40 抵达悉尼 T1。",
+          "placeIds": []
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "day-02",
+      "day": 2,
+      "date": "2026-09-25",
+      "title": "悉尼 city walk＋港湾日落",
+      "locations": [
+        "圣母主教座堂",
+        "海德公园",
+        "维多利亚女王大厦",
+        "悉尼市政厅"
+      ],
+      "schedule": [
+        {
+          "id": "day-2-item-1",
+          "time": "10:00",
+          "type": "attraction",
+          "text": "抵达后前往酒店寄存行李。先确认房间是否可提前入住；08:40 落地后给入境与交通留余量。",
+          "placeIds": []
+        },
+        {
+          "id": "day-2-item-2",
+          "time": "上午",
+          "type": "drive",
+          "text": "圣母主教座堂 → 海德公园。同一区域慢走，夜航后不赶场。",
+          "placeIds": [
+            "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+            "ChIJDflB7BWuEmsRYPbx-Wh9AQ8"
+          ]
+        },
+        {
+          "id": "day-2-item-3",
+          "time": "下午",
+          "type": "drive",
+          "text": "维多利亚女王大厦 → 市政厅 → 唐人街。步行为主，午餐和休息安排在途中。",
+          "placeIds": [
+            "ChIJISz8NjyuEmsRFTQ9Iw7Ear8"
+          ]
+        },
+        {
+          "id": "day-2-item-4",
+          "time": "傍晚",
+          "type": "attraction",
+          "text": "达令港散步与晚餐。按体力决定停留时间，冷时加外套。",
+          "placeIds": [
+            "ChIJt9trB0euEmsR8NbepO14j3M"
+          ]
+        },
+        {
+          "id": "day-2-hotel",
+          "time": "入住",
+          "type": "check-in",
+          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        }
+      ],
+      "notes": [
+        "A 城市：白／浅色短袖＋舒适直筒裤＋步行鞋，开衫随身；若阴冷用薄长袖。日落到达令港时按体感再加外壳。",
+        "中等偏高：把 QVB／海德公园作为当天主要人像背景，耳饰或彩色开衫就能换感觉；不额外带一套裙子走一整天。",
+        "开衫、墨镜、防晒、水瓶；港边加防风层。"
+      ]
+    },
+    {
+      "id": "day-03",
+      "day": 3,
+      "date": "2026-09-26",
+      "title": "澳大利亚博物馆＋岩石区",
+      "locations": [
+        "Australian Museum",
+        "The Rocks Market",
+        "Sydney Observatory",
+        "Ribs & Burgers The Rocks"
+      ],
+      "schedule": [
+        {
+          "id": "day-3-item-1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "Australian Museum。建议预留约 2 小时，具体营业时间点地点网站查看。",
+          "placeIds": [
+            "ChIJlwsH0RWuEmsR3Cg3WEDw76I"
+          ]
+        },
+        {
+          "id": "day-3-item-2",
+          "time": "中午",
+          "type": "drive",
+          "text": "The Rocks Market → Ribs & Burgers。原备注为周末集市；到场后安排午餐。",
+          "placeIds": [
+            "ChIJNcXcR12uEmsRkpSvsrO--1g"
+          ]
+        },
+        {
+          "id": "day-3-item-3",
+          "time": "下午",
+          "type": "attraction",
+          "text": "Sydney Observatory。安排山坡步行与观景；如进入需预约的项目，先核对票务。",
+          "placeIds": [
+            "ChIJhXXngUOuEmsRryJYPyfsBtQ"
+          ]
+        },
+        {
+          "id": "day-3-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        }
+      ],
+      "notes": [
+        "A 城市：薄长袖／短袖＋同一条直筒裤＋运动鞋；用开衫应对博物馆空调，天热时收进包里。",
+        "中等：岩石区用衬衫／条纹上衣（从已有 2 件长袖里选）配深裤，和前一天换上身即可。",
+        "薄开衫、水瓶、防晒；选能放进背包的小购物袋。"
+      ]
+    },
+    {
+      "id": "day-04",
+      "day": 4,
+      "date": "2026-09-27",
+      "title": "塔龙加动物园＋植物园",
+      "locations": [
+        "塔龙加动物园",
+        "悉尼皇家植物园",
+        "Mrs Macquarie's Chair",
+        "Kiama"
+      ],
+      "schedule": [
+        {
+          "id": "day-4-item-1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "塔龙加动物园。从市区前往码头，船班与动物园入场按当日班次；原备注仍为“预约？”。",
+          "placeIds": [
+            "ChIJq6qqWiSsEmsRJuIpepyEua4"
+          ]
+        },
+        {
+          "id": "day-4-item-2",
+          "time": "下午",
+          "type": "drive",
+          "text": "皇家植物园 → Mrs Macquarie’s Chair。回市区后按体力二选一或连走，拍照留在光线合适的时段。",
+          "placeIds": []
+        },
+        {
+          "id": "day-4-item-3",
+          "time": "可选",
+          "type": "attraction",
+          "text": "Kiama / Gerringong。原行程标为可选；距离市区较远，不和动物园主线硬拼，另择半天以上。",
+          "placeIds": [
+            "ChIJbR9t3WRsE2sRjtO6ru7Uep8",
+            "ChIJyxDbiRFvE2sRqVMVY_o4ZoM"
+          ]
+        },
+        {
+          "id": "day-4-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        }
+      ],
+      "notes": [
+        "A 户外版：速干短袖＋快干长裤＋步行鞋；渡轮备外壳，凉时加轻抓绒。暖天不穿保暖打底走动物园。",
+        "随手：动物园坡路与步行较多，以轻松为主；有余力在植物园拍几张，不为照片换鞋。",
+        "防晒帽、水、外壳；空出背包收纳脱下的衣服。"
+      ]
+    },
+    {
+      "id": "day-05",
+      "day": 5,
+      "date": "2026-09-28",
+      "title": "悉尼歌剧院：导览＋演出",
+      "locations": [
+        "悉尼歌剧院"
+      ],
+      "schedule": [
+        {
+          "id": "day-5-item-1",
+          "time": "按票面",
+          "type": "attraction",
+          "text": "悉尼歌剧院导览。已订票；具体集合点和时间等 PDF 补充，提前到场。",
+          "placeIds": [
+            "ChIJ3S-JXmauEmsRUcIaWtf4MzE"
+          ]
+        },
+        {
+          "id": "day-5-item-2",
+          "time": "两场之间",
+          "type": "attraction",
+          "text": "歌剧院周边休息、用餐。围绕已订场次安排空档，不额外塞入远处景点。",
+          "placeIds": []
+        },
+        {
+          "id": "day-5-item-3",
+          "time": "按票面",
+          "type": "attraction",
+          "text": "Great Opera Hits 演出。原行程已订票；演出时刻以确认邮件／门票为准。",
+          "placeIds": []
+        },
+        {
+          "id": "day-5-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        }
+      ],
+      "notes": [
+        "B 歌剧院：薄针织开衫＋唯一一件裙子＋好走的鞋；不想露腿就穿衬衫／针织＋直筒裤。冷时加薄打底，港边带外壳。",
+        "重点出片日：一套兼顾歌剧院白天与晚间；耳饰＋小包即可。选能穿着开衫拍照的衣服，不靠一直脱外套。",
+        "开衫、防风层、演出与导览电子票；核对具体场次着装要求。"
+      ]
+    },
+    {
+      "id": "day-06",
+      "day": 6,
+      "date": "2026-09-29",
+      "title": "环形码头＋半岛徒步",
+      "locations": [
+        "Circular Quay",
+        "环形码头",
+        "沃森湾",
+        "霍恩比灯塔"
+      ],
+      "schedule": [
+        {
+          "id": "day-6-item-1",
+          "time": "上午",
+          "type": "drive",
+          "text": "Circular Quay → Watsons Bay。环形码头两条记录合并为一次到访，轮渡时刻当日核对。",
+          "placeIds": [
+            "ChIJra9q0mmuEmsR4Hy11eshm38"
+          ]
+        },
+        {
+          "id": "day-6-item-2",
+          "time": "午前",
+          "type": "attraction",
+          "text": "Hornby Lighthouse 半岛徒步。原备注约 2 小时；防风层与饮水随身。",
+          "placeIds": []
+        },
+        {
+          "id": "day-6-item-3",
+          "time": "午后",
+          "type": "drive",
+          "text": "Shark Beach → Rose Bay。原备注徒步约 3 小时，按体力缩短；建议途中安排午餐休息。",
+          "placeIds": [
+            "ChIJGdUxDUWsEmsRf4aW67a3SJ4"
+          ]
+        },
+        {
+          "id": "day-6-item-4",
+          "time": "返程",
+          "type": "attraction",
+          "text": "轮渡返回 Circular Quay。优先确认末班船，回酒店休息。",
+          "placeIds": [
+            "ChIJra9q0mmuEmsR4Hy11eshm38"
+          ]
+        },
+        {
+          "id": "day-6-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        }
+      ],
+      "notes": [
+        "C 半岛徒步：速干短袖／长袖＋快干长裤＋防滑步行鞋；外壳随身，阴冷时加轻抓绒，走热后及时减层。",
+        "随手：灯塔和海岸已经足够有辨识度，用帽子或外套点缀；今天不安排裙装、高跟鞋或换装。",
+        "水、防晒、外壳、发圈、防磨脚贴；查看返程轮渡。"
+      ]
+    },
+    {
+      "id": "day-07",
+      "day": 7,
+      "date": "2026-09-30",
+      "title": "悉尼 → 墨尔本 → 吉朗",
+      "locations": [
+        "悉尼机场",
+        "墨尔本机场",
+        "吉朗"
+      ],
+      "schedule": [
+        {
+          "id": "day-7-item-1",
+          "time": "上午待定",
+          "type": "flight",
+          "text": "酒店退房 → SYD → MEL。国内段航班尚无时刻；确认落地时间足够赶上 14:00 市区取车。",
+          "placeIds": []
+        },
+        {
+          "id": "day-7-item-2",
+          "time": "14:00",
+          "type": "drive",
+          "text": "Thrifty 市区取车。Shop 3/8 Franklin St；取车时间来自租车订单，门店不在机场。",
+          "placeIds": []
+        },
+        {
+          "id": "day-7-item-3",
+          "time": "取车后",
+          "type": "drive",
+          "text": "墨尔本 → 吉朗。取车检查、熟悉车辆后出发，导航以当天交通为准。",
+          "placeIds": [
+            "ChIJgdYXBHty1GoRoM2MIXVWBAQ"
+          ]
+        },
+        {
+          "id": "day-7-item-4",
+          "time": "傍晚",
+          "type": "attraction",
+          "text": "Holiday Inn & Suites Geelong 入住。当天以转场为主，吉朗市中心按余裕散步。",
+          "placeIds": [
+            "ChIJgdYXBHty1GoRoM2MIXVWBAQ"
+          ]
+        },
+        {
+          "id": "day-7-hotel",
+          "time": "入住",
+          "type": "check-in",
+          "text": "Holiday Inn & Suites Geelong by IHG · 40 Ryrie St, Geelong VIC 3220, Australia",
+          "placeId": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+        }
+      ],
+      "notes": [
+        "转场：基础内搭＋直筒长裤＋运动鞋＋开衫，轻羽绒放随身行李容易拿的位置；到吉朗后按实际天气加外壳。",
+        "低：以飞行、取车舒适为主，复用 9/25 的裤子和鞋即可。",
+        "证件、充电线、一套换洗内衣、轻羽绒；今天或明天确认并完成洗衣。"
+      ]
+    },
+    {
+      "id": "day-08",
+      "day": 8,
+      "date": "2026-10-01",
+      "title": "吉朗 → 大洋路 → 阿波罗湾",
+      "locations": [
+        "吉朗",
+        "Point Addis Beach Lookout",
+        "Aireys Inlet",
+        "Memorial Arch at Eastern View"
+      ],
+      "schedule": [
+        {
+          "id": "day-8-item-1",
+          "time": "上午",
+          "type": "drive",
+          "text": "吉朗 → Point Addis → Aireys Inlet。先走海岸主线，灯塔周边安排短停。",
+          "placeIds": [
+            "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+            "ChIJb1x8iUd702oR4L6gMKR5BQQ"
+          ]
+        },
+        {
+          "id": "day-8-item-2",
+          "time": "午间",
+          "type": "drive",
+          "text": "Memorial Arch → Lorne。纪念拱门拍照后到洛恩午餐。",
+          "placeIds": [
+            "ChIJZRcMCzFl02oRYMigMKR5BQQ"
+          ]
+        },
+        {
+          "id": "day-8-item-3",
+          "time": "下午",
+          "type": "drive",
+          "text": "Sheoak Falls → Kafe Koala → Apollo Bay。瀑布步道和考拉点均为可缩减项；咖啡店状态先核对。",
+          "placeIds": [
+            "ChIJAczEik9k02oREzjcvP7rmnE",
+            "ChIJga0hRlNC02oRT3qW-lGOZew",
+            "ChIJkTcYKuI502oRIL-gMKR5BQQ"
+          ]
+        },
+        {
+          "id": "day-8-item-4",
+          "time": "傍晚",
+          "type": "drive",
+          "text": "Marriner’s Lookout → Sandpiper Motel。优先天亮时完成驾车；若晚到，跳过观景台直接入住。",
+          "placeIds": []
+        },
+        {
+          "id": "day-8-hotel",
+          "time": "入住",
+          "type": "check-in",
+          "text": "Sandpiper Motel Apollo Bay- Great Ocean Road · 3 Murray St, Apollo Bay VIC 3233, Australia",
+          "placeId": "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
+        }
+      ],
+      "notes": [
+        "C 海岸小镇：速干内搭＋轻抓绒／薄针织＋外壳＋快干长裤；怕冷加轻羽绒，进车热了再脱中层。",
+        "中等：Aireys Inlet／洛恩／阿波罗湾选一处重点拍；晴朗背风时让亮色针织入镜，大风时外套保持穿好、扎起头发。",
+        "外壳、轻羽绒、发圈、干袜、饮水；轻羽绒和外壳别压在行李箱底。"
+      ]
+    },
+    {
+      "id": "day-09",
+      "day": 9,
+      "date": "2026-10-02",
+      "title": "阿波罗湾 → 十二门徒 → 瓦南布尔",
+      "locations": [
+        "Maits Rest Rainforest Walk",
+        "Gibson Steps",
+        "Twelve Apostles",
+        "刀锋崖"
+      ],
+      "schedule": [
+        {
+          "id": "day-9-item-1",
+          "time": "上午",
+          "type": "drive",
+          "text": "Maits Rest → Gibson Steps → Twelve Apostles。雨林步道后驶向十二门徒，阶梯开放情况当天核对。",
+          "placeIds": [
+            "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+            "ChIJEWhPKBGegqoR8I2bMrxr7dE"
+          ]
+        },
+        {
+          "id": "day-9-item-2",
+          "time": "午间",
+          "type": "drive",
+          "text": "刀锋崖 → Loch Ard Gorge。按开放区域参观，附近补给并午餐。",
+          "placeIds": [
+            "ChIJ3bfJP86fgqoRNVotP63Yadk",
+            "ChIJDYxfGtCfgqoR3bzH2zNqsk0"
+          ]
+        },
+        {
+          "id": "day-9-item-3",
+          "time": "下午",
+          "type": "drive",
+          "text": "London Bridge → The Grotto → Bay of Islands。按 Wanderlog 顺序串联；每站短停，别将每处都安排长徒步。",
+          "placeIds": [
+            "ChIJExDJO9aggqoRGKaoThTm1Mk",
+            "ChIJOVO1OCingqoRrruRg84I2Nw",
+            "ChIJBX0bupqqgqoREKlCFKV5BQ8"
+          ]
+        },
+        {
+          "id": "day-9-item-4",
+          "time": "傍晚",
+          "type": "drive",
+          "text": "瓦南布尔 → Deep Blue Hotel。日落前抵达为目标；当天点位较多，迟出发就删减海岸短停。",
+          "placeIds": []
+        },
+        {
+          "id": "day-9-hotel",
+          "time": "入住",
+          "type": "check-in",
+          "text": "Deep Blue Hotel & Hot Springs · 1 Worm Bay Rd, Warrnambool VIC 3280, Australia",
+          "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU"
+        }
+      ],
+      "notes": [
+        "C 雨林＋十二门徒：速干长袖＋抓绒＋防风防水外套、快干裤和防滑鞋；冷时加轻羽绒，持续降雨时保持羽绒干燥。",
+        "中低：挑 1—2 个开放观景台拍外套造型；风雨大就缩短停留，不为照片在崖边换裙子。",
+        "干袜、防水收纳袋、护颈；当天暂无原天气快照覆盖，出发前复查。"
+      ]
+    },
+    {
+      "id": "day-10",
+      "day": 10,
+      "date": "2026-10-03",
+      "title": "瓦南布尔：动物体验＋温泉",
+      "locations": [
+        "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD",
+        "Flagstaff Hill Maritime Village",
+        "Lake Pertobe",
+        "Deep Blue Hot Springs Warrnambool"
+      ],
+      "schedule": [
+        {
+          "id": "day-10-item-1",
+          "time": "预约时段",
+          "type": "attraction",
+          "text": "Warrnambool Wildlife Encounters。原备注要求提前预约；先定场次，再调整当天其他点位。",
+          "placeIds": []
+        },
+        {
+          "id": "day-10-item-2",
+          "time": "午间",
+          "type": "attraction",
+          "text": "Flagstaff Hill Maritime Village。博物馆参观和午餐留在市区。",
+          "placeIds": [
+            "ChIJY3diHPxMzWoRYEVwJqrP0q0"
+          ]
+        },
+        {
+          "id": "day-10-item-3",
+          "time": "下午",
+          "type": "attraction",
+          "text": "Lake Pertobe。轻松散步或休息，原备注为游乐场。",
+          "placeIds": [
+            "ChIJ61U_cfBMzWoRsMBdbaR5BSo"
+          ]
+        },
+        {
+          "id": "day-10-item-4",
+          "time": "晚些时候",
+          "type": "attraction",
+          "text": "Deep Blue Hot Springs。温泉时段及是否包含在住宿中需以订单为准，泳衣和干衣随身。",
+          "placeIds": []
+        },
+        {
+          "id": "day-10-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Deep Blue Hotel & Hot Springs · 1 Worm Bay Rd, Warrnambool VIC 3280, Australia",
+          "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU"
+        }
+      ],
+      "notes": [
+        "E 动物体验＋温泉：柔软长袖＋抓绒／开衫＋好穿脱的长裤，凉时加外壳；温泉换泳衣，出水后马上擦干并换干衣、加保暖层。",
+        "随手：泳衣选自己穿着舒服的一套；拍摄先看场馆规则，其他行程复用城市／户外套装。",
+        "泳衣、拖鞋、湿衣袋、干内衣／袜、保暖上衣；毛巾／浴袍是否包含看订单。"
+      ]
+    },
+    {
+      "id": "day-11",
+      "day": 11,
+      "date": "2026-10-04",
+      "title": "塔山＋费里港 → 墨尔本还车",
+      "locations": [
+        "Tower Hill Wildlife Reserve (Parks Victoria)",
+        "费里港",
+        "A'Beckett St"
+      ],
+      "schedule": [
+        {
+          "id": "day-11-item-1",
+          "time": "上午",
+          "type": "drive",
+          "text": "酒店退房 → Tower Hill。进入野生动物保护区；原备注免费，具体开放与步道当日确认。",
+          "placeIds": []
+        },
+        {
+          "id": "day-11-item-2",
+          "time": "午间",
+          "type": "attraction",
+          "text": "Port Fairy。小镇短停、午餐后开始返墨尔本。",
+          "placeIds": []
+        },
+        {
+          "id": "day-11-item-3",
+          "time": "下午",
+          "type": "drive",
+          "text": "返回墨尔本 → Veriu 入住。长途自驾留休息时间；当天进入夏令时，启用自动时区。",
+          "placeIds": []
+        },
+        {
+          "id": "day-11-item-4",
+          "time": "待确认",
+          "type": "attraction",
+          "text": "还车安排。Wanderlog 写当天 A’Beckett St 还车，但租车单为 10/5 11:00 Franklin St；尚未擅自更改预约。",
+          "placeIds": []
+        },
+        {
+          "id": "day-11-hotel",
+          "time": "入住",
+          "type": "check-in",
+          "text": "Veriu Queen Victoria Market · 91/101 Therry St, Melbourne VIC 3000, Australia",
+          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        }
+      ],
+      "notes": [
+        "保护区＋长途车程：长袖／短袖＋抓绒＋快干或弹力长裤，外壳应对保护区与港口风；腰头不勒更适合久坐。",
+        "低：费里港沿路拍几张即可；复用海岸衣物，给还车和长途驾驶留出余量。",
+        "外壳、水、驾车文件；夏令时变更后按当地时间核对还车。"
+      ]
+    },
+    {
+      "id": "day-12",
+      "day": 12,
+      "date": "2026-10-05",
+      "title": "丹德农＋菲利普岛一日游",
+      "locations": [
+        "Dandenong Ranges",
+        "菲利普岛",
+        "Nobbies Centre"
+      ],
+      "schedule": [
+        {
+          "id": "day-12-item-1",
+          "time": "集合待定",
+          "type": "attraction",
+          "text": "小火车＋企鹅岛一日游。以旅行团集合点、接送与班次为准；Dandenong Ranges 图钉不等于车站。",
+          "placeIds": [
+            "ChIJ7UbDqw0l1moRDEPa1jtC2Qg"
+          ]
+        },
+        {
+          "id": "day-12-item-2",
+          "time": "白天",
+          "type": "attraction",
+          "text": "Dandenong Ranges / 小火车。顺序由旅行团安排，确认是否包含小火车票。",
+          "placeIds": [
+            "ChIJ7UbDqw0l1moRDEPa1jtC2Qg"
+          ]
+        },
+        {
+          "id": "day-12-item-3",
+          "time": "下午",
+          "type": "drive",
+          "text": "菲利普岛 → Nobbies。按实际团单停靠，Nobbies 开放状态出发前核对。",
+          "placeIds": [
+            "ChIJ57hyT0Dy1WoRM2yxoXEDDHk"
+          ]
+        },
+        {
+          "id": "day-12-item-4",
+          "time": "日落前后",
+          "type": "drive",
+          "text": "企鹅归巢 → 返回墨尔本。入场时间以门票为准；穿齐保暖层，遵守禁止摄影规定。",
+          "placeIds": []
+        },
+        {
+          "id": "day-12-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Veriu Queen Victoria Market · 91/101 Therry St, Melbourne VIC 3000, Australia",
+          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        }
+      ],
+      "notes": [
+        "D 最强保暖日：长袖＋抓绒＋轻羽绒＋外壳，长裤内加薄保暖裤；白天热了减层，日落前穿齐。厚袜、护耳帽、护颈、薄手套建议都带。",
+        "白天中等、晚间只观赏：小火车用亮色针织／外套加发夹；日落后的企鹅观赏区禁止手机、相机拍照及录像，关闭闪光灯也不例外。",
+        "轻羽绒、雨衣／外壳、帽子、手套、护颈、小坐垫／轻毯、保温水瓶；晨间随身，别留酒店。"
+      ]
+    },
+    {
+      "id": "day-13",
+      "day": 13,
+      "date": "2026-10-06",
+      "title": "墨尔本市区慢游",
+      "locations": [
+        "Flinders Street",
+        "Fed Square",
+        "St Paul's Cathedral, Melbourne",
+        "Hosier Ln"
+      ],
+      "schedule": [
+        {
+          "id": "day-13-item-1",
+          "time": "上午",
+          "type": "drive",
+          "text": "Flinders Street → Fed Square → St Paul’s Cathedral → Hosier Ln。市中心步行串联，教堂开放与活动以现场为准。",
+          "placeIds": [
+            "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+            "ChIJT8T86bZC1moRqw7W6kVH5zg",
+            "ChIJFWocUrZC1moRDz6RTASZJqk"
+          ]
+        },
+        {
+          "id": "day-13-item-2",
+          "time": "午间",
+          "type": "attraction",
+          "text": "Southbank Promenade。河边午餐、散步。",
+          "placeIds": [
+            "ChIJ23P7NwBD1moRxzIqbHVVdGM"
+          ]
+        },
+        {
+          "id": "day-13-item-3",
+          "time": "下午",
+          "type": "attraction",
+          "text": "植物园或 NGV 选一处重点。Wanderlog 两处均保留；好天气偏植物园，雨天偏美术馆。",
+          "placeIds": []
+        },
+        {
+          "id": "day-13-item-4",
+          "time": "晚上",
+          "type": "flight",
+          "text": "回 Veriu 整理行李。次日 08:25 国际航班；提前约车，按订单建议约 05:25 到 MEL。",
+          "placeIds": []
+        },
+        {
+          "id": "day-13-hotel",
+          "time": "住宿",
+          "type": "check-in",
+          "text": "Veriu Queen Victoria Market · 91/101 Therry St, Melbourne VIC 3000, Australia",
+          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        }
+      ],
+      "notes": [
+        "A 城市收尾：短袖／薄长袖＋好看的开衫＋直筒裤＋步行鞋；暖且无风时可复用那条裙子，阴雨则穿裤装、带外壳。",
+        "中等偏高：Flinders Street／涂鸦街／NGV 选 1—2 个背景，复用歌剧院的配色与小包，避免为最后一天多带一套。",
+        "开衫、外壳、充电宝；若当天返程，随身留保暖层和干衣。"
+      ]
+    },
+    {
+      "id": "day-14",
+      "day": 14,
+      "date": "2026-10-07",
+      "title": "墨尔本返程 · 抵达香港",
+      "locations": [],
+      "schedule": [
+        {
+          "id": "day-14-item-1",
+          "time": "05:25",
+          "type": "flight",
+          "text": "建议抵达 MEL T2。订单要求国际航班提前 3 小时到场；酒店出发时间按预约交通倒推。",
+          "placeIds": []
+        },
+        {
+          "id": "day-14-item-2",
+          "time": "07:25",
+          "type": "attraction",
+          "text": "订单所列值机截止。出发前再次核对航司通知，不以此时刻作为到机场时间。",
+          "placeIds": []
+        },
+        {
+          "id": "day-14-item-3",
+          "time": "08:25",
+          "type": "flight",
+          "text": "CX134 起飞。墨尔本当地时间 UTC+11。",
+          "placeIds": []
+        },
+        {
+          "id": "day-14-item-4",
+          "time": "14:55",
+          "type": "attraction",
+          "text": "抵达香港 HKG T1。香港当地时间 UTC+8。",
+          "placeIds": []
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "places": [
+    {
+      "id": "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+      "name": "圣母主教座堂",
+      "nameZh": "圣母主教座堂",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8711905,
+        "lng": 151.2133254
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae14e6fff121:0xfe7a7407a97636de",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae14e6fff121:0xfe7a7407a97636de",
+        "query": "圣母主教座堂"
+      },
+      "website": "http://www.stmaryscathedral.org.au/",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+      "name": "海德公园",
+      "nameZh": "海德公园",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8715202,
+        "lng": 151.21162429999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae15ec41f90d:0xf017d68f9f1f660",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae15ec41f90d:0xf017d68f9f1f660",
+        "query": "海德公园"
+      },
+      "website": "https://www.cityofsydney.nsw.gov.au/parks/hyde-park?utm_content=Hyde%20Park%20-%20Sydney&utm_campaign=googlemybusiness&utm_medium=organic&utm_source=google&utm_term=plcid_12610484903724465125",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+      "name": "维多利亚女王大厦",
+      "nameZh": "维多利亚女王大厦",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8717161,
+        "lng": 151.2067008
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3c36fc2c21:0xbf6ac40e233d3415",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae3c36fc2c21:0xbf6ac40e233d3415",
+        "query": "维多利亚女王大厦"
+      },
+      "website": "https://www.qvb.com.au/",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+      "name": "悉尼市政厅",
+      "nameZh": "悉尼市政厅",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8731575,
+        "lng": 151.2061157
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3c27682c85:0xb1663d1d054300f6",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae3c27682c85:0xb1663d1d054300f6",
+        "query": "悉尼市政厅"
+      },
+      "website": "https://www.cityofsydney.nsw.gov.au/landmarks/sydney-town-hall?utm_content=sydneytownhall&utm_campaign=googlemybusiness&utm_medium=organic&utm_source=google&utm_term=plcid_5819951888132886483",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+      "name": "悉尼唐人街",
+      "nameZh": "悉尼唐人街",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.879356099999995,
+        "lng": 151.2041567
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae249c20d251:0x6d49e024c3093a2f",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae249c20d251:0x6d49e024c3093a2f",
+        "query": "悉尼唐人街"
+      },
+      "website": "http://www.sydney.com/",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJt9trB0euEmsR8NbepO14j3M",
+      "name": "达令港",
+      "nameZh": "达令港",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.87488,
+        "lng": 151.2009
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae47076bdbb7:0x738f78eda4ded6f0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae47076bdbb7:0x738f78eda4ded6f0",
+        "query": "达令港"
+      },
+      "website": "https://www.darlingharbour.com/",
+      "cityOrArea": "city walk+日落"
+    },
+    {
+      "id": "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+      "name": "Australian Museum",
+      "nameZh": "Australian Museum",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.873917,
+        "lng": 151.212702
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae15d1070b97:0xa2eff040583728dc",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae15d1070b97:0xa2eff040583728dc",
+        "query": "Australian Museum"
+      },
+      "website": "https://australian.museum/",
+      "cityOrArea": "博物馆+rocks集市"
+    },
+    {
+      "id": "ChIJNcXcR12uEmsRkpSvsrO--1g",
+      "name": "The Rocks Market",
+      "nameZh": "The Rocks Market",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8577866,
+        "lng": 151.2085595
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae5d47dcc535:0x58fbbeb3b2af9492",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae5d47dcc535:0x58fbbeb3b2af9492",
+        "query": "The Rocks Market"
+      },
+      "website": "http://www.therocks.com/things-to-do/the-rocks-markets/",
+      "cityOrArea": "博物馆+rocks集市"
+    },
+    {
+      "id": "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+      "name": "Sydney Observatory",
+      "nameZh": "Sydney Observatory",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8598345,
+        "lng": 151.2048766
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae4381e77585:0xd406ec273f5822af",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae4381e77585:0xd406ec273f5822af",
+        "query": "Sydney Observatory"
+      },
+      "website": "https://powerhouse.com.au/visit/sydney-observatory",
+      "cityOrArea": "博物馆+rocks集市"
+    },
+    {
+      "id": "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+      "name": "Ribs & Burgers The Rocks",
+      "nameZh": "Ribs & Burgers The Rocks",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.85774,
+        "lng": 151.209159
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae5d4721a2d9:0xbfddd40d8820c399",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae5d4721a2d9:0xbfddd40d8820c399",
+        "query": "Ribs & Burgers The Rocks"
+      },
+      "website": "https://ribsandburgers.com/au/locations/nsw/the-rocks/",
+      "cityOrArea": "博物馆+rocks集市"
+    },
+    {
+      "id": "ChIJq6qqWiSsEmsRJuIpepyEua4",
+      "name": "塔龙加动物园",
+      "nameZh": "塔龙加动物园",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8435473,
+        "lng": 151.2413418
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac245aaaaaab:0xaeb9849c7a29e226",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ac245aaaaaab:0xaeb9849c7a29e226",
+        "query": "塔龙加动物园"
+      },
+      "website": "https://taronga.org.au/sydney-zoo",
+      "cityOrArea": "动物园"
+    },
+    {
+      "id": "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+      "name": "悉尼皇家植物园",
+      "nameZh": "悉尼皇家植物园",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.864185899999995,
+        "lng": 151.2165708
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae6b60dda459:0xf017d68f9f1e7a0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae6b60dda459:0xf017d68f9f1e7a0",
+        "query": "悉尼皇家植物园"
+      },
+      "website": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney",
+      "cityOrArea": "动物园"
+    },
+    {
+      "id": "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+      "name": "Mrs Macquarie's Chair",
+      "nameZh": "Mrs Macquarie's Chair",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8596639,
+        "lng": 151.22257059999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae7acdffd643:0x43bfb6b9da05a763",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae7acdffd643:0x43bfb6b9da05a763",
+        "query": "Mrs Macquarie's Chair"
+      },
+      "website": "https://www.botanicgardens.org.au/",
+      "cityOrArea": "动物园"
+    },
+    {
+      "id": "ChIJbR9t3WRsE2sRjtO6ru7Uep8",
+      "name": "Kiama",
+      "nameZh": "Kiama",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -34.673822099999995,
+        "lng": 150.8443706
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b136c64dd6d1f6d:0x9f7ad4eeaebad38e",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b136c64dd6d1f6d:0x9f7ad4eeaebad38e",
+        "query": "Kiama"
+      },
+      "website": "",
+      "cityOrArea": "动物园"
+    },
+    {
+      "id": "ChIJyxDbiRFvE2sRqVMVY_o4ZoM",
+      "name": "Gerringong",
+      "nameZh": "Gerringong",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -34.739138499999996,
+        "lng": 150.8249873
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b136f1189db10cb:0x836638fa631553a9",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b136f1189db10cb:0x836638fa631553a9",
+        "query": "Gerringong"
+      },
+      "website": "",
+      "cityOrArea": "动物园"
+    },
+    {
+      "id": "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+      "name": "悉尼歌剧院",
+      "nameZh": "悉尼歌剧院",
+      "photo": {
+        "url": "assets/photos/landmarks/sydney-opera-house.jpg",
+        "alt": "日落时的悉尼歌剧院",
+        "author": "Aus0me.au",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Sydney_Opera_House.jpg",
+        "overview": true,
+        "marker": true
+      },
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.856784399999995,
+        "lng": 151.21529669999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae665e892fdd:0x3133f8d75a1ac251",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae665e892fdd:0x3133f8d75a1ac251",
+        "query": "悉尼歌剧院"
+      },
+      "website": "https://www.sydneyoperahouse.com/",
+      "cityOrArea": "悉尼歌剧院演出"
+    },
+    {
+      "id": "ChIJra9q0mmuEmsR4Hy11eshm38",
+      "name": "环形码头",
+      "nameZh": "环形码头",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8611374,
+        "lng": 151.2126457
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae69d26aafad:0x7f9b21ebd5b57ce0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae69d26aafad:0x7f9b21ebd5b57ce0",
+        "query": "环形码头"
+      },
+      "website": "",
+      "cityOrArea": "半岛徒步"
+    },
+    {
+      "id": "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+      "name": "沃森湾",
+      "nameZh": "沃森湾",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.845007599999995,
+        "lng": 151.2828553
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac899335bc45:0x5017d681632cee0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ac899335bc45:0x5017d681632cee0",
+        "query": "沃森湾"
+      },
+      "website": "",
+      "cityOrArea": "半岛徒步"
+    },
+    {
+      "id": "ChIJl5-gnIesEmsRur3obYvC2Gc",
+      "name": "霍恩比灯塔",
+      "nameZh": "霍恩比灯塔",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.833530599999996,
+        "lng": 151.2809829
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac879ca09f97:0x67d8c28b6de8bdba",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ac879ca09f97:0x67d8c28b6de8bdba",
+        "query": "霍恩比灯塔"
+      },
+      "website": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/hornby-lighthouse?utm_source=google&utm_medium=organic&utm_campaign=Google%20My%20Business%20Page",
+      "cityOrArea": "半岛徒步"
+    },
+    {
+      "id": "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+      "name": "Shark Beach",
+      "nameZh": "Shark Beach",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8503961,
+        "lng": 151.2675361
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac450d31d519:0x9e48b7b6eb96867f",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ac450d31d519:0x9e48b7b6eb96867f",
+        "query": "Shark Beach"
+      },
+      "website": "http://www.nationalparks.nsw.gov.au/Sydney-Harbour-National-Park/Nielsen-Park/picnic-bbq",
+      "cityOrArea": "半岛徒步"
+    },
+    {
+      "id": "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+      "name": "玫瑰湾",
+      "nameZh": "玫瑰湾",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8700997,
+        "lng": 151.2691203
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac30c23d2dfb:0x5017d681632c8f0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ac30c23d2dfb:0x5017d681632c8f0",
+        "query": "玫瑰湾"
+      },
+      "website": "",
+      "cityOrArea": "半岛徒步"
+    },
+    {
+      "id": "ChIJ24MzG_GwEmsRd2VLWl01368",
+      "name": "悉尼机场",
+      "nameZh": "悉尼机场",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.950033,
+        "lng": 151.1816955
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12b0f11b3383db:0xafdf355d5a4b6577",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12b0f11b3383db:0xafdf355d5a4b6577",
+        "query": "悉尼机场"
+      },
+      "website": "https://www.sydneyairport.com.au/",
+      "cityOrArea": "悉尼-墨尔本-吉朗"
+    },
+    {
+      "id": "ChIJFzmq66lZ1moRkPAvBXZWBA8",
+      "name": "墨尔本机场",
+      "nameZh": "墨尔本机场",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.670822799999996,
+        "lng": 144.8429763
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad659a9ebaa3917:0xf045676052ff090",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad659a9ebaa3917:0xf045676052ff090",
+        "query": "墨尔本机场"
+      },
+      "website": "https://www.melbourneairport.com.au/",
+      "cityOrArea": "悉尼-墨尔本-吉朗"
+    },
+    {
+      "id": "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+      "name": "吉朗",
+      "nameZh": "吉朗",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.1499181,
+        "lng": 144.3617186
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4727b0417d681:0x4045675218ccda0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad4727b0417d681:0x4045675218ccda0",
+        "query": "吉朗"
+      },
+      "website": "",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJwdwZfYB71GoRXsh26Rj97WM",
+      "name": "Point Addis Beach Lookout",
+      "nameZh": "Point Addis Beach Lookout",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.391095,
+        "lng": 144.2507575
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad47b807d19dcc1:0x63edfd18e976c85e",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad47b807d19dcc1:0x63edfd18e976c85e",
+        "query": "Point Addis Beach Lookout"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/point-addis-marine-national-park",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+      "name": "Aireys Inlet",
+      "nameZh": "Aireys Inlet",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.457104799999996,
+        "lng": 144.1071845
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad37b47897c5c6f:0x40579a430a0bee0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad37b47897c5c6f:0x40579a430a0bee0",
+        "query": "Aireys Inlet"
+      },
+      "website": "",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJszM9KHx-02oRffOrQlBJxeg",
+      "name": "Memorial Arch at Eastern View",
+      "nameZh": "Memorial Arch at Eastern View",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.4719227,
+        "lng": 144.0445336
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad37e7c283d33b3:0xe8c5495042abf37d",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad37e7c283d33b3:0xe8c5495042abf37d",
+        "query": "Memorial Arch at Eastern View"
+      },
+      "website": "",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+      "name": "洛恩",
+      "nameZh": "洛恩",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.5368534,
+        "lng": 143.9738066
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad365310b0c1765:0x40579a430a0c860",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad365310b0c1765:0x40579a430a0c860",
+        "query": "洛恩"
+      },
+      "website": "",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJAczEik9k02oREzjcvP7rmnE",
+      "name": "Sheoak Falls",
+      "nameZh": "Sheoak Falls",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.5656509,
+        "lng": 143.96081669999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad3644f8ac4cc01:0x719aebfebcdc3813",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad3644f8ac4cc01:0x719aebfebcdc3813",
+        "query": "Sheoak Falls"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park/attractions/lorne/things-to-do/sheoak-falls?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJga0hRlNC02oRT3qW-lGOZew",
+      "name": "Kafe Koala",
+      "nameZh": "Kafe Koala",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6675116,
+        "lng": 143.8606806
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad342534621ad81:0xec658e51fa967a4f",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad342534621ad81:0xec658e51fa967a4f",
+        "query": "Kafe Koala"
+      },
+      "website": "https://www.facebook.com/kafekoala/",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+      "name": "Apollo Bay",
+      "nameZh": "Apollo Bay",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.7551525,
+        "lng": 143.66758529999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad339e22a183791:0x40579a430a0bf20",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad339e22a183791:0x40579a430a0bf20",
+        "query": "Apollo Bay"
+      },
+      "website": "",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJwQHAQyM302oR49Q4aQakvtw",
+      "name": "Marriner's Lookout",
+      "nameZh": "Marriner's Lookout",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.7368861,
+        "lng": 143.6673863
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad3372343c001c1:0xdcbea4066938d4e3",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad3372343c001c1:0xdcbea4066938d4e3",
+        "query": "Marriner's Lookout"
+      },
+      "website": "http://www.colacotway.vic.gov.au/Home",
+      "cityOrArea": "吉朗-阿波罗湾"
+    },
+    {
+      "id": "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+      "name": "Maits Rest Rainforest Walk",
+      "nameZh": "Maits Rest Rainforest Walk",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.755775,
+        "lng": 143.5546322
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad32df240ccf8f7:0x622c5a74401b84fe",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad32df240ccf8f7:0x622c5a74401b84fe",
+        "query": "Maits Rest Rainforest Walk"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/sites/maits-rest-rainforest-walk?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+      "name": "Gibson Steps",
+      "nameZh": "Gibson Steps",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.668694599999995,
+        "lng": 143.1120188
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829e0b8fb3e213:0xa49c4dc5cb44c4cc",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa829e0b8fb3e213:0xa49c4dc5cb44c4cc",
+        "query": "Gibson Steps"
+      },
+      "website": "",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+      "name": "Twelve Apostles",
+      "nameZh": "Twelve Apostles",
+      "photo": {
+        "url": "assets/photos/landmarks/twelve-apostles.jpg",
+        "alt": "维多利亚州十二门徒海岸景观",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0930.jpg",
+        "overview": true,
+        "marker": true
+      },
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6621015,
+        "lng": 143.1050917
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829e11284f6811:0xd1ed6bbc329b8df0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa829e11284f6811:0xd1ed6bbc329b8df0",
+        "query": "Twelve Apostles"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park/things-to-do/twelve-apostles?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJ3bfJP86fgqoRNVotP63Yadk",
+      "name": "刀锋崖",
+      "nameZh": "刀锋崖",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6499275,
+        "lng": 143.07273709999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829fce3fc9b7dd:0xd969d8ad3f2d5a35",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa829fce3fc9b7dd:0xd969d8ad3f2d5a35",
+        "query": "刀锋崖"
+      },
+      "website": "",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+      "name": "Loch Ard Gorge",
+      "nameZh": "Loch Ard Gorge",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6465896,
+        "lng": 143.0705094
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829fd01a5f8c0d:0x4db26a33dbc7bcdd",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa829fd01a5f8c0d:0x4db26a33dbc7bcdd",
+        "query": "Loch Ard Gorge"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park/things-to-do/loch-ard-gorge?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJExDJO9aggqoRGKaoThTm1Mk",
+      "name": "London Bridge",
+      "nameZh": "London Bridge",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6224139,
+        "lng": 142.9318583
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82a0d63bc91013:0xc9d4e6144ea8a618",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa82a0d63bc91013:0xc9d4e6144ea8a618",
+        "query": "London Bridge"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park/things-to-do/london-bridge?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJOVO1OCingqoRrruRg84I2Nw",
+      "name": "The Grotto",
+      "nameZh": "The Grotto",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.6185067,
+        "lng": 142.9145274
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82a72838b55339:0xdcd808ce8391bbae",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa82a72838b55339:0xdcd808ce8391bbae",
+        "query": "The Grotto"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+      "name": "Bay Of Islands",
+      "nameZh": "Bay Of Islands",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.5848139,
+        "lng": 142.8273399
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82aa9aba1b7d05:0xf0579a51442a910",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0xaa82aa9aba1b7d05:0xf0579a51442a910",
+        "query": "Bay Of Islands"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/bay-of-islands-coastal-park?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+      "name": "Warrnambool",
+      "nameZh": "Warrnambool",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3686779,
+        "lng": 142.4982086
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4dfacb74f9cb:0x40579a430a0cf30",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd4dfacb74f9cb:0x40579a430a0cf30",
+        "query": "Warrnambool"
+      },
+      "website": "",
+      "cityOrArea": "阿波罗湾-瓦南布尔"
+    },
+    {
+      "id": "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+      "name": "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD",
+      "nameZh": "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3420755,
+        "lng": 142.6497857
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd573c7663213f:0xc25f46e4e961b784",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd573c7663213f:0xc25f46e4e961b784",
+        "query": "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD"
+      },
+      "website": "http://www.warrnamboolwildlife.com/",
+      "cityOrArea": "瓦南布尔"
+    },
+    {
+      "id": "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+      "name": "Flagstaff Hill Maritime Village",
+      "nameZh": "Flagstaff Hill Maritime Village",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3895412,
+        "lng": 142.4851155
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4cfc1c627763:0xadd2cfaa26704560",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd4cfc1c627763:0xadd2cfaa26704560",
+        "query": "Flagstaff Hill Maritime Village"
+      },
+      "website": "http://www.flagstaffhill.com/",
+      "cityOrArea": "瓦南布尔"
+    },
+    {
+      "id": "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+      "name": "Lake Pertobe",
+      "nameZh": "Lake Pertobe",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3887126,
+        "lng": 142.4761952
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4cf0713f55eb:0x2a0579a46d5dc0b0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd4cf0713f55eb:0x2a0579a46d5dc0b0",
+        "query": "Lake Pertobe"
+      },
+      "website": "",
+      "cityOrArea": "瓦南布尔"
+    },
+    {
+      "id": "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+      "name": "Deep Blue Hot Springs Warrnambool",
+      "nameZh": "Deep Blue Hot Springs Warrnambool",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3976541,
+        "lng": 142.4737709
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4d3850010979:0xce237ea0362fa691",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd4d3850010979:0xce237ea0362fa691",
+        "query": "Deep Blue Hot Springs Warrnambool"
+      },
+      "website": "https://thedeepblue.com.au/hot-springs-sanctuary/",
+      "cityOrArea": "瓦南布尔"
+    },
+    {
+      "id": "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+      "name": "Tower Hill Wildlife Reserve (Parks Victoria)",
+      "nameZh": "Tower Hill Wildlife Reserve (Parks Victoria)",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.318329399999996,
+        "lng": 142.3637695
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd35f5762f5fa3:0x9a87db199c867e99",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd35f5762f5fa3:0x9a87db199c867e99",
+        "query": "Tower Hill Wildlife Reserve (Parks Victoria)"
+      },
+      "website": "https://www.parks.vic.gov.au/places-to-see/parks/tower-hill-wildlife-reserve?utm_source=google&utm_medium=maps&utm_campaign=GMB-2020",
+      "cityOrArea": "瓦南布尔-费里港-墨尔本"
+    },
+    {
+      "id": "ChIJnRuiwAgtzWoR8MugMKR5BQQ",
+      "name": "费里港",
+      "nameZh": "费里港",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.3806327,
+        "lng": 142.2294039
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd2d08c0a21b9d:0x40579a430a0cbf0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd2d08c0a21b9d:0x40579a430a0cbf0",
+        "query": "费里港"
+      },
+      "website": "",
+      "cityOrArea": "瓦南布尔-费里港-墨尔本"
+    },
+    {
+      "id": "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+      "name": "A'Beckett St",
+      "nameZh": "A'Beckett St",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8095944,
+        "lng": 144.9596133
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d3518335843:0x21c3f13f76766f22",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad65d3518335843:0x21c3f13f76766f22",
+        "query": "A'Beckett St"
+      },
+      "website": "",
+      "cityOrArea": "瓦南布尔-费里港-墨尔本"
+    },
+    {
+      "id": "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+      "name": "Dandenong Ranges",
+      "nameZh": "Dandenong Ranges",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8333333,
+        "lng": 145.35
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad6250dabc346ed:0x8d9423bd6da430c",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad6250dabc346ed:0x8d9423bd6da430c",
+        "query": "Dandenong Ranges"
+      },
+      "website": "",
+      "cityOrArea": "小火车+企鹅岛抱团一日游"
+    },
+    {
+      "id": "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+      "name": "菲利普岛",
+      "nameZh": "菲利普岛",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.4898703,
+        "lng": 145.2038278
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad5f2404f72b8e7:0x790c0371a1b16c33",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad5f2404f72b8e7:0x790c0371a1b16c33",
+        "query": "菲利普岛"
+      },
+      "website": "",
+      "cityOrArea": "小火车+企鹅岛抱团一日游"
+    },
+    {
+      "id": "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+      "name": "Nobbies Centre",
+      "nameZh": "Nobbies Centre",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.5174032,
+        "lng": 145.117975
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad5be3523d4c67b:0x51c6527b155c161b",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad5be3523d4c67b:0x51c6527b155c161b",
+        "query": "Nobbies Centre"
+      },
+      "website": "https://www.penguins.org.au/attractions/nobbies-centre?utm_source=google&utm_medium=organic&utm_campaign=google-business-profile",
+      "cityOrArea": "小火车+企鹅岛抱团一日游"
+    },
+    {
+      "id": "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+      "name": "Flinders Street",
+      "nameZh": "Flinders Street",
+      "photo": {
+        "url": "assets/photos/landmarks/flinders-street.jpg",
+        "alt": "墨尔本弗林德斯街车站历史影像",
+        "author": "Victoria State Transport Authority; restored by Adam Cuerden",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flinders_Street_Station,_Melbourne,_at_the_intersection_of_Swanston_Street_and_Flinders_Street,_1927_-_Glass_plate.jpg",
+        "overview": true,
+        "marker": true
+      },
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8182711,
+        "lng": 144.96706179999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6af832249:0xe39e415e49a7c44e",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad642b6af832249:0xe39e415e49a7c44e",
+        "query": "Flinders Street"
+      },
+      "website": "https://www.ptv.vic.gov.au/",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJT8T86bZC1moRqw7W6kVH5zg",
+      "name": "Fed Square",
+      "nameZh": "Fed Square",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8179789,
+        "lng": 144.96905759999999
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6e9fcc44f:0x38e74745ead60eab",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad642b6e9fcc44f:0x38e74745ead60eab",
+        "query": "Fed Square"
+      },
+      "website": "https://www.fedsquare.com/",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJbVDLhrZC1moRV4a7bU8smmI",
+      "name": "St Paul's Cathedral, Melbourne",
+      "nameZh": "St Paul's Cathedral, Melbourne",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.817029,
+        "lng": 144.96768699999998
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b686cb506d:0x629a2c4f6dbb8657",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad642b686cb506d:0x629a2c4f6dbb8657",
+        "query": "St Paul's Cathedral, Melbourne"
+      },
+      "website": "https://cathedral.org.au/",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJFWocUrZC1moRDz6RTASZJqk",
+      "name": "Hosier Ln",
+      "nameZh": "Hosier Ln",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.816527199999996,
+        "lng": 144.9691574
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6521c6a15:0xa92699044c913e0f",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad642b6521c6a15:0xa92699044c913e0f",
+        "query": "Hosier Ln"
+      },
+      "website": "",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+      "name": "Southbank Promenade",
+      "nameZh": "Southbank Promenade",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8200274,
+        "lng": 144.9654616
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad6430037fb73db:0x637455756c2a32c7",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad6430037fb73db:0x637455756c2a32c7",
+        "query": "Southbank Promenade"
+      },
+      "website": "",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+      "name": "Royal Botanic Gardens Victoria - Melbourne Gardens",
+      "nameZh": "Royal Botanic Gardens Victoria - Melbourne Gardens",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8302443,
+        "lng": 144.9801496
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad64296fb298d3b:0xf0456760531d7c0",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad64296fb298d3b:0xf0456760531d7c0",
+        "query": "Royal Botanic Gardens Victoria - Melbourne Gardens"
+      },
+      "website": "https://www.rbg.vic.gov.au/",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJuYNitLFC1moRVB5vMAKPcTM",
+      "name": "National Gallery of Victoria",
+      "nameZh": "National Gallery of Victoria",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8225942,
+        "lng": 144.9689278
+      },
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b1b46283b9:0x33718f02306f1e54",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad642b1b46283b9:0x33718f02306f1e54",
+        "query": "National Gallery of Victoria"
+      },
+      "website": "https://www.ngv.vic.gov.au/",
+      "cityOrArea": "休闲市区一日游"
+    },
+    {
+      "id": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+      "name": "Kimpton Margot Sydney",
+      "nameZh": "Kimpton Margot Sydney",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -33.8748991,
+        "lng": 151.2078403
+      },
+      "address": "339 Pitt St, Sydney NSW 2000, Australia",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3db5ea9fc3:0x3b0155a08051f08f",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6b12ae3db5ea9fc3:0x3b0155a08051f08f",
+        "query": "Kimpton Margot Sydney"
+      },
+      "website": "https://www.ihg.com/kimptonhotels/hotels/us/en/kimpton-hotel-sydney-australia/sydkm/hoteldetail",
+      "cityOrArea": "339 Pitt St, Sydney NSW 2000, Australia"
+    },
+    {
+      "id": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+      "name": "Holiday Inn & Suites Geelong by IHG",
+      "nameZh": "Holiday Inn & Suites Geelong by IHG",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.1482312,
+        "lng": 144.3551999
+      },
+      "address": "40 Ryrie St, Geelong VIC 3220, Australia",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4140491d830d3:0xd67fc88cc35211b3",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad4140491d830d3:0xd67fc88cc35211b3",
+        "query": "Holiday Inn & Suites Geelong by IHG"
+      },
+      "website": "https://www.ihg.com/holidayinn/hotels/us/en/geelong/gexgl/hoteldetail?cm_mmc=GoogleMaps-_-HI-_-AU-_-GEXGL",
+      "cityOrArea": "40 Ryrie St, Geelong VIC 3220, Australia"
+    },
+    {
+      "id": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+      "name": "Sandpiper Motel Apollo Bay- Great Ocean Road",
+      "nameZh": "Sandpiper Motel Apollo Bay- Great Ocean Road",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.751563,
+        "lng": 143.668294
+      },
+      "address": "3 Murray St, Apollo Bay VIC 3233, Australia",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad336dc44911fff:0x27e73f34c122190d",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad336dc44911fff:0x27e73f34c122190d",
+        "query": "Sandpiper Motel Apollo Bay- Great Ocean Road"
+      },
+      "website": "http://www.sandpipermotel.net.au/",
+      "cityOrArea": "3 Murray St, Apollo Bay VIC 3233, Australia"
+    },
+    {
+      "id": "ChIJGT48felMzWoRCnrF8CA1zBU",
+      "name": "Deep Blue Hotel & Hot Springs",
+      "nameZh": "Deep Blue Hotel & Hot Springs",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -38.397194299999995,
+        "lng": 142.4734688
+      },
+      "address": "1 Worm Bay Rd, Warrnambool VIC 3280, Australia",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4ce97d3c3e19:0x15cc3520f0c57a0a",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6acd4ce97d3c3e19:0x15cc3520f0c57a0a",
+        "query": "Deep Blue Hotel & Hot Springs"
+      },
+      "website": "https://thedeepblue.com.au/",
+      "cityOrArea": "1 Worm Bay Rd, Warrnambool VIC 3280, Australia"
+    },
+    {
+      "id": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+      "name": "Veriu Queen Victoria Market",
+      "nameZh": "Veriu Queen Victoria Market",
+      "countryCode": "AU",
+      "geo": {
+        "lat": -37.8075026,
+        "lng": 144.95914489999998
+      },
+      "address": "91/101 Therry St, Melbourne VIC 3000, Australia",
+      "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d0f15ef81b9:0x884509b93bc77397",
+      "navigation": {
+        "url": "https://maps.google.com/?ftid=0x6ad65d0f15ef81b9:0x884509b93bc77397",
+        "query": "Veriu Queen Victoria Market"
+      },
+      "website": "https://veriu.com.au/hotels/veriu-queen-victoria-market/",
+      "cityOrArea": "91/101 Therry St, Melbourne VIC 3000, Australia"
+    }
+  ],
+  "restaurants": [],
+  "bookingsAndTickets": [],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态暂保存在当前浏览器。",
+    "items": []
+  },
+  "preTrip": {
+    "packingItems": [],
+    "todoItems": [
+      {
+        "id": "todo-flight-domestic",
+        "text": "离线保存 JQ537 确认邮件与中英文行程单",
+        "completed": false
+      },
+      {
+        "id": "todo-rental-conflict",
+        "text": "确认租车最终还车日：Wanderlog 10/4 与订单 10/5 冲突",
+        "completed": false
+      },
+      {
+        "id": "todo-day-tour",
+        "text": "补充小火车＋企鹅岛一日游集合点与票据",
+        "completed": false
+      }
+    ],
+    "preparationsExplicitlyMentioned": [],
+    "missingNote": ""
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": [
+        "flight",
+        "note",
+        "rest"
+      ],
+      "selfNavigationTypes": [
+        "drive",
+        "return",
+        "transfer",
+        "check-in",
+        "check-out",
+        "restaurant",
+        "attraction",
+        "walk",
+        "hike"
+      ]
+    },
+    "navigationPlaces": []
+  },
+  "issuesAndUncertainties": [
+    "租车订单与 Wanderlog 的还车日期冲突待确认"
+  ],
+  "map": {
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "places": [
+      {
+        "id": "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+        "name": "圣母主教座堂",
+        "geo": {
+          "lat": -33.8711905,
+          "lng": 151.2133254
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+        "name": "海德公园",
+        "geo": {
+          "lat": -33.8715202,
+          "lng": 151.21162429999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+        "name": "维多利亚女王大厦",
+        "geo": {
+          "lat": -33.8717161,
+          "lng": 151.2067008
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+        "name": "悉尼市政厅",
+        "geo": {
+          "lat": -33.8731575,
+          "lng": 151.2061157
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+        "name": "悉尼唐人街",
+        "geo": {
+          "lat": -33.879356099999995,
+          "lng": 151.2041567
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJt9trB0euEmsR8NbepO14j3M",
+        "name": "达令港",
+        "geo": {
+          "lat": -33.87488,
+          "lng": 151.2009
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+        "name": "Australian Museum",
+        "geo": {
+          "lat": -33.873917,
+          "lng": 151.212702
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJNcXcR12uEmsRkpSvsrO--1g",
+        "name": "The Rocks Market",
+        "geo": {
+          "lat": -33.8577866,
+          "lng": 151.2085595
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+        "name": "Sydney Observatory",
+        "geo": {
+          "lat": -33.8598345,
+          "lng": 151.2048766
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+        "name": "Ribs & Burgers The Rocks",
+        "geo": {
+          "lat": -33.85774,
+          "lng": 151.209159
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJq6qqWiSsEmsRJuIpepyEua4",
+        "name": "塔龙加动物园",
+        "geo": {
+          "lat": -33.8435473,
+          "lng": 151.2413418
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+        "name": "悉尼皇家植物园",
+        "geo": {
+          "lat": -33.864185899999995,
+          "lng": 151.2165708
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+        "name": "Mrs Macquarie's Chair",
+        "geo": {
+          "lat": -33.8596639,
+          "lng": 151.22257059999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJbR9t3WRsE2sRjtO6ru7Uep8",
+        "name": "Kiama",
+        "geo": {
+          "lat": -34.673822099999995,
+          "lng": 150.8443706
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJyxDbiRFvE2sRqVMVY_o4ZoM",
+        "name": "Gerringong",
+        "geo": {
+          "lat": -34.739138499999996,
+          "lng": 150.8249873
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+        "name": "悉尼歌剧院",
+        "geo": {
+          "lat": -33.856784399999995,
+          "lng": 151.21529669999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJra9q0mmuEmsR4Hy11eshm38",
+        "name": "环形码头",
+        "geo": {
+          "lat": -33.8611374,
+          "lng": 151.2126457
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+        "name": "沃森湾",
+        "geo": {
+          "lat": -33.845007599999995,
+          "lng": 151.2828553
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJl5-gnIesEmsRur3obYvC2Gc",
+        "name": "霍恩比灯塔",
+        "geo": {
+          "lat": -33.833530599999996,
+          "lng": 151.2809829
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+        "name": "Shark Beach",
+        "geo": {
+          "lat": -33.8503961,
+          "lng": 151.2675361
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+        "name": "玫瑰湾",
+        "geo": {
+          "lat": -33.8700997,
+          "lng": 151.2691203
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJ24MzG_GwEmsRd2VLWl01368",
+        "name": "悉尼机场",
+        "geo": {
+          "lat": -33.950033,
+          "lng": 151.1816955
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJFzmq66lZ1moRkPAvBXZWBA8",
+        "name": "墨尔本机场",
+        "geo": {
+          "lat": -37.670822799999996,
+          "lng": 144.8429763
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+        "name": "吉朗",
+        "geo": {
+          "lat": -38.1499181,
+          "lng": 144.3617186
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJwdwZfYB71GoRXsh26Rj97WM",
+        "name": "Point Addis Beach Lookout",
+        "geo": {
+          "lat": -38.391095,
+          "lng": 144.2507575
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+        "name": "Aireys Inlet",
+        "geo": {
+          "lat": -38.457104799999996,
+          "lng": 144.1071845
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJszM9KHx-02oRffOrQlBJxeg",
+        "name": "Memorial Arch at Eastern View",
+        "geo": {
+          "lat": -38.4719227,
+          "lng": 144.0445336
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+        "name": "洛恩",
+        "geo": {
+          "lat": -38.5368534,
+          "lng": 143.9738066
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJAczEik9k02oREzjcvP7rmnE",
+        "name": "Sheoak Falls",
+        "geo": {
+          "lat": -38.5656509,
+          "lng": 143.96081669999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJga0hRlNC02oRT3qW-lGOZew",
+        "name": "Kafe Koala",
+        "geo": {
+          "lat": -38.6675116,
+          "lng": 143.8606806
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+        "name": "Apollo Bay",
+        "geo": {
+          "lat": -38.7551525,
+          "lng": 143.66758529999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJwQHAQyM302oR49Q4aQakvtw",
+        "name": "Marriner's Lookout",
+        "geo": {
+          "lat": -38.7368861,
+          "lng": 143.6673863
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+        "name": "Maits Rest Rainforest Walk",
+        "geo": {
+          "lat": -38.755775,
+          "lng": 143.5546322
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+        "name": "Gibson Steps",
+        "geo": {
+          "lat": -38.668694599999995,
+          "lng": 143.1120188
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+        "name": "Twelve Apostles",
+        "geo": {
+          "lat": -38.6621015,
+          "lng": 143.1050917
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJ3bfJP86fgqoRNVotP63Yadk",
+        "name": "刀锋崖",
+        "geo": {
+          "lat": -38.6499275,
+          "lng": 143.07273709999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+        "name": "Loch Ard Gorge",
+        "geo": {
+          "lat": -38.6465896,
+          "lng": 143.0705094
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJExDJO9aggqoRGKaoThTm1Mk",
+        "name": "London Bridge",
+        "geo": {
+          "lat": -38.6224139,
+          "lng": 142.9318583
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJOVO1OCingqoRrruRg84I2Nw",
+        "name": "The Grotto",
+        "geo": {
+          "lat": -38.6185067,
+          "lng": 142.9145274
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+        "name": "Bay Of Islands",
+        "geo": {
+          "lat": -38.5848139,
+          "lng": 142.8273399
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+        "name": "Warrnambool",
+        "geo": {
+          "lat": -38.3686779,
+          "lng": 142.4982086
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+        "name": "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD",
+        "geo": {
+          "lat": -38.3420755,
+          "lng": 142.6497857
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+        "name": "Flagstaff Hill Maritime Village",
+        "geo": {
+          "lat": -38.3895412,
+          "lng": 142.4851155
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+        "name": "Lake Pertobe",
+        "geo": {
+          "lat": -38.3887126,
+          "lng": 142.4761952
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+        "name": "Deep Blue Hot Springs Warrnambool",
+        "geo": {
+          "lat": -38.3976541,
+          "lng": 142.4737709
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+        "name": "Tower Hill Wildlife Reserve (Parks Victoria)",
+        "geo": {
+          "lat": -38.318329399999996,
+          "lng": 142.3637695
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJnRuiwAgtzWoR8MugMKR5BQQ",
+        "name": "费里港",
+        "geo": {
+          "lat": -38.3806327,
+          "lng": 142.2294039
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+        "name": "A'Beckett St",
+        "geo": {
+          "lat": -37.8095944,
+          "lng": 144.9596133
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+        "name": "Dandenong Ranges",
+        "geo": {
+          "lat": -37.8333333,
+          "lng": 145.35
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+        "name": "菲利普岛",
+        "geo": {
+          "lat": -38.4898703,
+          "lng": 145.2038278
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+        "name": "Nobbies Centre",
+        "geo": {
+          "lat": -38.5174032,
+          "lng": 145.117975
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+        "name": "Flinders Street",
+        "geo": {
+          "lat": -37.8182711,
+          "lng": 144.96706179999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJT8T86bZC1moRqw7W6kVH5zg",
+        "name": "Fed Square",
+        "geo": {
+          "lat": -37.8179789,
+          "lng": 144.96905759999999
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJbVDLhrZC1moRV4a7bU8smmI",
+        "name": "St Paul's Cathedral, Melbourne",
+        "geo": {
+          "lat": -37.817029,
+          "lng": 144.96768699999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJFWocUrZC1moRDz6RTASZJqk",
+        "name": "Hosier Ln",
+        "geo": {
+          "lat": -37.816527199999996,
+          "lng": 144.9691574
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+        "name": "Southbank Promenade",
+        "geo": {
+          "lat": -37.8200274,
+          "lng": 144.9654616
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+        "name": "Royal Botanic Gardens Victoria - Melbourne Gardens",
+        "geo": {
+          "lat": -37.8302443,
+          "lng": 144.9801496
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJuYNitLFC1moRVB5vMAKPcTM",
+        "name": "National Gallery of Victoria",
+        "geo": {
+          "lat": -37.8225942,
+          "lng": 144.9689278
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      },
+      {
+        "id": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+        "name": "Kimpton Margot Sydney",
+        "geo": {
+          "lat": -33.8748991,
+          "lng": 151.2078403
+        },
+        "countryCode": "AU",
+        "mapRegionId": "sydney"
+      },
+      {
+        "id": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+        "name": "Holiday Inn & Suites Geelong by IHG",
+        "geo": {
+          "lat": -38.1482312,
+          "lng": 144.3551999
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+        "name": "Sandpiper Motel Apollo Bay- Great Ocean Road",
+        "geo": {
+          "lat": -38.751563,
+          "lng": 143.668294
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJGT48felMzWoRCnrF8CA1zBU",
+        "name": "Deep Blue Hotel & Hot Springs",
+        "geo": {
+          "lat": -38.397194299999995,
+          "lng": 142.4734688
+        },
+        "countryCode": "AU",
+        "mapRegionId": "coast"
+      },
+      {
+        "id": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+        "name": "Veriu Queen Victoria Market",
+        "geo": {
+          "lat": -37.8075026,
+          "lng": 144.95914489999998
+        },
+        "countryCode": "AU",
+        "mapRegionId": "melbourne"
+      }
+    ],
+    "routes": [
+      {
+        "day": 2,
+        "placeIds": [
+          "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+          "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+          "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+          "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+          "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+          "ChIJt9trB0euEmsR8NbepO14j3M",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 3,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+          "ChIJNcXcR12uEmsRkpSvsrO--1g",
+          "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+          "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 4,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJq6qqWiSsEmsRJuIpepyEua4",
+          "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+          "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 5,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJra9q0mmuEmsR4Hy11eshm38",
+          "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+          "ChIJl5-gnIesEmsRur3obYvC2Gc",
+          "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+          "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJ24MzG_GwEmsRd2VLWl01368",
+          "ChIJFzmq66lZ1moRkPAvBXZWBA8",
+          "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+          "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+        ]
+      },
+      {
+        "day": 8,
+        "placeIds": [
+          "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+          "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+          "ChIJwdwZfYB71GoRXsh26Rj97WM",
+          "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+          "ChIJszM9KHx-02oRffOrQlBJxeg",
+          "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+          "ChIJAczEik9k02oREzjcvP7rmnE",
+          "ChIJga0hRlNC02oRT3qW-lGOZew",
+          "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+          "ChIJwQHAQyM302oR49Q4aQakvtw",
+          "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
+        ]
+      },
+      {
+        "day": 9,
+        "placeIds": [
+          "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+          "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+          "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+          "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+          "ChIJ3bfJP86fgqoRNVotP63Yadk",
+          "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+          "ChIJExDJO9aggqoRGKaoThTm1Mk",
+          "ChIJOVO1OCingqoRrruRg84I2Nw",
+          "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+          "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+          "ChIJGT48felMzWoRCnrF8CA1zBU"
+        ]
+      },
+      {
+        "day": 10,
+        "placeIds": [
+          "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+          "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+          "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+          "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+          "ChIJGT48felMzWoRCnrF8CA1zBU"
+        ]
+      },
+      {
+        "day": 11,
+        "placeIds": [
+          "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+          "ChIJnRuiwAgtzWoR8MugMKR5BQQ",
+          "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      },
+      {
+        "day": 12,
+        "placeIds": [
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+          "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+          "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      },
+      {
+        "day": 13,
+        "placeIds": [
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+          "ChIJT8T86bZC1moRqw7W6kVH5zg",
+          "ChIJbVDLhrZC1moRV4a7bU8smmI",
+          "ChIJFWocUrZC1moRDz6RTASZJqk",
+          "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+          "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+          "ChIJuYNitLFC1moRVB5vMAKPcTM",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 2,
+        "placeIds": [
+          "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+          "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+          "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+          "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+          "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+          "ChIJt9trB0euEmsR8NbepO14j3M",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 3,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+          "ChIJNcXcR12uEmsRkpSvsrO--1g",
+          "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+          "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 4,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJq6qqWiSsEmsRJuIpepyEua4",
+          "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+          "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 5,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJra9q0mmuEmsR4Hy11eshm38",
+          "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+          "ChIJl5-gnIesEmsRur3obYvC2Gc",
+          "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+          "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJ24MzG_GwEmsRd2VLWl01368",
+          "ChIJFzmq66lZ1moRkPAvBXZWBA8",
+          "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+          "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+        ]
+      },
+      {
+        "day": 8,
+        "placeIds": [
+          "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+          "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+          "ChIJwdwZfYB71GoRXsh26Rj97WM",
+          "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+          "ChIJszM9KHx-02oRffOrQlBJxeg",
+          "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+          "ChIJAczEik9k02oREzjcvP7rmnE",
+          "ChIJga0hRlNC02oRT3qW-lGOZew",
+          "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+          "ChIJwQHAQyM302oR49Q4aQakvtw",
+          "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
+        ]
+      },
+      {
+        "day": 9,
+        "placeIds": [
+          "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+          "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+          "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+          "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+          "ChIJ3bfJP86fgqoRNVotP63Yadk",
+          "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+          "ChIJExDJO9aggqoRGKaoThTm1Mk",
+          "ChIJOVO1OCingqoRrruRg84I2Nw",
+          "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+          "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+          "ChIJGT48felMzWoRCnrF8CA1zBU"
+        ]
+      },
+      {
+        "day": 10,
+        "placeIds": [
+          "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+          "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+          "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+          "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+          "ChIJGT48felMzWoRCnrF8CA1zBU"
+        ]
+      },
+      {
+        "day": 11,
+        "placeIds": [
+          "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+          "ChIJnRuiwAgtzWoR8MugMKR5BQQ",
+          "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      },
+      {
+        "day": 12,
+        "placeIds": [
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+          "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+          "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      },
+      {
+        "day": 13,
+        "placeIds": [
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+          "ChIJT8T86bZC1moRqw7W6kVH5zg",
+          "ChIJbVDLhrZC1moRV4a7bU8smmI",
+          "ChIJFWocUrZC1moRDz6RTASZJqk",
+          "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+          "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+          "ChIJuYNitLFC1moRVB5vMAKPcTM",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+        ]
+      }
+    ],
+    "regions": [
+      {
+        "id": "sydney",
+        "label": "悉尼与周边",
+        "countryCode": "AU"
+      },
+      {
+        "id": "coast",
+        "label": "大洋路与瓦南布尔",
+        "countryCode": "AU"
+      },
+      {
+        "id": "melbourne",
+        "label": "墨尔本与菲利普岛",
+        "countryCode": "AU"
+      }
+    ]
+  },
+  "routeMap": {
+    "defaultRegionId": "sydney",
+    "regions": [
+      {
+        "id": "sydney",
+        "label": "悉尼与周边",
+        "countryCode": "AU",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "upland-basin",
+        "mapModeReason": "dense-place-cluster",
+        "mapModeMetrics": {
+          "placeCount": 23,
+          "geoPlaceCount": 23,
+          "widthKm": 42.16,
+          "heightKm": 100.52,
+          "spanKm": 109.07,
+          "averageNearestKm": 1.61,
+          "components": 1,
+          "largestLegKm": 8.7,
+          "jumpRatio": 4.74
+        },
+        "days": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-06-upland-basin.webp",
+        "title": "悉尼与周边 · 旅行路线",
+        "ariaLabel": "悉尼与周边模板化旅行路线示意图，共6天",
+        "disclaimer": "本图为模板化行程示意图，仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。如需使用真实国家或城市地图，可在生成后自行调整。",
+        "heading": {
+          "text": "悉尼与周边",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 2,
+            "color": "#e77e22",
+            "placeIds": [
+              "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+              "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+              "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+              "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+              "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+              "ChIJt9trB0euEmsR8NbepO14j3M",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "paths": [
+              "M1090.24 266.13 C992.7 238.9 895.5 240.3 804.42 270.24 C887.5 213.9 979.2 184.6 1074.13 184 C970.6 209.3 882.1 260.5 813.79 334.71 C897.1 311.4 980.0 312.4 1057.79 337.77 C989.6 267.8 907.9 221.8 817.42 202.62 C857.2 221.6 888.6 249.9 909.93 285.76"
+            ],
+            "overviewPaths": [
+              "M1090.24 266.13 C989.4 261.8 895.4 285.1 813.79 334.71 C841.6 308.5 874.3 291.8 909.93 285.76"
+            ]
+          },
+          {
+            "day": 3,
+            "color": "#618344",
+            "placeIds": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+              "ChIJNcXcR12uEmsRkpSvsrO--1g",
+              "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+              "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "paths": [
+              "M909.93 285.76 C942.8 296.3 970.2 315.0 990.57 340.6 C988.9 282.3 971.6 229.0 939.68 184 C935.9 253.8 913.6 317.1 873.92 370.01 C935.6 358.6 989.2 331.4 1031.71 290.09 C989.9 300.8 948.5 299.3 909.93 285.76"
+            ],
+            "overviewPaths": [
+              "M909.93 285.76 C906.1 318.0 893.9 346.7 873.92 370.01 C935.6 358.6 989.2 331.4 1031.71 290.09 C989.9 300.8 948.5 299.3 909.93 285.76"
+            ]
+          },
+          {
+            "day": 4,
+            "color": "#209aaa",
+            "placeIds": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJq6qqWiSsEmsRJuIpepyEua4",
+              "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+              "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "paths": [
+              "M909.93 285.76 C891.4 289.4 875.4 297.8 862.72 310.4 C892.2 267.8 930.8 236.6 976.37 218.59 C948.6 273.5 937.9 331.6 944.85 389.39 C922.6 357.6 910.7 322.4 909.93 285.76"
+            ],
+            "overviewPaths": [
+              "M909.93 285.76 C939.2 269.6 961.8 246.7 976.37 218.59 C960.5 248.1 937.9 270.9 909.93 285.76"
+            ]
+          },
+          {
+            "day": 5,
+            "color": "#8865a5",
+            "placeIds": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "paths": [
+              "M909.93 285.76 C888.1 254.6 876.4 220.0 875.57 184 C877.1 222.0 888.8 256.6 909.93 285.76"
+            ],
+            "overviewPaths": [
+              "M909.93 285.76 C888.1 254.6 876.4 220.0 875.57 184 C877.1 222.0 888.8 256.6 909.93 285.76"
+            ]
+          },
+          {
+            "day": 6,
+            "color": "#df6185",
+            "placeIds": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJra9q0mmuEmsR4Hy11eshm38",
+              "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+              "ChIJl5-gnIesEmsRur3obYvC2Gc",
+              "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+              "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "paths": [
+              "M909.93 285.76 C909.0 304.8 913.3 322.6 922.58 338.04 C936.7 277.0 966.2 224.6 1009.44 184 C989.2 214.7 979.0 248.3 979.17 283.05 C957.6 265.9 942.4 244.3 934.51 219.43 C972.3 233.9 1011.1 237.0 1048.41 228.5 C1007.1 261.8 960.0 281.3 909.93 285.76"
+            ],
+            "overviewPaths": [
+              "M909.93 285.76 C933.7 291.8 957.3 290.8 979.17 283.05 C997.3 257.6 1020.8 239.0 1048.41 228.5 C995.6 234.1 948.5 253.6 909.93 285.76"
+            ]
+          },
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJ24MzG_GwEmsRd2VLWl01368"
+            ],
+            "paths": [
+              "M909.93 285.76 C887.9 277.9 869.7 264.8 856.48 247.03"
+            ],
+            "overviewPaths": [
+              "M909.93 285.76 C887.9 277.9 869.7 264.8 856.48 247.03"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+            "x": 1090.24,
+            "y": 266.13,
+            "color": "#e77e22",
+            "tx": 1122.24,
+            "ty": 234.13,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "圣母主教座堂"
+            ],
+            "query": "圣母主教座堂",
+            "geo": {
+              "lat": -33.8711905,
+              "lng": 151.2133254
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae14e6fff121:0xfe7a7407a97636de"
+          },
+          {
+            "id": "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+            "x": 804.42,
+            "y": 270.24,
+            "color": "#e77e22",
+            "tx": 772.42,
+            "ty": 238.24,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "海德公园"
+            ],
+            "query": "海德公园",
+            "geo": {
+              "lat": -33.8715202,
+              "lng": 151.21162429999998
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae15ec41f90d:0xf017d68f9f1f660"
+          },
+          {
+            "id": "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+            "x": 1074.13,
+            "y": 184,
+            "color": "#e77e22",
+            "tx": 1152.13,
+            "ty": 122,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "维多利亚女王大厦"
+            ],
+            "query": "维多利亚女王大厦",
+            "geo": {
+              "lat": -33.8717161,
+              "lng": 151.2067008
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3c36fc2c21:0xbf6ac40e233d3415"
+          },
+          {
+            "id": "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+            "x": 813.79,
+            "y": 334.71,
+            "color": "#e77e22",
+            "tx": 735.79,
+            "ty": 410.71,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "悉尼市政厅"
+            ],
+            "query": "悉尼市政厅",
+            "geo": {
+              "lat": -33.8731575,
+              "lng": 151.2061157
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3c27682c85:0xb1663d1d054300f6"
+          },
+          {
+            "id": "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+            "x": 1057.79,
+            "y": 337.77,
+            "color": "#e77e22",
+            "tx": 1195.79,
+            "ty": 439.77,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "悉尼唐人街"
+            ],
+            "query": "悉尼唐人街",
+            "geo": {
+              "lat": -33.879356099999995,
+              "lng": 151.2041567
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae249c20d251:0x6d49e024c3093a2f"
+          },
+          {
+            "id": "ChIJt9trB0euEmsR8NbepO14j3M",
+            "x": 817.42,
+            "y": 202.62,
+            "color": "#e77e22",
+            "tx": 679.42,
+            "ty": 304.62,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "达令港"
+            ],
+            "query": "达令港",
+            "geo": {
+              "lat": -33.87488,
+              "lng": 151.2009
+            },
+            "days": [
+              2
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae47076bdbb7:0x738f78eda4ded6f0"
+          },
+          {
+            "id": "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+            "x": 990.57,
+            "y": 340.6,
+            "color": "#618344",
+            "tx": 1022.57,
+            "ty": 390.6,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Australian Museum"
+            ],
+            "query": "Australian Museum",
+            "geo": {
+              "lat": -33.873917,
+              "lng": 151.212702
+            },
+            "days": [
+              3
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae15d1070b97:0xa2eff040583728dc"
+          },
+          {
+            "id": "ChIJNcXcR12uEmsRkpSvsrO--1g",
+            "x": 939.68,
+            "y": 184,
+            "color": "#618344",
+            "tx": 861.68,
+            "ty": 122,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "The Rocks Market"
+            ],
+            "query": "The Rocks Market",
+            "geo": {
+              "lat": -33.8577866,
+              "lng": 151.2085595
+            },
+            "days": [
+              3
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae5d47dcc535:0x58fbbeb3b2af9492"
+          },
+          {
+            "id": "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+            "x": 873.92,
+            "y": 370.01,
+            "color": "#618344",
+            "tx": 735.92,
+            "ty": 472.01,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Sydney Observatory"
+            ],
+            "query": "Sydney Observatory",
+            "geo": {
+              "lat": -33.8598345,
+              "lng": 151.2048766
+            },
+            "days": [
+              3
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae4381e77585:0xd406ec273f5822af"
+          },
+          {
+            "id": "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+            "x": 1031.71,
+            "y": 290.09,
+            "color": "#618344",
+            "tx": 1109.71,
+            "ty": 228.09,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Ribs & Burgers The Rocks"
+            ],
+            "query": "Ribs & Burgers The Rocks",
+            "geo": {
+              "lat": -33.85774,
+              "lng": 151.209159
+            },
+            "days": [
+              3
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae5d4721a2d9:0xbfddd40d8820c399"
+          },
+          {
+            "id": "ChIJq6qqWiSsEmsRJuIpepyEua4",
+            "x": 862.72,
+            "y": 310.4,
+            "color": "#209aaa",
+            "tx": 784.72,
+            "ty": 386.4,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "塔龙加动物园"
+            ],
+            "query": "塔龙加动物园",
+            "geo": {
+              "lat": -33.8435473,
+              "lng": 151.2413418
+            },
+            "days": [
+              4
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac245aaaaaab:0xaeb9849c7a29e226"
+          },
+          {
+            "id": "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+            "x": 976.37,
+            "y": 218.59,
+            "color": "#209aaa",
+            "tx": 1114.37,
+            "ty": 320.59,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "悉尼皇家植物园"
+            ],
+            "query": "悉尼皇家植物园",
+            "geo": {
+              "lat": -33.864185899999995,
+              "lng": 151.2165708
+            },
+            "days": [
+              4
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae6b60dda459:0xf017d68f9f1e7a0"
+          },
+          {
+            "id": "ChIJQ9b_zXquEmsRY6cF2rm2v0M",
+            "x": 944.85,
+            "y": 389.39,
+            "color": "#209aaa",
+            "tx": 1022.85,
+            "ty": 465.39,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Mrs Macquarie's Chair"
+            ],
+            "query": "Mrs Macquarie's Chair",
+            "geo": {
+              "lat": -33.8596639,
+              "lng": 151.22257059999998
+            },
+            "days": [
+              4
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae7acdffd643:0x43bfb6b9da05a763"
+          },
+          {
+            "id": "ChIJbR9t3WRsE2sRjtO6ru7Uep8",
+            "x": 736.79,
+            "y": 767.02,
+            "color": "#397dc1",
+            "tx": 704.79,
+            "ty": 735.02,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Kiama"
+            ],
+            "query": "Kiama",
+            "geo": {
+              "lat": -34.673822099999995,
+              "lng": 150.8443706
+            },
+            "days": [],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b136c64dd6d1f6d:0x9f7ad4eeaebad38e"
+          },
+          {
+            "id": "ChIJyxDbiRFvE2sRqVMVY_o4ZoM",
+            "x": 720.26,
+            "y": 834.16,
+            "color": "#397dc1",
+            "tx": 798.26,
+            "ty": 772.16,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Gerringong"
+            ],
+            "query": "Gerringong",
+            "geo": {
+              "lat": -34.739138499999996,
+              "lng": 150.8249873
+            },
+            "days": [],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b136f1189db10cb:0x836638fa631553a9"
+          },
+          {
+            "id": "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+            "x": 875.57,
+            "y": 184,
+            "color": "#8865a5",
+            "tx": 953.57,
+            "ty": 122,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "悉尼歌剧院"
+            ],
+            "query": "悉尼歌剧院",
+            "geo": {
+              "lat": -33.856784399999995,
+              "lng": 151.21529669999998
+            },
+            "days": [
+              5
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae665e892fdd:0x3133f8d75a1ac251",
+            "photo": {
+              "url": "assets/photos/landmarks/sydney-opera-house.jpg",
+              "alt": "日落时的悉尼歌剧院",
+              "author": "Aus0me.au",
+              "license": "CC0",
+              "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Sydney_Opera_House.jpg",
+              "overview": true,
+              "marker": true
+            }
+          },
+          {
+            "id": "ChIJra9q0mmuEmsR4Hy11eshm38",
+            "x": 922.58,
+            "y": 338.04,
+            "color": "#df6185",
+            "tx": 954.58,
+            "ty": 388.04,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "环形码头"
+            ],
+            "query": "环形码头",
+            "geo": {
+              "lat": -33.8611374,
+              "lng": 151.2126457
+            },
+            "days": [
+              6
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae69d26aafad:0x7f9b21ebd5b57ce0"
+          },
+          {
+            "id": "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+            "x": 1009.44,
+            "y": 184,
+            "color": "#df6185",
+            "tx": 931.44,
+            "ty": 122,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "沃森湾"
+            ],
+            "query": "沃森湾",
+            "geo": {
+              "lat": -33.845007599999995,
+              "lng": 151.2828553
+            },
+            "days": [
+              6
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac899335bc45:0x5017d681632cee0"
+          },
+          {
+            "id": "ChIJl5-gnIesEmsRur3obYvC2Gc",
+            "x": 979.17,
+            "y": 283.05,
+            "color": "#df6185",
+            "tx": 1117.17,
+            "ty": 195.05,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "霍恩比灯塔"
+            ],
+            "query": "霍恩比灯塔",
+            "geo": {
+              "lat": -33.833530599999996,
+              "lng": 151.2809829
+            },
+            "days": [
+              6
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac879ca09f97:0x67d8c28b6de8bdba"
+          },
+          {
+            "id": "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+            "x": 934.51,
+            "y": 219.43,
+            "color": "#df6185",
+            "tx": 796.51,
+            "ty": 321.43,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Shark Beach"
+            ],
+            "query": "Shark Beach",
+            "geo": {
+              "lat": -33.8503961,
+              "lng": 151.2675361
+            },
+            "days": [
+              6
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac450d31d519:0x9e48b7b6eb96867f"
+          },
+          {
+            "id": "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+            "x": 1048.41,
+            "y": 228.5,
+            "color": "#df6185",
+            "tx": 1126.41,
+            "ty": 304.5,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "玫瑰湾"
+            ],
+            "query": "玫瑰湾",
+            "geo": {
+              "lat": -33.8700997,
+              "lng": 151.2691203
+            },
+            "days": [
+              6
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ac30c23d2dfb:0x5017d681632c8f0"
+          },
+          {
+            "id": "ChIJ24MzG_GwEmsRd2VLWl01368",
+            "x": 856.48,
+            "y": 247.03,
+            "color": "#397dc1",
+            "tx": 778.48,
+            "ty": 185.03,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "悉尼机场"
+            ],
+            "query": "悉尼机场",
+            "geo": {
+              "lat": -33.950033,
+              "lng": 151.1816955
+            },
+            "days": [
+              7
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12b0f11b3383db:0xafdf355d5a4b6577"
+          },
+          {
+            "id": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+            "x": 909.93,
+            "y": 285.76,
+            "color": "#e77e22",
+            "tx": 771.93,
+            "ty": 197.76,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Kimpton Margot Sydney"
+            ],
+            "query": "Kimpton Margot Sydney",
+            "geo": {
+              "lat": -33.8748991,
+              "lng": 151.2078403
+            },
+            "days": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3db5ea9fc3:0x3b0155a08051f08f"
+          }
+        ],
+        "overviewPlaceIds": [
+          "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+          "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+          "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+          "ChIJ2aIhR12uEmsRmcMgiA3U3b8",
+          "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+          "ChIJ3S-JXmauEmsRUcIaWtf4MzE",
+          "ChIJl5-gnIesEmsRur3obYvC2Gc",
+          "ChIJ-y09wjCsEmsR8MgyFmh9AQU",
+          "ChIJ24MzG_GwEmsRd2VLWl01368"
+        ],
+        "dailyLayouts": {
+          "2": {
+            "places": [
+              "ChIJIfH_5hSuEmsR3jZ2qQd0ev4",
+              "ChIJDflB7BWuEmsRYPbx-Wh9AQ8",
+              "ChIJISz8NjyuEmsRFTQ9Iw7Ear8",
+              "ChIJhSxoJzyuEmsR9gBDBR09ZrE",
+              "ChIJUdIgnCSuEmsRLzoJwyTgSW0",
+              "ChIJt9trB0euEmsR8NbepO14j3M",
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs"
+            ],
+            "labels": {
+              "ChIJIfH_5hSuEmsR3jZ2qQd0ev4": {
+                "x": 1122.24,
+                "y": 234.13,
+                "anchor": "start"
+              },
+              "ChIJDflB7BWuEmsRYPbx-Wh9AQ8": {
+                "x": 772.42,
+                "y": 238.24,
+                "anchor": "end"
+              },
+              "ChIJISz8NjyuEmsRFTQ9Iw7Ear8": {
+                "x": 1152.13,
+                "y": 122,
+                "anchor": "start"
+              },
+              "ChIJhSxoJzyuEmsR9gBDBR09ZrE": {
+                "x": 735.79,
+                "y": 410.71,
+                "anchor": "end"
+              },
+              "ChIJUdIgnCSuEmsRLzoJwyTgSW0": {
+                "x": 1195.79,
+                "y": 439.77,
+                "anchor": "start"
+              },
+              "ChIJt9trB0euEmsR8NbepO14j3M": {
+                "x": 679.42,
+                "y": 304.62,
+                "anchor": "end"
+              },
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 947.33,
+                "y": 268.19
+              },
+              {
+                "items": [],
+                "x": 939.28,
+                "y": 227.12
+              },
+              {
+                "items": [],
+                "x": 943.96,
+                "y": 259.36
+              },
+              {
+                "items": [],
+                "x": 935.79,
+                "y": 336.24
+              },
+              {
+                "items": [],
+                "x": 937.61,
+                "y": 270.19
+              },
+              {
+                "items": [],
+                "x": 863.67,
+                "y": 244.19
+              }
+            ]
+          },
+          "3": {
+            "places": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJlwsH0RWuEmsR3Cg3WEDw76I",
+              "ChIJNcXcR12uEmsRkpSvsrO--1g",
+              "ChIJhXXngUOuEmsRryJYPyfsBtQ",
+              "ChIJ2aIhR12uEmsRmcMgiA3U3b8"
+            ],
+            "labels": {
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              },
+              "ChIJlwsH0RWuEmsR3Cg3WEDw76I": {
+                "x": 1022.57,
+                "y": 390.6,
+                "anchor": "start"
+              },
+              "ChIJNcXcR12uEmsRkpSvsrO--1g": {
+                "x": 861.68,
+                "y": 122,
+                "anchor": "end"
+              },
+              "ChIJhXXngUOuEmsRryJYPyfsBtQ": {
+                "x": 735.92,
+                "y": 472.01,
+                "anchor": "end"
+              },
+              "ChIJ2aIhR12uEmsRmcMgiA3U3b8": {
+                "x": 1109.71,
+                "y": 228.09,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 950.25,
+                "y": 313.18
+              },
+              {
+                "items": [],
+                "x": 965.13,
+                "y": 262.3
+              },
+              {
+                "items": [],
+                "x": 906.8,
+                "y": 277
+              },
+              {
+                "items": [],
+                "x": 952.82,
+                "y": 330.05
+              },
+              {
+                "items": [],
+                "x": 970.82,
+                "y": 287.92
+              }
+            ]
+          },
+          "4": {
+            "places": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJq6qqWiSsEmsRJuIpepyEua4",
+              "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8",
+              "ChIJQ9b_zXquEmsRY6cF2rm2v0M"
+            ],
+            "labels": {
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              },
+              "ChIJq6qqWiSsEmsRJuIpepyEua4": {
+                "x": 784.72,
+                "y": 386.4,
+                "anchor": "end"
+              },
+              "ChIJWaTdYGuuEmsRoOfx-Wh9AQ8": {
+                "x": 1114.37,
+                "y": 320.59,
+                "anchor": "start"
+              },
+              "ChIJQ9b_zXquEmsRY6cF2rm2v0M": {
+                "x": 1022.85,
+                "y": 465.39,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 886.33,
+                "y": 298.08
+              },
+              {
+                "items": [],
+                "x": 919.55,
+                "y": 264.5
+              },
+              {
+                "items": [],
+                "x": 960.61,
+                "y": 303.99
+              },
+              {
+                "items": [],
+                "x": 927.39,
+                "y": 337.57
+              }
+            ]
+          },
+          "5": {
+            "places": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJ3S-JXmauEmsRUcIaWtf4MzE"
+            ],
+            "labels": {
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              },
+              "ChIJ3S-JXmauEmsRUcIaWtf4MzE": {
+                "x": 953.57,
+                "y": 122,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 892.75,
+                "y": 234.88
+              },
+              {
+                "items": [],
+                "x": 892.75,
+                "y": 234.88
+              }
+            ]
+          },
+          "6": {
+            "places": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJra9q0mmuEmsR4Hy11eshm38",
+              "ChIJRbw1k4msEmsR4M4yFmh9AQU",
+              "ChIJl5-gnIesEmsRur3obYvC2Gc",
+              "ChIJGdUxDUWsEmsRf4aW67a3SJ4",
+              "ChIJ-y09wjCsEmsR8MgyFmh9AQU"
+            ],
+            "labels": {
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              },
+              "ChIJra9q0mmuEmsR4Hy11eshm38": {
+                "x": 954.58,
+                "y": 388.04,
+                "anchor": "start"
+              },
+              "ChIJRbw1k4msEmsR4M4yFmh9AQU": {
+                "x": 931.44,
+                "y": 122,
+                "anchor": "end"
+              },
+              "ChIJl5-gnIesEmsRur3obYvC2Gc": {
+                "x": 1117.17,
+                "y": 195.05,
+                "anchor": "start"
+              },
+              "ChIJGdUxDUWsEmsRf4aW67a3SJ4": {
+                "x": 796.51,
+                "y": 321.43,
+                "anchor": "end"
+              },
+              "ChIJ-y09wjCsEmsR8MgyFmh9AQU": {
+                "x": 1126.41,
+                "y": 304.5,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 916.25,
+                "y": 311.9
+              },
+              {
+                "items": [],
+                "x": 966.01,
+                "y": 261.02
+              },
+              {
+                "items": [],
+                "x": 994.31,
+                "y": 233.53
+              },
+              {
+                "items": [],
+                "x": 956.84,
+                "y": 251.24
+              },
+              {
+                "items": [],
+                "x": 991.46,
+                "y": 223.97
+              },
+              {
+                "items": [],
+                "x": 979.17,
+                "y": 257.13
+              }
+            ]
+          },
+          "7": {
+            "places": [
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+              "ChIJ24MzG_GwEmsRd2VLWl01368"
+            ],
+            "labels": {
+              "ChIJw5_qtT2uEmsRj_BRgKBVATs": {
+                "x": 771.93,
+                "y": 197.76,
+                "anchor": "end"
+              },
+              "ChIJ24MzG_GwEmsRd2VLWl01368": {
+                "x": 778.48,
+                "y": 185.03,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 883.2,
+                "y": 266.39
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "coast",
+        "label": "大洋路与瓦南布尔",
+        "countryCode": "AU",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "upland-basin",
+        "mapModeReason": "dense-place-cluster",
+        "mapModeMetrics": {
+          "placeCount": 27,
+          "geoPlaceCount": 27,
+          "widthKm": 185.2,
+          "heightKm": 67.44,
+          "spanKm": 187.92,
+          "averageNearestKm": 4.4,
+          "components": 1,
+          "largestLegKm": 39.61,
+          "jumpRatio": 4.69
+        },
+        "days": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-06-upland-basin.webp",
+        "title": "大洋路与瓦南布尔 · 旅行路线",
+        "ariaLabel": "大洋路与瓦南布尔模板化旅行路线示意图，共5天",
+        "disclaimer": "本图为模板化行程示意图，仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。如需使用真实国家或城市地图，可在生成后自行调整。",
+        "heading": {
+          "text": "大洋路与瓦南布尔",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+            ],
+            "paths": [
+              "M1222.65 404.63 C1200.8 403.9 1180.9 397.3 1164.04 385.25"
+            ],
+            "overviewPaths": [
+              "M1222.65 404.63 C1200.8 403.9 1180.9 397.3 1164.04 385.25"
+            ]
+          },
+          {
+            "day": 8,
+            "color": "#e77e22",
+            "placeIds": [
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+              "ChIJwdwZfYB71GoRXsh26Rj97WM",
+              "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+              "ChIJszM9KHx-02oRffOrQlBJxeg",
+              "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+              "ChIJAczEik9k02oREzjcvP7rmnE",
+              "ChIJga0hRlNC02oRT3qW-lGOZew",
+              "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+              "ChIJwQHAQyM302oR49Q4aQakvtw",
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
+            ],
+            "paths": [
+              "M1164.04 385.25 C1182.0 397.7 1202.0 404.3 1222.65 404.63 C1212.3 435.9 1194.3 461.8 1169.75 480.93 C1152.5 495.0 1140.4 512.6 1134.17 532.68 C1112.2 529.7 1092.7 520.9 1076.97 506.96 C1074.4 532.5 1079.0 556.8 1090.4 578.24 C1068.5 575.7 1049.0 567.4 1033.11 553.92 C1029.0 575.9 1031.2 597.3 1039.48 616.78 C1022.8 653.2 997.7 682.3 965.41 702.17 C975.9 662.5 974.9 623.1 962.31 586.28 C975.1 604.2 982.1 624.2 982.77 645"
+            ],
+            "overviewPaths": [
+              "M1164.04 385.25 C1182.0 397.7 1202.0 404.3 1222.65 404.63 C1195.0 476.9 1150.1 535.9 1090.4 578.24 C1047.1 590.2 1010.5 612.9 982.77 645"
+            ]
+          },
+          {
+            "day": 9,
+            "color": "#618344",
+            "placeIds": [
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+              "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+              "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+              "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+              "ChIJ3bfJP86fgqoRNVotP63Yadk",
+              "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+              "ChIJExDJO9aggqoRGKaoThTm1Mk",
+              "ChIJOVO1OCingqoRrruRg84I2Nw",
+              "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+              "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+              "ChIJGT48felMzWoRCnrF8CA1zBU"
+            ],
+            "paths": [
+              "M982.77 645 C961.2 651.3 939.6 651.3 919.23 644.96 C887.7 637.1 856.5 638.4 827.51 648.74 C802.3 613.9 788.6 575.0 787.05 534.3 C769.1 567.8 761.7 603.4 765.22 639.2 C774.6 619.3 788.6 603.5 806.43 592.79 C767.9 592.7 732.4 603.1 702.02 623.34 C712.6 603.8 727.7 588.7 746.34 578.93 C727.7 567.2 707.4 561.5 686.64 562.11 C646.3 525.2 619.1 480.3 606.72 430.09 C601.2 450.5 601.6 470.8 608.03 489.71"
+            ],
+            "overviewPaths": [
+              "M982.77 645 C908.2 664.8 834.3 662.8 765.22 639.2 C783.9 627.5 797.9 611.8 806.43 592.79 C728.7 577.6 661.2 542.5 608.03 489.71"
+            ]
+          },
+          {
+            "day": 10,
+            "color": "#209aaa",
+            "placeIds": [
+              "ChIJGT48felMzWoRCnrF8CA1zBU",
+              "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+              "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+              "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+              "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+              "ChIJGT48felMzWoRCnrF8CA1zBU"
+            ],
+            "paths": [
+              "M608.03 489.71 C629.7 487.8 649.1 480.2 665.19 467.36 C659.1 499.2 644.9 526.9 623.33 548.78 C607.9 512.1 583.7 482.5 552.3 461.74 C563.3 484.7 567.1 508.8 563.72 532.56 C583.1 522.4 598.1 507.9 608.03 489.71"
+            ],
+            "overviewPaths": [
+              "M608.03 489.71 C591.9 474.6 572.9 465.1 552.3 461.74 C574.0 465.7 593.0 475.2 608.03 489.71"
+            ]
+          },
+          {
+            "day": 11,
+            "color": "#8865a5",
+            "placeIds": [
+              "ChIJGT48felMzWoRCnrF8CA1zBU",
+              "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+              "ChIJnRuiwAgtzWoR8MugMKR5BQQ"
+            ],
+            "paths": [
+              "M608.03 489.71 C575.8 505.4 541.8 511.1 508.15 506.55 C502.1 485.5 490.8 467.9 474.95 454.53"
+            ],
+            "overviewPaths": [
+              "M608.03 489.71 C575.8 505.4 541.8 511.1 508.15 506.55 C502.1 485.5 490.8 467.9 474.95 454.53"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+            "x": 1222.65,
+            "y": 404.63,
+            "color": "#397dc1",
+            "tx": 1254.65,
+            "ty": 372.63,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "吉朗"
+            ],
+            "query": "吉朗",
+            "geo": {
+              "lat": -38.1499181,
+              "lng": 144.3617186
+            },
+            "days": [
+              7,
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4727b0417d681:0x4045675218ccda0"
+          },
+          {
+            "id": "ChIJwdwZfYB71GoRXsh26Rj97WM",
+            "x": 1169.75,
+            "y": 480.93,
+            "color": "#e77e22",
+            "tx": 1137.75,
+            "ty": 448.93,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Point Addis Beach Lookout"
+            ],
+            "query": "Point Addis Beach Lookout",
+            "geo": {
+              "lat": -38.391095,
+              "lng": 144.2507575
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad47b807d19dcc1:0x63edfd18e976c85e"
+          },
+          {
+            "id": "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+            "x": 1134.17,
+            "y": 532.68,
+            "color": "#e77e22",
+            "tx": 1212.17,
+            "ty": 470.68,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Aireys Inlet"
+            ],
+            "query": "Aireys Inlet",
+            "geo": {
+              "lat": -38.457104799999996,
+              "lng": 144.1071845
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad37b47897c5c6f:0x40579a430a0bee0"
+          },
+          {
+            "id": "ChIJszM9KHx-02oRffOrQlBJxeg",
+            "x": 1076.97,
+            "y": 506.96,
+            "color": "#e77e22",
+            "tx": 1044.97,
+            "ty": 474.96,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Memorial Arch at Eastern View"
+            ],
+            "query": "Memorial Arch at Eastern View",
+            "geo": {
+              "lat": -38.4719227,
+              "lng": 144.0445336
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad37e7c283d33b3:0xe8c5495042abf37d"
+          },
+          {
+            "id": "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+            "x": 1090.4,
+            "y": 578.24,
+            "color": "#e77e22",
+            "tx": 1228.4,
+            "ty": 680.24,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "洛恩"
+            ],
+            "query": "洛恩",
+            "geo": {
+              "lat": -38.5368534,
+              "lng": 143.9738066
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad365310b0c1765:0x40579a430a0c860"
+          },
+          {
+            "id": "ChIJAczEik9k02oREzjcvP7rmnE",
+            "x": 1033.11,
+            "y": 553.92,
+            "color": "#e77e22",
+            "tx": 1001.11,
+            "ty": 521.92,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Sheoak Falls"
+            ],
+            "query": "Sheoak Falls",
+            "geo": {
+              "lat": -38.5656509,
+              "lng": 143.96081669999998
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad3644f8ac4cc01:0x719aebfebcdc3813"
+          },
+          {
+            "id": "ChIJga0hRlNC02oRT3qW-lGOZew",
+            "x": 1039.48,
+            "y": 616.78,
+            "color": "#e77e22",
+            "tx": 1071.48,
+            "ty": 666.78,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Kafe Koala"
+            ],
+            "query": "Kafe Koala",
+            "geo": {
+              "lat": -38.6675116,
+              "lng": 143.8606806
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad342534621ad81:0xec658e51fa967a4f"
+          },
+          {
+            "id": "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+            "x": 965.41,
+            "y": 702.17,
+            "color": "#e77e22",
+            "tx": 933.41,
+            "ty": 752.17,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Apollo Bay"
+            ],
+            "query": "Apollo Bay",
+            "geo": {
+              "lat": -38.7551525,
+              "lng": 143.66758529999998
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad339e22a183791:0x40579a430a0bf20"
+          },
+          {
+            "id": "ChIJwQHAQyM302oR49Q4aQakvtw",
+            "x": 962.31,
+            "y": 586.28,
+            "color": "#e77e22",
+            "tx": 824.31,
+            "ty": 688.28,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Marriner's Lookout"
+            ],
+            "query": "Marriner's Lookout",
+            "geo": {
+              "lat": -38.7368861,
+              "lng": 143.6673863
+            },
+            "days": [
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad3372343c001c1:0xdcbea4066938d4e3"
+          },
+          {
+            "id": "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+            "x": 919.23,
+            "y": 644.96,
+            "color": "#618344",
+            "tx": 1057.23,
+            "ty": 746.96,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Maits Rest Rainforest Walk"
+            ],
+            "query": "Maits Rest Rainforest Walk",
+            "geo": {
+              "lat": -38.755775,
+              "lng": 143.5546322
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad32df240ccf8f7:0x622c5a74401b84fe"
+          },
+          {
+            "id": "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+            "x": 827.51,
+            "y": 648.74,
+            "color": "#618344",
+            "tx": 689.51,
+            "ty": 750.74,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Gibson Steps"
+            ],
+            "query": "Gibson Steps",
+            "geo": {
+              "lat": -38.668694599999995,
+              "lng": 143.1120188
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829e0b8fb3e213:0xa49c4dc5cb44c4cc"
+          },
+          {
+            "id": "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+            "x": 787.05,
+            "y": 534.3,
+            "color": "#618344",
+            "tx": 709.05,
+            "ty": 610.3,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Twelve Apostles"
+            ],
+            "query": "Twelve Apostles",
+            "geo": {
+              "lat": -38.6621015,
+              "lng": 143.1050917
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829e11284f6811:0xd1ed6bbc329b8df0",
+            "photo": {
+              "url": "assets/photos/landmarks/twelve-apostles.jpg",
+              "alt": "维多利亚州十二门徒海岸景观",
+              "author": "Dietmar Rabich",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0930.jpg",
+              "overview": true,
+              "marker": true
+            }
+          },
+          {
+            "id": "ChIJ3bfJP86fgqoRNVotP63Yadk",
+            "x": 765.22,
+            "y": 639.2,
+            "color": "#618344",
+            "tx": 733.22,
+            "ty": 689.2,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "刀锋崖"
+            ],
+            "query": "刀锋崖",
+            "geo": {
+              "lat": -38.6499275,
+              "lng": 143.07273709999998
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829fce3fc9b7dd:0xd969d8ad3f2d5a35"
+          },
+          {
+            "id": "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+            "x": 806.43,
+            "y": 592.79,
+            "color": "#618344",
+            "tx": 728.43,
+            "ty": 668.79,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Loch Ard Gorge"
+            ],
+            "query": "Loch Ard Gorge",
+            "geo": {
+              "lat": -38.6465896,
+              "lng": 143.0705094
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa829fd01a5f8c0d:0x4db26a33dbc7bcdd"
+          },
+          {
+            "id": "ChIJExDJO9aggqoRGKaoThTm1Mk",
+            "x": 702.02,
+            "y": 623.34,
+            "color": "#618344",
+            "tx": 840.02,
+            "ty": 535.34,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "London Bridge"
+            ],
+            "query": "London Bridge",
+            "geo": {
+              "lat": -38.6224139,
+              "lng": 142.9318583
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82a0d63bc91013:0xc9d4e6144ea8a618"
+          },
+          {
+            "id": "ChIJOVO1OCingqoRrruRg84I2Nw",
+            "x": 746.34,
+            "y": 578.93,
+            "color": "#618344",
+            "tx": 714.34,
+            "ty": 546.93,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "The Grotto"
+            ],
+            "query": "The Grotto",
+            "geo": {
+              "lat": -38.6185067,
+              "lng": 142.9145274
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82a72838b55339:0xdcd808ce8391bbae"
+          },
+          {
+            "id": "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+            "x": 686.64,
+            "y": 562.11,
+            "color": "#618344",
+            "tx": 654.64,
+            "ty": 612.11,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Bay Of Islands"
+            ],
+            "query": "Bay Of Islands",
+            "geo": {
+              "lat": -38.5848139,
+              "lng": 142.8273399
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0xaa82aa9aba1b7d05:0xf0579a51442a910"
+          },
+          {
+            "id": "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+            "x": 606.72,
+            "y": 430.09,
+            "color": "#618344",
+            "tx": 468.72,
+            "ty": 532.09,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Warrnambool"
+            ],
+            "query": "Warrnambool",
+            "geo": {
+              "lat": -38.3686779,
+              "lng": 142.4982086
+            },
+            "days": [
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4dfacb74f9cb:0x40579a430a0cf30"
+          },
+          {
+            "id": "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+            "x": 665.19,
+            "y": 467.36,
+            "color": "#209aaa",
+            "tx": 803.19,
+            "ty": 379.36,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD"
+            ],
+            "query": "WARRNAMBOOL WILDLIFE ENCOUNTERS, GREAT OCEAN ROAD",
+            "geo": {
+              "lat": -38.3420755,
+              "lng": 142.6497857
+            },
+            "days": [
+              10
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd573c7663213f:0xc25f46e4e961b784"
+          },
+          {
+            "id": "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+            "x": 623.33,
+            "y": 548.78,
+            "color": "#209aaa",
+            "tx": 485.33,
+            "ty": 460.78,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Flagstaff Hill Maritime Village"
+            ],
+            "query": "Flagstaff Hill Maritime Village",
+            "geo": {
+              "lat": -38.3895412,
+              "lng": 142.4851155
+            },
+            "days": [
+              10
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4cfc1c627763:0xadd2cfaa26704560"
+          },
+          {
+            "id": "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+            "x": 552.3,
+            "y": 461.74,
+            "color": "#209aaa",
+            "tx": 630.3,
+            "ty": 399.74,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Lake Pertobe"
+            ],
+            "query": "Lake Pertobe",
+            "geo": {
+              "lat": -38.3887126,
+              "lng": 142.4761952
+            },
+            "days": [
+              10
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4cf0713f55eb:0x2a0579a46d5dc0b0"
+          },
+          {
+            "id": "ChIJeQkBUDhNzWoRkaYvNqB-I84",
+            "x": 563.72,
+            "y": 532.56,
+            "color": "#209aaa",
+            "tx": 425.72,
+            "ty": 634.56,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Deep Blue Hot Springs Warrnambool"
+            ],
+            "query": "Deep Blue Hot Springs Warrnambool",
+            "geo": {
+              "lat": -38.3976541,
+              "lng": 142.4737709
+            },
+            "days": [
+              10
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4d3850010979:0xce237ea0362fa691"
+          },
+          {
+            "id": "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+            "x": 508.15,
+            "y": 506.55,
+            "color": "#8865a5",
+            "tx": 430.15,
+            "ty": 444.55,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Tower Hill Wildlife Reserve (Parks Victoria)"
+            ],
+            "query": "Tower Hill Wildlife Reserve (Parks Victoria)",
+            "geo": {
+              "lat": -38.318329399999996,
+              "lng": 142.3637695
+            },
+            "days": [
+              11
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd35f5762f5fa3:0x9a87db199c867e99"
+          },
+          {
+            "id": "ChIJnRuiwAgtzWoR8MugMKR5BQQ",
+            "x": 474.95,
+            "y": 454.53,
+            "color": "#8865a5",
+            "tx": 396.95,
+            "ty": 530.53,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "费里港"
+            ],
+            "query": "费里港",
+            "geo": {
+              "lat": -38.3806327,
+              "lng": 142.2294039
+            },
+            "days": [
+              11
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd2d08c0a21b9d:0x40579a430a0cbf0"
+          },
+          {
+            "id": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+            "x": 1164.04,
+            "y": 385.25,
+            "color": "#397dc1",
+            "tx": 1026.04,
+            "ty": 297.25,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Holiday Inn & Suites Geelong by IHG"
+            ],
+            "query": "Holiday Inn & Suites Geelong by IHG",
+            "geo": {
+              "lat": -38.1482312,
+              "lng": 144.3551999
+            },
+            "days": [
+              7,
+              8
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4140491d830d3:0xd67fc88cc35211b3"
+          },
+          {
+            "id": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+            "x": 982.77,
+            "y": 645,
+            "color": "#e77e22",
+            "tx": 1060.77,
+            "ty": 583,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Sandpiper Motel Apollo Bay- Great Ocean Road"
+            ],
+            "query": "Sandpiper Motel Apollo Bay- Great Ocean Road",
+            "geo": {
+              "lat": -38.751563,
+              "lng": 143.668294
+            },
+            "days": [
+              8,
+              9
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad336dc44911fff:0x27e73f34c122190d"
+          },
+          {
+            "id": "ChIJGT48felMzWoRCnrF8CA1zBU",
+            "x": 608.03,
+            "y": 489.71,
+            "color": "#618344",
+            "tx": 470.03,
+            "ty": 591.71,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Deep Blue Hotel & Hot Springs"
+            ],
+            "query": "Deep Blue Hotel & Hot Springs",
+            "geo": {
+              "lat": -38.397194299999995,
+              "lng": 142.4734688
+            },
+            "days": [
+              9,
+              10,
+              11
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4ce97d3c3e19:0x15cc3520f0c57a0a"
+          }
+        ],
+        "overviewPlaceIds": [
+          "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+          "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+          "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+          "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+          "ChIJ3bfJP86fgqoRNVotP63Yadk",
+          "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+          "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+          "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+          "ChIJnRuiwAgtzWoR8MugMKR5BQQ"
+        ],
+        "dailyLayouts": {
+          "7": {
+            "places": [
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+            ],
+            "labels": {
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ": {
+                "x": 1254.65,
+                "y": 372.63,
+                "anchor": "start"
+              },
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y": {
+                "x": 1026.04,
+                "y": 297.25,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 1193.35,
+                "y": 394.94
+              }
+            ]
+          },
+          "8": {
+            "places": [
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ",
+              "ChIJwdwZfYB71GoRXsh26Rj97WM",
+              "ChIJb1x8iUd702oR4L6gMKR5BQQ",
+              "ChIJszM9KHx-02oRffOrQlBJxeg",
+              "ChIJZRcMCzFl02oRYMigMKR5BQQ",
+              "ChIJAczEik9k02oREzjcvP7rmnE",
+              "ChIJga0hRlNC02oRT3qW-lGOZew",
+              "ChIJkTcYKuI502oRIL-gMKR5BQQ",
+              "ChIJwQHAQyM302oR49Q4aQakvtw",
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
+            ],
+            "labels": {
+              "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y": {
+                "x": 1026.04,
+                "y": 297.25,
+                "anchor": "end"
+              },
+              "ChIJgdYXBHty1GoRoM2MIXVWBAQ": {
+                "x": 1254.65,
+                "y": 372.63,
+                "anchor": "start"
+              },
+              "ChIJwdwZfYB71GoRXsh26Rj97WM": {
+                "x": 1137.75,
+                "y": 448.93,
+                "anchor": "end"
+              },
+              "ChIJb1x8iUd702oR4L6gMKR5BQQ": {
+                "x": 1212.17,
+                "y": 470.68,
+                "anchor": "start"
+              },
+              "ChIJszM9KHx-02oRffOrQlBJxeg": {
+                "x": 1044.97,
+                "y": 474.96,
+                "anchor": "end"
+              },
+              "ChIJZRcMCzFl02oRYMigMKR5BQQ": {
+                "x": 1228.4,
+                "y": 680.24,
+                "anchor": "start"
+              },
+              "ChIJAczEik9k02oREzjcvP7rmnE": {
+                "x": 1001.11,
+                "y": 521.92,
+                "anchor": "end"
+              },
+              "ChIJga0hRlNC02oRT3qW-lGOZew": {
+                "x": 1071.48,
+                "y": 666.78,
+                "anchor": "start"
+              },
+              "ChIJkTcYKuI502oRIL-gMKR5BQQ": {
+                "x": 933.41,
+                "y": 752.17,
+                "anchor": "end"
+              },
+              "ChIJwQHAQyM302oR49Q4aQakvtw": {
+                "x": 824.31,
+                "y": 688.28,
+                "anchor": "end"
+              },
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc": {
+                "x": 1060.77,
+                "y": 583,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 1193.35,
+                "y": 394.94
+              },
+              {
+                "items": [],
+                "x": 1196.2,
+                "y": 442.78
+              },
+              {
+                "items": [],
+                "x": 1151.96,
+                "y": 506.8
+              },
+              {
+                "items": [],
+                "x": 1105.57,
+                "y": 519.82
+              },
+              {
+                "items": [],
+                "x": 1083.68,
+                "y": 542.6
+              },
+              {
+                "items": [],
+                "x": 1061.76,
+                "y": 566.08
+              },
+              {
+                "items": [],
+                "x": 1036.3,
+                "y": 585.35
+              },
+              {
+                "items": [],
+                "x": 1002.44,
+                "y": 659.47
+              },
+              {
+                "items": [],
+                "x": 963.86,
+                "y": 644.22
+              },
+              {
+                "items": [],
+                "x": 972.54,
+                "y": 615.64
+              }
+            ]
+          },
+          "9": {
+            "places": [
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+              "ChIJ9_jMQPIt02oR_oQbQHRaLGI",
+              "ChIJE-KzjwuegqoRzMREy8VNnKQ",
+              "ChIJEWhPKBGegqoR8I2bMrxr7dE",
+              "ChIJ3bfJP86fgqoRNVotP63Yadk",
+              "ChIJDYxfGtCfgqoR3bzH2zNqsk0",
+              "ChIJExDJO9aggqoRGKaoThTm1Mk",
+              "ChIJOVO1OCingqoRrruRg84I2Nw",
+              "ChIJBX0bupqqgqoREKlCFKV5BQ8",
+              "ChIJy_l0y_pNzWoRMM-gMKR5BQQ",
+              "ChIJGT48felMzWoRCnrF8CA1zBU"
+            ],
+            "labels": {
+              "ChIJ_x-RRNw202oRDRkiwTQ_5yc": {
+                "x": 1060.77,
+                "y": 583,
+                "anchor": "start"
+              },
+              "ChIJ9_jMQPIt02oR_oQbQHRaLGI": {
+                "x": 1057.23,
+                "y": 746.96,
+                "anchor": "start"
+              },
+              "ChIJE-KzjwuegqoRzMREy8VNnKQ": {
+                "x": 689.51,
+                "y": 750.74,
+                "anchor": "end"
+              },
+              "ChIJEWhPKBGegqoR8I2bMrxr7dE": {
+                "x": 709.05,
+                "y": 610.3,
+                "anchor": "end"
+              },
+              "ChIJ3bfJP86fgqoRNVotP63Yadk": {
+                "x": 733.22,
+                "y": 689.2,
+                "anchor": "end"
+              },
+              "ChIJDYxfGtCfgqoR3bzH2zNqsk0": {
+                "x": 728.43,
+                "y": 668.79,
+                "anchor": "end"
+              },
+              "ChIJExDJO9aggqoRGKaoThTm1Mk": {
+                "x": 840.02,
+                "y": 535.34,
+                "anchor": "start"
+              },
+              "ChIJOVO1OCingqoRrruRg84I2Nw": {
+                "x": 714.34,
+                "y": 546.93,
+                "anchor": "end"
+              },
+              "ChIJBX0bupqqgqoREKlCFKV5BQ8": {
+                "x": 654.64,
+                "y": 612.11,
+                "anchor": "end"
+              },
+              "ChIJy_l0y_pNzWoRMM-gMKR5BQQ": {
+                "x": 468.72,
+                "y": 532.09,
+                "anchor": "end"
+              },
+              "ChIJGT48felMzWoRCnrF8CA1zBU": {
+                "x": 470.03,
+                "y": 591.71,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 951,
+                "y": 644.98
+              },
+              {
+                "items": [],
+                "x": 873.37,
+                "y": 646.85
+              },
+              {
+                "items": [],
+                "x": 807.28,
+                "y": 591.52
+              },
+              {
+                "items": [],
+                "x": 776.13,
+                "y": 586.75
+              },
+              {
+                "items": [],
+                "x": 785.83,
+                "y": 616
+              },
+              {
+                "items": [],
+                "x": 754.22,
+                "y": 608.07
+              },
+              {
+                "items": [],
+                "x": 724.18,
+                "y": 601.13
+              },
+              {
+                "items": [],
+                "x": 716.49,
+                "y": 570.52
+              },
+              {
+                "items": [],
+                "x": 646.68,
+                "y": 496.1
+              },
+              {
+                "items": [],
+                "x": 607.38,
+                "y": 459.9
+              }
+            ]
+          },
+          "10": {
+            "places": [
+              "ChIJGT48felMzWoRCnrF8CA1zBU",
+              "ChIJPyFjdjxXzWoRhLdh6eRGX8I",
+              "ChIJY3diHPxMzWoRYEVwJqrP0q0",
+              "ChIJ61U_cfBMzWoRsMBdbaR5BSo",
+              "ChIJeQkBUDhNzWoRkaYvNqB-I84"
+            ],
+            "labels": {
+              "ChIJGT48felMzWoRCnrF8CA1zBU": {
+                "x": 470.03,
+                "y": 591.71,
+                "anchor": "end"
+              },
+              "ChIJPyFjdjxXzWoRhLdh6eRGX8I": {
+                "x": 803.19,
+                "y": 379.36,
+                "anchor": "start"
+              },
+              "ChIJY3diHPxMzWoRYEVwJqrP0q0": {
+                "x": 485.33,
+                "y": 460.78,
+                "anchor": "end"
+              },
+              "ChIJ61U_cfBMzWoRsMBdbaR5BSo": {
+                "x": 630.3,
+                "y": 399.74,
+                "anchor": "start"
+              },
+              "ChIJeQkBUDhNzWoRkaYvNqB-I84": {
+                "x": 425.72,
+                "y": 634.56,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 636.61,
+                "y": 478.53
+              },
+              {
+                "items": [],
+                "x": 644.26,
+                "y": 508.07
+              },
+              {
+                "items": [],
+                "x": 587.82,
+                "y": 505.26
+              },
+              {
+                "items": [],
+                "x": 558.01,
+                "y": 497.15
+              },
+              {
+                "items": [],
+                "x": 585.88,
+                "y": 511.13
+              }
+            ]
+          },
+          "11": {
+            "places": [
+              "ChIJGT48felMzWoRCnrF8CA1zBU",
+              "ChIJo18vdvU1zWoRmX6GnBnbh5o",
+              "ChIJnRuiwAgtzWoR8MugMKR5BQQ"
+            ],
+            "labels": {
+              "ChIJGT48felMzWoRCnrF8CA1zBU": {
+                "x": 470.03,
+                "y": 591.71,
+                "anchor": "end"
+              },
+              "ChIJo18vdvU1zWoRmX6GnBnbh5o": {
+                "x": 430.15,
+                "y": 444.55,
+                "anchor": "end"
+              },
+              "ChIJnRuiwAgtzWoR8MugMKR5BQQ": {
+                "x": 396.95,
+                "y": 530.53,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 558.09,
+                "y": 498.13
+              },
+              {
+                "items": [],
+                "x": 491.55,
+                "y": 480.54
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "melbourne",
+        "label": "墨尔本与菲利普岛",
+        "countryCode": "AU",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "upland-basin",
+        "mapModeReason": "dense-place-cluster",
+        "mapModeMetrics": {
+          "placeCount": 13,
+          "geoPlaceCount": 13,
+          "widthKm": 44.4,
+          "heightKm": 93.97,
+          "spanKm": 97.16,
+          "averageNearestKm": 5.38,
+          "components": 1,
+          "largestLegKm": 80.15,
+          "jumpRatio": 57.88
+        },
+        "days": [
+          11,
+          12,
+          13
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-06-upland-basin.webp",
+        "title": "墨尔本与菲利普岛 · 旅行路线",
+        "ariaLabel": "墨尔本与菲利普岛模板化旅行路线示意图，共3天",
+        "disclaimer": "本图为模板化行程示意图，仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。如需使用真实国家或城市地图，可在生成后自行调整。",
+        "heading": {
+          "text": "墨尔本与菲利普岛",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 11,
+            "color": "#8865a5",
+            "placeIds": [
+              "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+            ],
+            "paths": [
+              "M679.35 298.31 C733.5 297.1 783.7 310.7 826.87 338.19"
+            ],
+            "overviewPaths": [
+              "M679.35 298.31 C733.5 297.1 783.7 310.7 826.87 338.19"
+            ]
+          },
+          {
+            "day": 12,
+            "color": "#df6185",
+            "placeIds": [
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+              "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+              "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+              "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+            ],
+            "paths": [
+              "M826.87 338.19 C883.8 353.3 940.2 351.7 992.89 333.7 C1000.8 494.8 979.0 651.7 928.72 795.32 C896.4 798.6 867.6 810.3 843.89 829.81 C808.1 663.7 802.3 496.5 826.87 338.19"
+            ],
+            "overviewPaths": [
+              "M826.87 338.19 C883.8 353.3 940.2 351.7 992.89 333.7 C1000.8 494.8 979.0 651.7 928.72 795.32 C896.4 798.6 867.6 810.3 843.89 829.81 C808.1 663.7 802.3 496.5 826.87 338.19"
+            ]
+          },
+          {
+            "day": 13,
+            "color": "#397dc1",
+            "placeIds": [
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+              "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+              "ChIJT8T86bZC1moRqw7W6kVH5zg",
+              "ChIJbVDLhrZC1moRV4a7bU8smmI",
+              "ChIJFWocUrZC1moRDz6RTASZJqk",
+              "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+              "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+              "ChIJuYNitLFC1moRVB5vMAKPcTM",
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+            ],
+            "paths": [
+              "M826.87 338.19 C853.2 349.1 874.4 366.3 889.41 388.69 C875.1 312.5 841.3 246.2 790.05 193.76 C817.5 269.0 822.3 345.7 804.31 419.35 C804.4 364.8 789.6 314.6 761.01 271.63 C739.7 322.0 706.5 362.5 663.25 390.95 C740.6 364.0 804.6 318.3 851.33 256.48 C824.0 302.6 786.3 337.6 740.58 359.56 C772.1 360.9 801.4 353.7 826.87 338.19"
+            ],
+            "overviewPaths": [
+              "M826.87 338.19 C853.2 349.1 874.4 366.3 889.41 388.69 C857.4 390.6 828.5 401.0 804.31 419.35 C774.8 373.5 760.1 323.2 761.01 271.63 C715.8 302.4 682.6 343.0 663.25 390.95 C713.8 326.4 777.7 280.7 851.33 256.48 C834.8 281.8 826.5 309.6 826.87 338.19"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "ChIJFzmq66lZ1moRkPAvBXZWBA8",
+            "x": 695.95,
+            "y": 206.5,
+            "color": "#397dc1",
+            "tx": 663.95,
+            "ty": 174.5,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "墨尔本机场"
+            ],
+            "query": "墨尔本机场",
+            "geo": {
+              "lat": -37.670822799999996,
+              "lng": 144.8429763
+            },
+            "days": [],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad659a9ebaa3917:0xf045676052ff090"
+          },
+          {
+            "id": "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+            "x": 679.35,
+            "y": 298.31,
+            "color": "#8865a5",
+            "tx": 647.35,
+            "ty": 266.31,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "A'Beckett St"
+            ],
+            "query": "A'Beckett St",
+            "geo": {
+              "lat": -37.8095944,
+              "lng": 144.9596133
+            },
+            "days": [
+              11
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d3518335843:0x21c3f13f76766f22"
+          },
+          {
+            "id": "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+            "x": 992.89,
+            "y": 333.7,
+            "color": "#df6185",
+            "tx": 1070.89,
+            "ty": 271.7,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Dandenong Ranges"
+            ],
+            "query": "Dandenong Ranges",
+            "geo": {
+              "lat": -37.8333333,
+              "lng": 145.35
+            },
+            "days": [
+              12
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad6250dabc346ed:0x8d9423bd6da430c"
+          },
+          {
+            "id": "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+            "x": 928.72,
+            "y": 795.32,
+            "color": "#df6185",
+            "tx": 850.72,
+            "ty": 733.32,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "菲利普岛"
+            ],
+            "query": "菲利普岛",
+            "geo": {
+              "lat": -38.4898703,
+              "lng": 145.2038278
+            },
+            "days": [
+              12
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad5f2404f72b8e7:0x790c0371a1b16c33"
+          },
+          {
+            "id": "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+            "x": 843.89,
+            "y": 829.81,
+            "color": "#df6185",
+            "tx": 981.89,
+            "ty": 741.81,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Nobbies Centre"
+            ],
+            "query": "Nobbies Centre",
+            "geo": {
+              "lat": -38.5174032,
+              "lng": 145.117975
+            },
+            "days": [
+              12
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad5be3523d4c67b:0x51c6527b155c161b"
+          },
+          {
+            "id": "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+            "x": 889.41,
+            "y": 388.69,
+            "color": "#397dc1",
+            "tx": 1027.41,
+            "ty": 490.69,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Flinders Street"
+            ],
+            "query": "Flinders Street",
+            "geo": {
+              "lat": -37.8182711,
+              "lng": 144.96706179999998
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6af832249:0xe39e415e49a7c44e",
+            "photo": {
+              "url": "assets/photos/landmarks/flinders-street.jpg",
+              "alt": "墨尔本弗林德斯街车站历史影像",
+              "author": "Victoria State Transport Authority; restored by Adam Cuerden",
+              "license": "Public domain",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flinders_Street_Station,_Melbourne,_at_the_intersection_of_Swanston_Street_and_Flinders_Street,_1927_-_Glass_plate.jpg",
+              "overview": true,
+              "marker": true
+            }
+          },
+          {
+            "id": "ChIJT8T86bZC1moRqw7W6kVH5zg",
+            "x": 790.05,
+            "y": 193.76,
+            "color": "#397dc1",
+            "tx": 822.05,
+            "ty": 161.76,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Fed Square"
+            ],
+            "query": "Fed Square",
+            "geo": {
+              "lat": -37.8179789,
+              "lng": 144.96905759999999
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6e9fcc44f:0x38e74745ead60eab"
+          },
+          {
+            "id": "ChIJbVDLhrZC1moRV4a7bU8smmI",
+            "x": 804.31,
+            "y": 419.35,
+            "color": "#397dc1",
+            "tx": 772.31,
+            "ty": 469.35,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "St Paul's Cathedral, Melbourne"
+            ],
+            "query": "St Paul's Cathedral, Melbourne",
+            "geo": {
+              "lat": -37.817029,
+              "lng": 144.96768699999998
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b686cb506d:0x629a2c4f6dbb8657"
+          },
+          {
+            "id": "ChIJFWocUrZC1moRDz6RTASZJqk",
+            "x": 761.01,
+            "y": 271.63,
+            "color": "#397dc1",
+            "tx": 623.01,
+            "ty": 373.63,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Hosier Ln"
+            ],
+            "query": "Hosier Ln",
+            "geo": {
+              "lat": -37.816527199999996,
+              "lng": 144.9691574
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b6521c6a15:0xa92699044c913e0f"
+          },
+          {
+            "id": "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+            "x": 663.25,
+            "y": 390.95,
+            "color": "#397dc1",
+            "tx": 631.25,
+            "ty": 358.95,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "Southbank Promenade"
+            ],
+            "query": "Southbank Promenade",
+            "geo": {
+              "lat": -37.8200274,
+              "lng": 144.9654616
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad6430037fb73db:0x637455756c2a32c7"
+          },
+          {
+            "id": "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+            "x": 851.33,
+            "y": 256.48,
+            "color": "#397dc1",
+            "tx": 989.33,
+            "ty": 168.48,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Royal Botanic Gardens Victoria - Melbourne Gardens"
+            ],
+            "query": "Royal Botanic Gardens Victoria - Melbourne Gardens",
+            "geo": {
+              "lat": -37.8302443,
+              "lng": 144.9801496
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad64296fb298d3b:0xf0456760531d7c0"
+          },
+          {
+            "id": "ChIJuYNitLFC1moRVB5vMAKPcTM",
+            "x": 740.58,
+            "y": 359.56,
+            "color": "#397dc1",
+            "tx": 662.58,
+            "ty": 435.56,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "National Gallery of Victoria"
+            ],
+            "query": "National Gallery of Victoria",
+            "geo": {
+              "lat": -37.8225942,
+              "lng": 144.9689278
+            },
+            "days": [
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad642b1b46283b9:0x33718f02306f1e54"
+          },
+          {
+            "id": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+            "x": 826.87,
+            "y": 338.19,
+            "color": "#8865a5",
+            "tx": 858.87,
+            "ty": 388.19,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "Veriu Queen Victoria Market"
+            ],
+            "query": "Veriu Queen Victoria Market",
+            "geo": {
+              "lat": -37.8075026,
+              "lng": 144.95914489999998
+            },
+            "days": [
+              11,
+              12,
+              13
+            ],
+            "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d0f15ef81b9:0x884509b93bc77397"
+          }
+        ],
+        "overviewPlaceIds": [
+          "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+          "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+          "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+          "ChIJe8bUIzW-1WoRGxZcFXtSxlE",
+          "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+          "ChIJbVDLhrZC1moRV4a7bU8smmI",
+          "ChIJFWocUrZC1moRDz6RTASZJqk",
+          "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+          "ChIJO40p-5ZC1moRwNcxBXZWBA8"
+        ],
+        "dailyLayouts": {
+          "11": {
+            "places": [
+              "ChIJQ1gzGDVd1moRIm92dj_xwyE",
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
+            ],
+            "labels": {
+              "ChIJQ1gzGDVd1moRIm92dj_xwyE": {
+                "x": 647.35,
+                "y": 266.31,
+                "anchor": "end"
+              },
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg": {
+                "x": 858.87,
+                "y": 388.19,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 753.11,
+                "y": 318.25
+              }
+            ]
+          },
+          "12": {
+            "places": [
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+              "ChIJ7UbDqw0l1moRDEPa1jtC2Qg",
+              "ChIJ57hyT0Dy1WoRM2yxoXEDDHk",
+              "ChIJe8bUIzW-1WoRGxZcFXtSxlE"
+            ],
+            "labels": {
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg": {
+                "x": 858.87,
+                "y": 388.19,
+                "anchor": "start"
+              },
+              "ChIJ7UbDqw0l1moRDEPa1jtC2Qg": {
+                "x": 1070.89,
+                "y": 271.7,
+                "anchor": "start"
+              },
+              "ChIJ57hyT0Dy1WoRM2yxoXEDDHk": {
+                "x": 850.72,
+                "y": 733.32,
+                "anchor": "end"
+              },
+              "ChIJe8bUIzW-1WoRGxZcFXtSxlE": {
+                "x": 981.89,
+                "y": 741.81,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 909.88,
+                "y": 335.94
+              },
+              {
+                "items": [],
+                "x": 960.81,
+                "y": 564.51
+              },
+              {
+                "items": [],
+                "x": 886.31,
+                "y": 812.57
+              },
+              {
+                "items": [],
+                "x": 835.38,
+                "y": 584
+              }
+            ]
+          },
+          "13": {
+            "places": [
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+              "ChIJSSKDr7ZC1moRTsSnSV5BnuM",
+              "ChIJT8T86bZC1moRqw7W6kVH5zg",
+              "ChIJbVDLhrZC1moRV4a7bU8smmI",
+              "ChIJFWocUrZC1moRDz6RTASZJqk",
+              "ChIJ23P7NwBD1moRxzIqbHVVdGM",
+              "ChIJO40p-5ZC1moRwNcxBXZWBA8",
+              "ChIJuYNitLFC1moRVB5vMAKPcTM"
+            ],
+            "labels": {
+              "ChIJuYHvFQ9d1moRl3PHO7kJRYg": {
+                "x": 858.87,
+                "y": 388.19,
+                "anchor": "start"
+              },
+              "ChIJSSKDr7ZC1moRTsSnSV5BnuM": {
+                "x": 1027.41,
+                "y": 490.69,
+                "anchor": "start"
+              },
+              "ChIJT8T86bZC1moRqw7W6kVH5zg": {
+                "x": 822.05,
+                "y": 161.76,
+                "anchor": "start"
+              },
+              "ChIJbVDLhrZC1moRV4a7bU8smmI": {
+                "x": 772.31,
+                "y": 469.35,
+                "anchor": "end"
+              },
+              "ChIJFWocUrZC1moRDz6RTASZJqk": {
+                "x": 623.01,
+                "y": 373.63,
+                "anchor": "end"
+              },
+              "ChIJ23P7NwBD1moRxzIqbHVVdGM": {
+                "x": 631.25,
+                "y": 358.95,
+                "anchor": "end"
+              },
+              "ChIJO40p-5ZC1moRwNcxBXZWBA8": {
+                "x": 989.33,
+                "y": 168.48,
+                "anchor": "start"
+              },
+              "ChIJuYNitLFC1moRVB5vMAKPcTM": {
+                "x": 662.58,
+                "y": 435.56,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 858.14,
+                "y": 363.44
+              },
+              {
+                "items": [],
+                "x": 839.73,
+                "y": 291.23
+              },
+              {
+                "items": [],
+                "x": 797.18,
+                "y": 306.56
+              },
+              {
+                "items": [],
+                "x": 782.66,
+                "y": 345.49
+              },
+              {
+                "items": [],
+                "x": 712.13,
+                "y": 331.29
+              },
+              {
+                "items": [],
+                "x": 757.29,
+                "y": 323.72
+              },
+              {
+                "items": [],
+                "x": 795.96,
+                "y": 308.02
+              },
+              {
+                "items": [],
+                "x": 783.73,
+                "y": 348.88
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "extra": {
+    "packingGroups": [
+      [
+        "衣服 · 每人数量",
+        [
+          "短袖 4 件：2 件透气速干＋2 件城市基础款",
+          "薄长袖 2 件：1 件速干／薄美利奴＋1 件衬衫或柔软长袖",
+          "轻抓绒／薄羊毛衫 1 件：徒步和冷夜中层",
+          "轻羽绒／保暖棉服 1 件：怕冷者建议带，企鹅岛优先",
+          "带帽防风防水外套 1 件：能套在抓绒和轻羽绒外",
+          "长裤 2 条：1 条快干防风＋1 条舒适直筒，裤脚不拖地",
+          "轻裙 1 件（可选）：连衣裙／半裙二选一；不穿裙可省",
+          "薄保暖打底 1 套：含打底裤，企鹅岛和冷天用",
+          "内裤 7 条＋文胸 3 件＋袜子 7 双（含厚袜 2 双）；中途洗衣",
+          "睡衣 1 套；泳衣 1 套，温泉用",
+          "好看的薄针织开衫 1 件：日常和歌剧院共用"
+        ]
+      ],
+      [
+        "鞋与户外",
+        [
+          "穿熟的防滑步行鞋 1 双：飞机穿，覆盖徒步和城市",
+          "备用轻鞋 1 双（可选）：不磨脚、能长走才带",
+          "防滑拖鞋 1 双：住宿与温泉，不当全天步行鞋",
+          "防晒帽 1 顶＋墨镜；海边选不易吹跑的帽子",
+          "围巾／脖套 1 件＋薄手套 1 双：企鹅夜建议带",
+          "SPF50+ 防晒霜＋润唇膏，按旅程用量准备",
+          "15—20L 轻背包＋防水收纳袋，装得下保暖层",
+          "保温水瓶＋少量路餐／零食（入境食品按要求申报）",
+          "温泉毛巾（如不提供）＋湿衣袋；另留干内衣和干袜"
+        ]
+      ],
+      [
+        "证件与预订",
+        [
+          "护照原件＋澳洲签证批准信离线副本",
+          "机票、酒店、旅行保险订单离线保存",
+          "驾照原件＋认可翻译／许可，核对租车条款",
+          "主驾驶信用卡＋备用银行卡＋少量澳元",
+          "核对 SYD／MEL／AVV、取还车门店和时间",
+          "歌剧院两项订单；动物园、温泉及一日游预约",
+          "紧急联系人、保险理赔电话"
+        ]
+      ],
+      [
+        "电子与随身用品",
+        [
+          "手机＋充电线＋充电器",
+          "澳标 Type I 转换插头；电器核对电压",
+          "符合航司规定的充电宝（随身）",
+          "eSIM／漫游与离线地图",
+          "车载充电器＋手机支架",
+          "个人常用药原包装＋英文处方（如适用）",
+          "晕车药、创可贴、个人卫生用品",
+          "牙刷、牙膏、洗漱包、纸巾",
+          "随身包放一套换洗衣物与保暖层"
+        ]
+      ],
+      [
+        "为怕冷和轻松拍照补充",
+        [
+          "护耳针织帽 1 顶：企鹅夜间替换防晒帽",
+          "折叠坐垫／轻毯二选一：减少海边久坐受凉",
+          "发圈＋发夹：大洋路和渡轮固定头发",
+          "保湿面霜＋身体乳小样＋卸妆／洁面",
+          "生理用品＋防磨脚贴，按个人需要准备",
+          "精简化妆包（可选）：常用底妆、眉笔、口红",
+          "扁平斜挎小包＋小耳饰（可选）：歌剧院和城市复用",
+          "备用框架眼镜（如戴隐形）；暖贴少量（可选）",
+          "9/30—10/1 洗衣条件确认＋洗衣袋＋各段行李额度确认"
+        ]
+      ]
+    ],
+    "weatherAndClothing": {
+      "outfitPlan": {
+        "2026-09-25": {
+          "wear": "A 城市：白／浅色短袖＋舒适直筒裤＋步行鞋，开衫随身；若阴冷用薄长袖。日落到达令港时按体感再加外壳。",
+          "photo": "中等偏高：把 QVB／海德公园作为当天主要人像背景，耳饰或彩色开衫就能换感觉；不额外带一套裙子走一整天。",
+          "carry": "开衫、墨镜、防晒、水瓶；港边加防风层。"
+        },
+        "2026-09-26": {
+          "wear": "A 城市：薄长袖／短袖＋同一条直筒裤＋运动鞋；用开衫应对博物馆空调，天热时收进包里。",
+          "photo": "中等：岩石区用衬衫／条纹上衣（从已有 2 件长袖里选）配深裤，和前一天换上身即可。",
+          "carry": "薄开衫、水瓶、防晒；选能放进背包的小购物袋。"
+        },
+        "2026-09-27": {
+          "wear": "A 户外版：速干短袖＋快干长裤＋步行鞋；渡轮备外壳，凉时加轻抓绒。暖天不穿保暖打底走动物园。",
+          "photo": "随手：动物园坡路与步行较多，以轻松为主；有余力在植物园拍几张，不为照片换鞋。",
+          "carry": "防晒帽、水、外壳；空出背包收纳脱下的衣服。"
+        },
+        "2026-09-28": {
+          "wear": "B 歌剧院：薄针织开衫＋唯一一件裙子＋好走的鞋；不想露腿就穿衬衫／针织＋直筒裤。冷时加薄打底，港边带外壳。",
+          "photo": "重点出片日：一套兼顾歌剧院白天与晚间；耳饰＋小包即可。选能穿着开衫拍照的衣服，不靠一直脱外套。",
+          "carry": "开衫、防风层、演出与导览电子票；核对具体场次着装要求。"
+        },
+        "2026-09-29": {
+          "wear": "C 半岛徒步：速干短袖／长袖＋快干长裤＋防滑步行鞋；外壳随身，阴冷时加轻抓绒，走热后及时减层。",
+          "photo": "随手：灯塔和海岸已经足够有辨识度，用帽子或外套点缀；今天不安排裙装、高跟鞋或换装。",
+          "carry": "水、防晒、外壳、发圈、防磨脚贴；查看返程轮渡。"
+        },
+        "2026-09-30": {
+          "wear": "转场：基础内搭＋直筒长裤＋运动鞋＋开衫，轻羽绒放随身行李容易拿的位置；到吉朗后按实际天气加外壳。",
+          "photo": "低：以飞行、取车舒适为主，复用 9/25 的裤子和鞋即可。",
+          "carry": "证件、充电线、一套换洗内衣、轻羽绒；今天或明天确认并完成洗衣。"
+        },
+        "2026-10-01": {
+          "wear": "C 海岸小镇：速干内搭＋轻抓绒／薄针织＋外壳＋快干长裤；怕冷加轻羽绒，进车热了再脱中层。",
+          "photo": "中等：Aireys Inlet／洛恩／阿波罗湾选一处重点拍；晴朗背风时让亮色针织入镜，大风时外套保持穿好、扎起头发。",
+          "carry": "外壳、轻羽绒、发圈、干袜、饮水；轻羽绒和外壳别压在行李箱底。"
+        },
+        "2026-10-02": {
+          "wear": "C 雨林＋十二门徒：速干长袖＋抓绒＋防风防水外套、快干裤和防滑鞋；冷时加轻羽绒，持续降雨时保持羽绒干燥。",
+          "photo": "中低：挑 1—2 个开放观景台拍外套造型；风雨大就缩短停留，不为照片在崖边换裙子。",
+          "carry": "干袜、防水收纳袋、护颈；当天暂无原天气快照覆盖，出发前复查。"
+        },
+        "2026-10-03": {
+          "wear": "E 动物体验＋温泉：柔软长袖＋抓绒／开衫＋好穿脱的长裤，凉时加外壳；温泉换泳衣，出水后马上擦干并换干衣、加保暖层。",
+          "photo": "随手：泳衣选自己穿着舒服的一套；拍摄先看场馆规则，其他行程复用城市／户外套装。",
+          "carry": "泳衣、拖鞋、湿衣袋、干内衣／袜、保暖上衣；毛巾／浴袍是否包含看订单。"
+        },
+        "2026-10-04": {
+          "wear": "保护区＋长途车程：长袖／短袖＋抓绒＋快干或弹力长裤，外壳应对保护区与港口风；腰头不勒更适合久坐。",
+          "photo": "低：费里港沿路拍几张即可；复用海岸衣物，给还车和长途驾驶留出余量。",
+          "carry": "外壳、水、驾车文件；夏令时变更后按当地时间核对还车。"
+        },
+        "2026-10-05": {
+          "wear": "D 最强保暖日：长袖＋抓绒＋轻羽绒＋外壳，长裤内加薄保暖裤；白天热了减层，日落前穿齐。厚袜、护耳帽、护颈、薄手套建议都带。",
+          "photo": "白天中等、晚间只观赏：小火车用亮色针织／外套加发夹；日落后的企鹅观赏区禁止手机、相机拍照及录像，关闭闪光灯也不例外。",
+          "carry": "轻羽绒、雨衣／外壳、帽子、手套、护颈、小坐垫／轻毯、保温水瓶；晨间随身，别留酒店。"
+        },
+        "2026-10-06": {
+          "wear": "A 城市收尾：短袖／薄长袖＋好看的开衫＋直筒裤＋步行鞋；暖且无风时可复用那条裙子，阴雨则穿裤装、带外壳。",
+          "photo": "中等偏高：Flinders Street／涂鸦街／NGV 选 1—2 个背景，复用歌剧院的配色与小包，避免为最后一天多带一套。",
+          "carry": "开衫、外壳、充电宝；若当天返程，随身留保暖层和干衣。"
+        }
+      }
+    },
+    "confirmationEmails": {
+      "flight": 34868420,
+      "hotels": {
+        "stay-1": 35413193,
+        "stay-2": 35413179,
+        "stay-3": 35413205,
+        "stay-4": 35413198,
+        "stay-5": 35413153
+      }
+    }
+  }
+}
