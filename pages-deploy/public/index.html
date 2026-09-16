@@ -142,6 +142,11 @@
     <div class="ticket-dialog__body" id="ticket-dialog-body"></div>
   </dialog>
 
+  <dialog class="ticket-dialog email-dialog" id="email-dialog" aria-labelledby="email-dialog-title">
+    <header><div><span>BOOKING EMAIL</span><h2 id="email-dialog-title">确认邮件</h2></div><button type="button" id="email-dialog-close" aria-label="关闭确认邮件">关闭</button></header>
+    <div class="ticket-dialog__body"><iframe class="email-dialog__frame" id="email-dialog-frame" title="确认邮件原文" src="about:blank" referrerpolicy="no-referrer"></iframe><div class="ticket-dialog__links"><a id="email-dialog-external" target="_blank" rel="noopener noreferrer">在新窗口打开邮件 ↗</a></div></div>
+  </dialog>
+
   <div class="place-map-overlay" id="place-map" hidden>
     <section class="place-map-sheet" role="dialog" aria-modal="true" aria-labelledby="place-map-title">
       <header><h2 id="place-map-title">地点地图</h2><button id="place-map-close" type="button" aria-label="关闭地点地图">关闭</button></header>

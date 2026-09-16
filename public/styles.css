@@ -343,6 +343,10 @@ main { overflow: hidden; }
 .ticket-dialog__empty { margin: 18px 0; padding: 24px 16px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.6; }
 .ticket-dialog__links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .ticket-dialog__links a { min-height: 42px; padding: 0 13px; display: inline-flex; align-items: center; border: 1px solid #c8dadc; border-radius: 999px; color: #205e6b; background: #edf6f5; text-decoration: none; font-size: 12px; font-weight: 720; }
+.email-dialog { width:min(100% - 28px,920px); }
+.email-dialog__frame { display:block;width:100%;height:min(70dvh,760px);border:1px solid var(--line);border-radius:12px;background:white; }
+.schedule-booking-links { display:flex;flex-wrap:wrap;gap:6px;margin-top:9px; }
+.schedule-booking-links .booking-email-link,.schedule-resource-link { display:inline-flex;align-items:center;width:auto;min-height:34px;margin:0;padding:6px 9px;border:1px solid #c8dadc;border-radius:999px;background:#edf6f5;color:#205e6b;font:700 11px/1.3 inherit;text-decoration:none;cursor:pointer; }
 
 .accordion-stack { margin-top: 14px; display: block; }
 .drive-note-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }

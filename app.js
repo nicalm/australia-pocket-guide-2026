@@ -284,9 +284,50 @@ function confirmationEmailUrl(emailId) {
   return emailId && share ? `/api/confirmation/${encodeURIComponent(emailId)}?share=${encodeURIComponent(share)}` : "";
 }
 
-function confirmationEmailLink(emailId) {
+function confirmationEmailLink(emailId, title = "确认邮件", label = "查看原确认邮件") {
   const url = confirmationEmailUrl(emailId);
-  return url ? `<a class="booking-email-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">查看原确认邮件 ↗</a>` : "";
+  return url ? `<button type="button" class="booking-email-link" data-email-url="${escapeHtml(url)}" data-email-title="${escapeHtml(title)}">${escapeHtml(label)}</button>` : "";
+}
+
+function setupEmailDialog() {
+  const dialog = $("#email-dialog");
+  const frame = $("#email-dialog-frame");
+  let opener = null;
+  const close = () => { if (dialog.open) dialog.close(); else dialog.removeAttribute("open"); frame.src = "about:blank"; opener?.focus({ preventScroll: true }); };
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-email-url]");
+    if (!button) return;
+    event.preventDefault(); opener = button;
+    $("#email-dialog-title").textContent = button.dataset.emailTitle || "确认邮件";
+    frame.src = button.dataset.emailUrl; $("#email-dialog-external").href = button.dataset.emailUrl;
+    if (typeof dialog.showModal === "function") dialog.showModal(); else dialog.setAttribute("open", "");
+    $("#email-dialog-close").focus();
+  });
+  $("#email-dialog-close").onclick = close;
+  dialog.addEventListener("click", (event) => { if (event.target === dialog) close(); });
+  dialog.addEventListener("close", () => { frame.src = "about:blank"; });
+}
+
+function scheduleBookingLinks(day, item) {
+  const links = [];
+  if (item.flightId) {
+    const flight = state.data.flights.find((flight) => flight.id === item.flightId);
+    const journey = flight && state.data.flightJourneys.find((journey) => journey.id === flight.journeyId);
+    if (flight && journey) links.push(confirmationEmailLink(journey.confirmationEmailId, `${flight.flightNumber} 航班确认邮件`, `查看 ${flight.flightNumber} 确认邮件`));
+    if (flight) {
+      links.push(`<a class="schedule-resource-link" href="${escapeHtml(mapsSearch(`${flight.departure.airportCode} Airport`))}" target="_blank" rel="noopener">${escapeHtml(flight.departure.airportCode)} 机场地图 ↗</a>`);
+      links.push(`<a class="schedule-resource-link" href="${escapeHtml(mapsSearch(`${flight.arrival.airportCode} Airport`))}" target="_blank" rel="noopener">${escapeHtml(flight.arrival.airportCode)} 机场地图 ↗</a>`);
+    }
+  }
+  if (item.stayId) {
+    const stay = state.data.accommodations.find((stay) => stay.id === item.stayId);
+    if (stay) {
+      links.push(confirmationEmailLink(stay.confirmationEmailId, `${stay.name} 住宿确认邮件`, "查看住宿确认邮件"));
+      if (stay.website) links.push(`<a class="schedule-resource-link" href="${escapeHtml(stay.website)}" target="_blank" rel="noopener">酒店官网 ↗</a>`);
+      if (stay.googleMapsUrl) links.push(`<a class="schedule-resource-link" href="${escapeHtml(stay.googleMapsUrl)}" target="_blank" rel="noopener">酒店地图 ↗</a>`);
+    }
+  }
+  return links.filter(Boolean).join("");
 }
 
 function flightCard(journey, index) {
@@ -511,12 +552,14 @@ function dayCard(day) {
       <button type="button" class="schedule-map-link" data-map-query="${escapeHtml(destination.query)}" data-map-url="${escapeHtml(destination.url || "")}" data-map-label="${escapeHtml(destination.label)}" aria-haspopup="dialog" aria-controls="place-map" aria-label="查看 ${escapeHtml(destination.label)} 的地图">📍 ${escapeHtml(destination.label)}</button>
     `).join("");
     const scheduleTickets = ticketsForSchedule(day, item).map(inlineTicketMarkup).join("");
+    const bookingLinks = scheduleBookingLinks(day, item);
     return `
       <li class="schedule-item">
         <span class="schedule-time">${escapeHtml(item.time)}</span>
         <div class="schedule-content">
           <div class="schedule-text">${escapeHtml(item.text)}</div>
           ${scheduleTickets}
+          ${bookingLinks ? `<div class="schedule-booking-links">${bookingLinks}</div>` : ""}
           ${mapLinks ? `<div class="schedule-map-links">${mapLinks}</div>` : ""}
         </div>
       </li>
@@ -1060,6 +1103,7 @@ async function init() {
     if (moduleEnabled("driving")) renderRental();
     if (moduleEnabled("todo")) renderTravelPrep();
     setupExtras();
+    setupEmailDialog();
     await loadExtras();
     if (moduleEnabled("ledger")) {
       await window.TravelLedger?.init?.({ tripId: state.data.metadata.tripId, config: state.config });

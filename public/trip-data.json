@@ -166,7 +166,9 @@
       "phone": "+61 2 8027 8000",
       "website": "https://www.ihg.com/kimptonhotels/hotels/us/en/kimpton-hotel-sydney-australia/sydkm/hoteldetail",
       "googleMapsUrl": "https://maps.google.com/?ftid=0x6b12ae3db5ea9fc3:0x3b0155a08051f08f",
-      "confirmationEmailId": 35413193
+      "confirmationEmailId": 35413193,
+      "checkInTime": "15:00 后",
+      "checkOutTime": "11:00 前"
     },
     {
       "id": "stay-2",
@@ -181,7 +183,9 @@
       "phone": "+61 3 4225 6100",
       "website": "https://www.ihg.com/holidayinn/hotels/us/en/geelong/gexgl/hoteldetail?cm_mmc=GoogleMaps-_-HI-_-AU-_-GEXGL",
       "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad4140491d830d3:0xd67fc88cc35211b3",
-      "confirmationEmailId": 35413179
+      "confirmationEmailId": 35413179,
+      "checkInTime": "15:00 后",
+      "checkOutTime": "11:00 前"
     },
     {
       "id": "stay-3",
@@ -196,7 +200,9 @@
       "phone": "+61 3 5237 6732",
       "website": "http://www.sandpipermotel.net.au/",
       "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad336dc44911fff:0x27e73f34c122190d",
-      "confirmationEmailId": 35413205
+      "confirmationEmailId": 35413205,
+      "checkInTime": "14:30 后",
+      "checkOutTime": "10:00 前"
     },
     {
       "id": "stay-4",
@@ -211,7 +217,9 @@
       "phone": "+61 3 5559 2000",
       "website": "https://thedeepblue.com.au/",
       "googleMapsUrl": "https://maps.google.com/?ftid=0x6acd4ce97d3c3e19:0x15cc3520f0c57a0a",
-      "confirmationEmailId": 35413198
+      "confirmationEmailId": 35413198,
+      "checkInTime": "14:00 后",
+      "checkOutTime": "10:00 前"
     },
     {
       "id": "stay-5",
@@ -226,7 +234,9 @@
       "phone": "+61 3 9100 4600",
       "website": "https://veriu.com.au/hotels/veriu-queen-victoria-market/",
       "googleMapsUrl": "https://maps.google.com/?ftid=0x6ad65d0f15ef81b9:0x884509b93bc77397",
-      "confirmationEmailId": 35413153
+      "confirmationEmailId": 35413153,
+      "checkInTime": "14:00 后",
+      "checkOutTime": "10:00 前"
     }
   ],
   "groundTransport": {
@@ -297,6 +307,14 @@
       "locations": [],
       "schedule": [
         {
+          "id": "day-01-flight-flight-cx161-depart",
+          "time": "21:35",
+          "type": "flight",
+          "text": "国泰航空 CX161：HKG 21:35 起飞 → SYD 08:40 抵达（机场当地时间）。",
+          "flightId": "flight-cx161",
+          "bookingGenerated": true
+        },
+        {
           "id": "day-1-item-1",
           "time": "18:35",
           "type": "flight",
@@ -333,11 +351,21 @@
       ],
       "schedule": [
         {
-          "id": "day-2-item-1",
-          "time": "10:00",
-          "type": "attraction",
-          "text": "抵达后前往酒店寄存行李。先确认房间是否可提前入住；08:40 落地后给入境与交通留余量。",
-          "placeIds": []
+          "id": "day-02-flight-flight-cx161-arrive",
+          "time": "08:40",
+          "type": "flight",
+          "text": "国泰航空 CX161：08:40 抵达 SYD（机场当地时间）。",
+          "flightId": "flight-cx161",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-02-checkin",
+          "time": "15:00 后",
+          "type": "check-in",
+          "text": "15:00 后可办理 Kimpton Margot Sydney 入住。",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "stayId": "stay-1",
+          "bookingGenerated": true
         },
         {
           "id": "day-2-item-2",
@@ -366,13 +394,6 @@
           "placeIds": [
             "ChIJt9trB0euEmsR8NbepO14j3M"
           ]
-        },
-        {
-          "id": "day-2-hotel",
-          "time": "入住",
-          "type": "check-in",
-          "text": "Kimpton Margot Sydney · 339 Pitt St, Sydney NSW 2000, Australia",
-          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs"
         }
       ],
       "notes": [
@@ -602,7 +623,7 @@
       "id": "day-07",
       "day": 7,
       "date": "2026-09-30",
-      "title": "悉尼 → 墨尔本 → 吉朗",
+      "title": "悉尼退房 → JQ537 → 墨尔本取车 → 吉朗入住",
       "locations": [
         "悉尼机场",
         "墨尔本机场",
@@ -610,11 +631,40 @@
       ],
       "schedule": [
         {
-          "id": "day-7-item-1",
-          "time": "上午待定",
+          "id": "day-07-checkout",
+          "time": "09:00 前",
+          "type": "check-out",
+          "text": "09:00 前从 Kimpton Margot Sydney 退房并出发去机场；酒店订单允许 11:00 前退房。",
+          "placeId": "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+          "stayId": "stay-1",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-7-airport-transfer",
+          "time": "09:25 前",
+          "type": "transfer",
+          "text": "从 Kimpton Margot Sydney 前往悉尼机场 T2；确认邮件建议国内航班提前 2 小时到达。",
+          "placeIds": [
+            "ChIJw5_qtT2uEmsRj_BRgKBVATs",
+            "ChIJ24MzG_GwEmsRd2VLWl01368"
+          ]
+        },
+        {
+          "id": "day-07-flight-flight-jq537-depart",
+          "time": "11:25",
           "type": "flight",
-          "text": "酒店退房 → SYD → MEL。国内段航班尚无时刻；确认落地时间足够赶上 14:00 市区取车。",
-          "placeIds": []
+          "text": "捷星航空 JQ537：SYD 11:25 起飞 → MEL 13:00 抵达（机场当地时间）。",
+          "flightId": "flight-jq537",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-7-city-transfer",
+          "time": "13:00–14:00",
+          "type": "transfer",
+          "text": "从墨尔本机场前往 Thrifty Melbourne Downtown 门店；14:00 预约取车，时间较紧，请预先确认交通与航班准点情况。",
+          "placeIds": [
+            "ChIJFzmq66lZ1moRkPAvBXZWBA8"
+          ]
         },
         {
           "id": "day-7-item-2",
@@ -633,20 +683,13 @@
           ]
         },
         {
-          "id": "day-7-item-4",
-          "time": "傍晚",
-          "type": "attraction",
-          "text": "Holiday Inn & Suites Geelong 入住。当天以转场为主，吉朗市中心按余裕散步。",
-          "placeIds": [
-            "ChIJgdYXBHty1GoRoM2MIXVWBAQ"
-          ]
-        },
-        {
-          "id": "day-7-hotel",
-          "time": "入住",
+          "id": "day-07-checkin",
+          "time": "15:00 后",
           "type": "check-in",
-          "text": "Holiday Inn & Suites Geelong by IHG · 40 Ryrie St, Geelong VIC 3220, Australia",
-          "placeId": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y"
+          "text": "15:00 后可办理 Holiday Inn & Suites Geelong by IHG 入住。",
+          "placeId": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+          "stayId": "stay-2",
+          "bookingGenerated": true
         }
       ],
       "notes": [
@@ -667,6 +710,24 @@
         "Memorial Arch at Eastern View"
       ],
       "schedule": [
+        {
+          "id": "day-08-checkout",
+          "time": "11:00 前",
+          "type": "check-out",
+          "text": "11:00 前从 Holiday Inn & Suites Geelong by IHG 退房。",
+          "placeId": "ChIJ0zDYkQQU1GoRsxFSw4zIf9Y",
+          "stayId": "stay-2",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-08-checkin",
+          "time": "14:30 后",
+          "type": "check-in",
+          "text": "14:30 后可办理 Sandpiper Motel Apollo Bay- Great Ocean Road 入住。",
+          "placeId": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+          "stayId": "stay-3",
+          "bookingGenerated": true
+        },
         {
           "id": "day-8-item-1",
           "time": "上午",
@@ -696,20 +757,6 @@
             "ChIJga0hRlNC02oRT3qW-lGOZew",
             "ChIJkTcYKuI502oRIL-gMKR5BQQ"
           ]
-        },
-        {
-          "id": "day-8-item-4",
-          "time": "傍晚",
-          "type": "drive",
-          "text": "Marriner’s Lookout → Sandpiper Motel。优先天亮时完成驾车；若晚到，跳过观景台直接入住。",
-          "placeIds": []
-        },
-        {
-          "id": "day-8-hotel",
-          "time": "入住",
-          "type": "check-in",
-          "text": "Sandpiper Motel Apollo Bay- Great Ocean Road · 3 Murray St, Apollo Bay VIC 3233, Australia",
-          "placeId": "ChIJ_x-RRNw202oRDRkiwTQ_5yc"
         }
       ],
       "notes": [
@@ -730,6 +777,24 @@
         "刀锋崖"
       ],
       "schedule": [
+        {
+          "id": "day-09-checkout",
+          "time": "10:00 前",
+          "type": "check-out",
+          "text": "10:00 前从 Sandpiper Motel Apollo Bay- Great Ocean Road 退房。",
+          "placeId": "ChIJ_x-RRNw202oRDRkiwTQ_5yc",
+          "stayId": "stay-3",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-09-checkin",
+          "time": "14:00 后",
+          "type": "check-in",
+          "text": "14:00 后可办理 Deep Blue Hotel & Hot Springs 入住。",
+          "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "stayId": "stay-4",
+          "bookingGenerated": true
+        },
         {
           "id": "day-9-item-1",
           "time": "上午",
@@ -767,13 +832,6 @@
           "type": "drive",
           "text": "瓦南布尔 → Deep Blue Hotel。日落前抵达为目标；当天点位较多，迟出发就删减海岸短停。",
           "placeIds": []
-        },
-        {
-          "id": "day-9-hotel",
-          "time": "入住",
-          "type": "check-in",
-          "text": "Deep Blue Hotel & Hot Springs · 1 Worm Bay Rd, Warrnambool VIC 3280, Australia",
-          "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU"
         }
       ],
       "notes": [
@@ -852,6 +910,24 @@
       ],
       "schedule": [
         {
+          "id": "day-11-checkout",
+          "time": "10:00 前",
+          "type": "check-out",
+          "text": "10:00 前从 Deep Blue Hotel & Hot Springs 退房。",
+          "placeId": "ChIJGT48felMzWoRCnrF8CA1zBU",
+          "stayId": "stay-4",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-11-checkin",
+          "time": "14:00 后",
+          "type": "check-in",
+          "text": "14:00 后可办理 Veriu Queen Victoria Market 入住。",
+          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "stayId": "stay-5",
+          "bookingGenerated": true
+        },
+        {
           "id": "day-11-item-1",
           "time": "上午",
           "type": "drive",
@@ -866,25 +942,11 @@
           "placeIds": []
         },
         {
-          "id": "day-11-item-3",
-          "time": "下午",
-          "type": "drive",
-          "text": "返回墨尔本 → Veriu 入住。长途自驾留休息时间；当天进入夏令时，启用自动时区。",
-          "placeIds": []
-        },
-        {
           "id": "day-11-item-4",
           "time": "待确认",
           "type": "attraction",
           "text": "还车安排。Wanderlog 写当天 A’Beckett St 还车，但租车单为 10/5 11:00 Franklin St；尚未擅自更改预约。",
           "placeIds": []
-        },
-        {
-          "id": "day-11-hotel",
-          "time": "入住",
-          "type": "check-in",
-          "text": "Veriu Queen Victoria Market · 91/101 Therry St, Melbourne VIC 3000, Australia",
-          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg"
         }
       ],
       "notes": [
@@ -1022,6 +1084,23 @@
       "title": "墨尔本返程 · 抵达香港",
       "locations": [],
       "schedule": [
+        {
+          "id": "day-14-checkout",
+          "time": "05:00 前",
+          "type": "check-out",
+          "text": "05:00 前从 Veriu Queen Victoria Market 退房并出发去机场；酒店订单允许 10:00 前退房。",
+          "placeId": "ChIJuYHvFQ9d1moRl3PHO7kJRYg",
+          "stayId": "stay-5",
+          "bookingGenerated": true
+        },
+        {
+          "id": "day-14-flight-flight-cx134-depart",
+          "time": "08:25",
+          "type": "flight",
+          "text": "国泰航空 CX134：MEL 08:25 起飞 → HKG 14:55 抵达（机场当地时间）。",
+          "flightId": "flight-cx134",
+          "bookingGenerated": true
+        },
         {
           "id": "day-14-item-1",
           "time": "05:25",
