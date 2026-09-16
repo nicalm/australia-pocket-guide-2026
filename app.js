@@ -425,6 +425,7 @@ function renderStays() {
 }
 
 let packingItems = [];
+const collapsedPackingGroups = new Set();
 function sharedApi(path, options = {}) {
   const share = new URLSearchParams(location.search).get("share") || "";
   return fetch(`/api/${path}${path.includes("?") ? "&" : "?"}share=${encodeURIComponent(share)}`, { ...options, headers: { "content-type": "application/json", ...(options.headers || {}) } }).then(async (response) => {
@@ -436,7 +437,11 @@ function renderPacking() {
   const done = packingItems.filter((item) => item.packed).length;
   $("#packing-progress").textContent = `${done} / ${packingItems.length}`;
   const groups = Map.groupBy(packingItems, (item) => item.category || "其他");
-  $("#packing-list").innerHTML = [...groups].map(([category, items]) => `<section class="packing-group"><h3>${escapeHtml(category)}</h3>${items.map((item) => `<div class="packing-row${item.packed ? " is-complete" : ""}" data-packing-id="${escapeHtml(item.id)}"><label><input type="checkbox" ${item.packed ? "checked" : ""}><span class="todo-check">✓</span><span>${escapeHtml(item.label)}</span></label><button type="button">删除</button></div>`).join("")}</section>`).join("");
+  $("#packing-list").innerHTML = [...groups].map(([category, items], groupIndex) => {
+    const collapsed = collapsedPackingGroups.has(category);
+    const packed = items.filter((item) => item.packed).length;
+    return `<section class="packing-group${collapsed ? " is-collapsed" : ""}"><button type="button" class="packing-group-toggle" data-packing-category="${escapeHtml(category)}" aria-expanded="${!collapsed}" aria-controls="packing-group-${groupIndex}"><span><strong>${escapeHtml(category)}</strong><small>${packed} / ${items.length}</small></span><i aria-hidden="true">+</i></button><div class="packing-group-items" id="packing-group-${groupIndex}" ${collapsed ? "hidden" : ""}>${items.map((item) => `<div class="packing-row${item.packed ? " is-complete" : ""}" data-packing-id="${escapeHtml(item.id)}"><label><input type="checkbox" ${item.packed ? "checked" : ""}><span class="todo-check">✓</span><span>${escapeHtml(item.label)}</span></label><span class="packing-actions"><button type="button" data-packing-action="edit">编辑</button><button type="button" data-packing-action="delete">删除</button></span></div>`).join("")}</div></section>`;
+  }).join("");
 }
 async function loadExtras() {
   const share = new URLSearchParams(location.search).get("share") || "";
@@ -448,7 +453,14 @@ async function loadExtras() {
 function setupExtras() {
   $("#packing-form").onsubmit = async (event) => { event.preventDefault(); const input=$("#packing-input"), category=$("#packing-category"); if(!input.value.trim()) return; const item={id:crypto.randomUUID(),label:input.value.trim(),category:category.value.trim()||"其他",packed:false,position:(packingItems.at(-1)?.position||0)+1}; packingItems.push(item); renderPacking(); event.target.reset(); await sharedApi("items",{method:"POST",body:JSON.stringify(item)}); };
   $("#packing-list").onchange = async (event) => { const row=event.target.closest("[data-packing-id]"); if(!row) return; const item=packingItems.find(x=>x.id===row.dataset.packingId); item.packed=event.target.checked; renderPacking(); await sharedApi(`items/${encodeURIComponent(item.id)}`,{method:"PATCH",body:JSON.stringify({packed:item.packed})}); };
-  $("#packing-list").onclick = async (event) => { const row=event.target.closest("[data-packing-id]"); if(!row||!event.target.closest("button")) return; packingItems=packingItems.filter(x=>x.id!==row.dataset.packingId); renderPacking(); await sharedApi(`items/${encodeURIComponent(row.dataset.packingId)}`,{method:"DELETE"}); };
+  $("#packing-list").onclick = async (event) => {
+    const groupButton = event.target.closest("[data-packing-category]");
+    if (groupButton) { const category=groupButton.dataset.packingCategory; if(collapsedPackingGroups.has(category))collapsedPackingGroups.delete(category);else collapsedPackingGroups.add(category);renderPacking();return; }
+    const row=event.target.closest("[data-packing-id]"),button=event.target.closest("[data-packing-action]"); if(!row||!button) return;
+    const item=packingItems.find(x=>x.id===row.dataset.packingId);
+    if(button.dataset.packingAction==="edit") { const label=prompt("编辑行李条目",item.label);if(label===null)return;const next=label.trim().slice(0,160);if(!next)return;item.label=next;renderPacking();await sharedApi(`items/${encodeURIComponent(item.id)}`,{method:"PATCH",body:JSON.stringify({label:next})});return; }
+    packingItems=packingItems.filter(x=>x.id!==row.dataset.packingId);renderPacking();await sharedApi(`items/${encodeURIComponent(row.dataset.packingId)}`,{method:"DELETE"});
+  };
   let notesTimer; $("#shared-notes").oninput = (event) => { clearTimeout(notesTimer); $("#notes-sync").textContent="正在保存…"; notesTimer=setTimeout(async()=>{try{await sharedApi("notes",{method:"PUT",body:JSON.stringify({notes:event.target.value})});$("#notes-sync").textContent="共享备注已同步";}catch{$("#notes-sync").textContent="保存失败";}},650); };
 }
 
